@@ -4,6 +4,8 @@ B_CMK3:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 500
@@ -51,7 +53,7 @@ B_CMK3:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: QF2_40
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 700,0,1100
 		Recoil: 150
 		RecoilRecovery: 10
@@ -63,13 +65,10 @@ B_CMK3:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -88,6 +87,8 @@ B_CMK3:
 	ProvidesPrerequisite@britain:
 		Prerequisite: vehicles.britain
 		Factions: britain
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0

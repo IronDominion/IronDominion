@@ -1,0 +1,187 @@
+########################################################################
+########################################################################
+########################################################################
+#####                                                              #####
+#####                        GENERATED FILE                        #####
+#####                         DO NOT EDIT                          #####
+#####                                                              #####
+########################################################################
+########################################################################
+########################################################################
+
+
+^ResourceAmmoAP:
+	ReloadDelay: 0
+	BurstDelay: 0
+	TargetActorCenter: True
+	Projectile: InstantHit
+	Warhead@ResourceAmmoAP: TransferAmmo
+		AmmoPoolName: ResourceAmmoAP
+		ReturnAmmo: True
+		DebugOverlayColor: 00FF00
+
+ResourceAmmoAPProduction:
+	Inherits@ResourceAmmoAP: ^ResourceAmmoAP
+	Range: 20c0
+	ValidTargets: ResourceAmmoAPWarehouse
+	Warhead@ResourceAmmoAP:
+		ValidTargets: ResourceAmmoAPWarehouse
+		Amount: 0
+
+ResourceAmmoAPWarehouse:
+	Inherits@ResourceAmmoAP: ^ResourceAmmoAP
+	Range: 1c0
+	ValidTargets: ResourceAmmoAPTransport, ResourceAmmoAPConsumer
+	Warhead@ResourceAmmoAP:
+		ValidTargets: ResourceAmmoAPTransport, ResourceAmmoAPConsumer
+		Amount: 5
+
+ResourceAmmoAPTransport:
+	Inherits@ResourceAmmoAP: ^ResourceAmmoAP
+	Range: 3c0
+	ValidTargets: ResourceAmmoAPTransport, ResourceAmmoAPConsumer
+	Warhead@ResourceAmmoAP:
+		ValidTargets: ResourceAmmoAPTransport, ResourceAmmoAPConsumer
+		Amount: 1
+
+
+^ResourceAmmoAPCR:
+	ReloadDelay: 0
+	BurstDelay: 0
+	TargetActorCenter: True
+	Projectile: InstantHit
+	Warhead@ResourceAmmoAPCR: TransferAmmo
+		AmmoPoolName: ResourceAmmoAPCR
+		ReturnAmmo: True
+		DebugOverlayColor: 00FF00
+
+ResourceAmmoAPCRProduction:
+	Inherits@ResourceAmmoAPCR: ^ResourceAmmoAPCR
+	Range: 20c0
+	ValidTargets: ResourceAmmoAPCRWarehouse
+	Warhead@ResourceAmmoAPCR:
+		ValidTargets: ResourceAmmoAPCRWarehouse
+		Amount: 0
+
+ResourceAmmoAPCRWarehouse:
+	Inherits@ResourceAmmoAPCR: ^ResourceAmmoAPCR
+	Range: 1c0
+	ValidTargets: ResourceAmmoAPCRTransport, ResourceAmmoAPCRConsumer
+	Warhead@ResourceAmmoAPCR:
+		ValidTargets: ResourceAmmoAPCRTransport, ResourceAmmoAPCRConsumer
+		Amount: 5
+
+ResourceAmmoAPCRTransport:
+	Inherits@ResourceAmmoAPCR: ^ResourceAmmoAPCR
+	Range: 3c0
+	ValidTargets: ResourceAmmoAPCRTransport, ResourceAmmoAPCRConsumer
+	Warhead@ResourceAmmoAPCR:
+		ValidTargets: ResourceAmmoAPCRTransport, ResourceAmmoAPCRConsumer
+		Amount: 1
+
+
+^ResourceAmmoHE:
+	ReloadDelay: 0
+	BurstDelay: 0
+	TargetActorCenter: True
+	Projectile: InstantHit
+	Warhead@ResourceAmmoHE: TransferAmmo
+		AmmoPoolName: ResourceAmmoHE
+		ReturnAmmo: True
+		DebugOverlayColor: 00FF00
+
+ResourceAmmoHEProduction:
+	Inherits@ResourceAmmoHE: ^ResourceAmmoHE
+	Range: 20c0
+	ValidTargets: ResourceAmmoHEWarehouse
+	Warhead@ResourceAmmoHE:
+		ValidTargets: ResourceAmmoHEWarehouse
+		Amount: 0
+
+ResourceAmmoHEWarehouse:
+	Inherits@ResourceAmmoHE: ^ResourceAmmoHE
+	Range: 1c0
+	ValidTargets: ResourceAmmoHETransport, ResourceAmmoHEConsumer
+	Warhead@ResourceAmmoHE:
+		ValidTargets: ResourceAmmoHETransport, ResourceAmmoHEConsumer
+		Amount: 5
+
+ResourceAmmoHETransport:
+	Inherits@ResourceAmmoHE: ^ResourceAmmoHE
+	Range: 3c0
+	ValidTargets: ResourceAmmoHETransport, ResourceAmmoHEConsumer
+	Warhead@ResourceAmmoHE:
+		ValidTargets: ResourceAmmoHETransport, ResourceAmmoHEConsumer
+		Amount: 1
+
+
+^ResourceAmmoHEAT:
+	ReloadDelay: 0
+	BurstDelay: 0
+	TargetActorCenter: True
+	Projectile: InstantHit
+	Warhead@ResourceAmmoHEAT: TransferAmmo
+		AmmoPoolName: ResourceAmmoHEAT
+		ReturnAmmo: True
+		DebugOverlayColor: 00FF00
+
+ResourceAmmoHEATProduction:
+	Inherits@ResourceAmmoHEAT: ^ResourceAmmoHEAT
+	Range: 20c0
+	ValidTargets: ResourceAmmoHEATWarehouse
+	Warhead@ResourceAmmoHEAT:
+		ValidTargets: ResourceAmmoHEATWarehouse
+		Amount: 0
+
+ResourceAmmoHEATWarehouse:
+	Inherits@ResourceAmmoHEAT: ^ResourceAmmoHEAT
+	Range: 1c0
+	ValidTargets: ResourceAmmoHEATTransport, ResourceAmmoHEATConsumer
+	Warhead@ResourceAmmoHEAT:
+		ValidTargets: ResourceAmmoHEATTransport, ResourceAmmoHEATConsumer
+		Amount: 5
+
+ResourceAmmoHEATTransport:
+	Inherits@ResourceAmmoHEAT: ^ResourceAmmoHEAT
+	Range: 3c0
+	ValidTargets: ResourceAmmoHEATTransport, ResourceAmmoHEATConsumer
+	Warhead@ResourceAmmoHEAT:
+		ValidTargets: ResourceAmmoHEATTransport, ResourceAmmoHEATConsumer
+		Amount: 1
+
+
+^ResourceFuel:
+	ReloadDelay: 0
+	BurstDelay: 0
+	TargetActorCenter: True
+	Projectile: InstantHit
+	Warhead@ResourceFuel: TransferAmmo
+		AmmoPoolName: ResourceFuel
+		ReturnAmmo: True
+		DebugOverlayColor: 00FF00
+
+ResourceFuelProduction:
+	Inherits@ResourceFuel: ^ResourceFuel
+	Range: 20c0
+	ValidTargets: ResourceFuelWarehouse
+	Warhead@ResourceFuel:
+		ValidTargets: ResourceFuelWarehouse
+		Amount: 20
+
+ResourceFuelWarehouse:
+	Inherits@ResourceFuel: ^ResourceFuel
+	Range: 1c0
+	ValidTargets: ResourceFuelTransport, ResourceFuelConsumer
+	Warhead@ResourceFuel:
+		ValidTargets: ResourceFuelTransport, ResourceFuelConsumer
+		Amount: 100
+
+ResourceFuelTransport:
+	Inherits@ResourceFuel: ^ResourceFuel
+	Range: 3c0
+	ValidTargets: ResourceFuelTransport, ResourceFuelConsumer
+	Warhead@ResourceFuel:
+		ValidTargets: ResourceFuelTransport, ResourceFuelConsumer
+		Amount: 10
+
+

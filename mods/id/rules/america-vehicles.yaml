@@ -4,6 +4,8 @@ A_M2MC:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 300
@@ -53,7 +55,7 @@ A_M2MC:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M5_37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 700,0,1300
 		Recoil: 150
 		RecoilRecovery: 10
@@ -65,13 +67,10 @@ A_M2MC:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -90,6 +89,8 @@ A_M2MC:
 	ProvidesPrerequisite@america:
 		Prerequisite: vehicles.america
 		Factions: america
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0

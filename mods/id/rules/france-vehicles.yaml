@@ -4,6 +4,8 @@ F_AMXELC:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
@@ -51,19 +53,16 @@ F_AMXELC:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA32L
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 700,0,850
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -82,6 +81,8 @@ F_AMXELC:
 	ProvidesPrerequisite@france:
 		Prerequisite: vehicles.france
 		Factions: france
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0

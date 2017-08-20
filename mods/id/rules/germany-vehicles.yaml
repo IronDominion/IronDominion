@@ -4,6 +4,8 @@ G_P4A:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceGermany
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
@@ -48,7 +50,7 @@ G_P4A:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: KwK37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 750,0,980
 		Recoil: 150
 		RecoilRecovery: 10
@@ -60,13 +62,10 @@ G_P4A:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -85,6 +84,8 @@ G_P4A:
 	ProvidesPrerequisite@germany:
 		Prerequisite: vehicles.germany
 		Factions: germany
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0

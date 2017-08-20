@@ -94,6 +94,9 @@ Rules:
 	id|rules/russia-vehicles.yaml
 	id|rules/britain-infantry.yaml
 	id|rules/britain-vehicles.yaml
+	id|rules/resource.yaml
+	id|rules-generated/resource.yaml
+	id|rules/movement.yaml
 
 Sequences:
 	id|sequences/misc.yaml
@@ -184,6 +187,8 @@ Weapons:
 	id|weapons/america-weapons.yaml
 	id|weapons/russia-weapons.yaml
 	id|weapons/britain-weapons.yaml
+	id|weapons/resource.yaml
+	id|weapons-generated/resource.yaml
 
 Voices:
 	id|audio/voices.yaml

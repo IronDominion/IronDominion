@@ -1,0 +1,15 @@
+^MovementGround:
+	Mobile:
+		RequiresCondition: !MovementDisabled
+		Voice: Move
+		Crushes: crate
+		TurnSpeed: 5
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 70
+			Rail: 80
+			Road: 100
+			DirtRoad: 95
+			Beach: 100
+			Ore: 50
+			Gems: 50

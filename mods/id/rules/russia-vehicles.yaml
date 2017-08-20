@@ -4,6 +4,8 @@ R_T127:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 400
@@ -51,7 +53,7 @@ R_T127:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M1937/L46_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 800,0,980
 		Recoil: 150
 		RecoilRecovery: 10
@@ -63,13 +65,10 @@ R_T127:
 		LocalOffset: 300,-64,1025
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -88,6 +87,8 @@ R_T127:
 	ProvidesPrerequisite@russia:
 		Prerequisite: vehicles.russia
 		Factions: russia
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0
