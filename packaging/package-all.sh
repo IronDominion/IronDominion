@@ -1,52 +1,35 @@
 #!/bin/bash
+set -e
 
-if [ $# -ne "2" ]; then
-    echo "Usage: `basename $0` version outputdir"
-    exit 1
+if [ $# -eq "0" ]; then
+	echo "Usage: `basename $0` version [outputdir]"
+	exit 1
 fi
-
-PACKAGING_DIR=$(python -c "import os; print(os.path.dirname(os.path.realpath('$0')))")
-TEMPLATE_ROOT="${PACKAGING_DIR}/../"
-
-# shellcheck source=mod.config
-. "${TEMPLATE_ROOT}/mod.config"
-
-if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
-	# shellcheck source=user.config
-	. "${TEMPLATE_ROOT}/user.config"
-fi
-
-function build()
-{
-	TAG="$1"
-	OUTPUTDIR="$2"
-	DIRECTORY="$3"
-	DISPLAYNAME="$4"
-	ENABLED="$5"
-
-	if [ "${ENABLED^^}" == "FALSE" ]; then
-		echo "$DISPLAYNAME package build is disabled."
-		return
-	fi
-
-	pushd $DIRECTORY >/dev/null
-	echo "Building $DISPLAYNAME package"
-	./buildpackage.sh "${TAG}" "${OUTPUTDIR}"
-	if [ $? -ne 0 ]; then
-	    echo "$DISPLAYNAME package build failed."
-	fi
-	popd >/dev/null
-}
-
 
 TAG="$1"
-OUTPUTDIR="$2"
+if [ $# -eq "1" ]; then
+	OUTPUTDIR=$(pwd)
+else
+	OUTPUTDIR=$2
+fi
 
-# Set the working dir to the location of this script
-cd "$(dirname $0)"
+command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
+command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires makensis."; exit 1; }
 
-build "${TAG}" "${OUTPUTDIR}" "windows" "Windows" "${PACKAGING_WINDOWS_ENABLED}"
-build "${TAG}" "${OUTPUTDIR}" "osx" "macOS" "${PACKAGING_OSX_ENABLED}"
-build "${TAG}" "${OUTPUTDIR}" "zip" ".zip" "${PACKAGING_ZIP_ENABLED}"
+PACKAGING_DIR=$(python -c "import os; print(os.path.dirname(os.path.realpath('$0')))")
 
-echo "Package builds done."
+echo "Building Windows package"
+${PACKAGING_DIR}/windows/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
+if [ $? -ne 0 ]; then
+	echo "Windows package build failed."
+fi
+
+echo "Building macOS package"
+${PACKAGING_DIR}/osx/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
+if [ $? -ne 0 ]; then
+	echo "macOS package build failed."
+fi
+
+echo "Package build done."
