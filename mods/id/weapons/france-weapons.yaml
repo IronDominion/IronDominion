@@ -13,15 +13,61 @@ FrenchRifleGarrison:
 	Inherits@caltype: FrenchRifle
 	Range: 15c0
 
+FrenchSMG:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 80
+	Range: 8c0
+	Burst: 5
+	BurstDelay: 3
+	Report: fsmg_v1.wav, fsmg_v2.wav, fsmg_v3.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+
+FrenchSMGGarrison:
+	Inherits@caltype: FrenchSMG
+	Range: 15c0
+
+SA32L:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		Speed: 0c900
+		Inaccuracy: 1c0
+
 D915:
 	Inherits@calsize: ^90mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 26c520
+	Range: 35c360
 	Report: 90mm M3_L53_v1.wav, 90mm M3_L53_v2.wav, 90mm M3_L53_v3.wav
 	Projectile: BulletAS
-		Speed: 1c235
-		Inaccuracy: 1c0
+		Speed: 1c395
+		Inaccuracy: 0c625
+
+25mmCRM:
+	Inherits@calsize: ^25mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 12c730
+	Burst: 6
+	BurstDelay: 5
+	Report: 20mm_v1.wav, 20mm_v2.wav, 20mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c425
+		Inaccuracy: 1c256
+	Warhead@2Eff: CreateEffect
+		InValidTargets: Vehicle, OpenVehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pshotts1, pshotts2, pshotts3
+		ExplosionPalette: pshotts
+		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
+		ValidTargets: Vehicle, OpenVehicle
         
 SA18:
 	Inherits@calsize: ^37mm
@@ -33,14 +79,14 @@ SA18:
 		Speed: 0c900
 		Inaccuracy: 1c0
 
-SA34:
+SA34_HE:
 	Inherits@calsize: ^47mm
 	Inherits@caltype: ^HE
 	ReloadDelay: 200
 	Range: 26c520
 	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
 	Projectile: BulletAS
-		Speed: 0c735
+		Speed: 0c675
 		Inaccuracy: 1c0
 
 SA35:
@@ -50,7 +96,17 @@ SA35:
 	Range: 26c520
 	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
 	Projectile: BulletAS
-		Speed: 0c750
+		Speed: 0c990
+		Inaccuracy: 1c0
+
+SA38:
+	Inherits@calsize: ^47mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c058
 		Inaccuracy: 1c0
         
 7.5mmMG:
@@ -82,12 +138,22 @@ SA35:
 
 SA37:
 	Inherits@calsize: ^47mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 35c360
+	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c328
+		Inaccuracy: 0c675
+
+SA37_APCR:
+	Inherits@calsize: ^47mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 200
 	Range: 35c360
 	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
 	Projectile: BulletAS
-		Speed: 1c283
+		Speed: 1c659
 		Inaccuracy: 0c512
 
 75mmBS:
@@ -98,19 +164,19 @@ SA37:
 	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
-		Speed: 0c330
+		Speed: 0c405
 		Inaccuracy: 6c0
 		ContrailLength: 20
 
 105mmL:
 	Inherits@calsize: ^105mm
-	Inherits@caltype: ^ARTY_HEAT
+	Inherits@caltype: ^HE
 	ReloadDelay: 200
 	Range: 50c0
 	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
-		Speed: 0c810
+		Speed: 0c608
 		Inaccuracy: 6c0
 		ContrailLength: 20
         
@@ -121,5 +187,35 @@ SA32:
 	Range: 26c520
 	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
 	Projectile: BulletAS
-		Speed: 1c112
+		Speed: 0c900
 		Inaccuracy: 1c0
+
+SA44:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c103
+		Inaccuracy: 0c625
+
+SA44_APCR:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 150
+	Range: 26c520
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c379
+		Inaccuracy: 0c512
+
+F3_90:
+	Inherits@calsize: ^90mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 90mm M3_L53_v1.wav, 90mm M3_L53_v2.wav, 90mm M3_L53_v3.wav
+	Projectile: BulletAS
+		Speed: 1c395
+		Inaccuracy: 0c625

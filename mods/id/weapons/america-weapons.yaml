@@ -27,9 +27,36 @@ BazookaGarrison:
 	Inherits@caltype: Bazooka
 	Range: 15c0
 
+Thomson:
+	Inherits@caltype: ^Bullet
+	ReloadDelay: 80
+	Range: 8c0
+	Burst: 5
+	BurstDelay: 3
+	Report: thompson_v1.wav, thompson_v2.wav, thompson_v3.wav
+	Projectile: BulletAS
+		Speed: 1c350
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+
+ThomsonGarrison:
+	Inherits@caltype: Thomson
+	Range: 13c0
+
 M3_75:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c080
+		Inaccuracy: 1c0
+
+M3_75_HE:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^HE
 	ReloadDelay: 250
 	Range: 26c520
 	Report: 75mm_L40_v1.wav, 75mm_L40_v2.wav, 75mm_L40_v3.wav
@@ -82,7 +109,7 @@ M5_37:
 	Range: 17c680
 	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
 	Projectile: BulletAS
-		Speed: 1c140
+		Speed: 1c173
 		Inaccuracy: 1c0
 
 M1_76:
@@ -92,7 +119,7 @@ M1_76:
 	Range: 26c520
 	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
 	Projectile: BulletAS
-		Speed: 1c500
+		Speed: 1c485
 		Inaccuracy: 0c512
 
 M1_105:
@@ -103,7 +130,7 @@ M1_105:
 	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
-		Speed: 0c708
+		Speed: 0c615
 		Inaccuracy: 6c0
 		ContrailLength: 20
 
@@ -114,7 +141,7 @@ M1_57:
 	Range: 26c520
 	Report: 57mm_v1.wav, 57mm_v2.wav, 57mm_v3.wav
 	Projectile: BulletAS
-		Speed: 1c500
+		Speed: 1c544
 		Inaccuracy: 0c512
 
 M3_76:
@@ -125,4 +152,24 @@ M3_76:
 	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
 	Projectile: BulletAS
 		Speed: 0c929
+		Inaccuracy: 0c768
+
+M1A1_76:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 26c520
+	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c188
+		Inaccuracy: 0c768
+
+M1A2_76:
+	Inherits@calsize: ^76mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 26c520
+	Report: 76mm_v1.wav, 76mm_v2.wav, 76mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c188
 		Inaccuracy: 0c768

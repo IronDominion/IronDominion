@@ -1,26 +1,1160 @@
-F_AMXELC90:
+F_AMXELC:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
-		Prerequisites: ~france.commander
+		Prerequisites: ~france.commander, ~!MidPhaseI
 		BuildLimit: 1
 		BuildDuration: 1
 		Description: Start Phase
 	BaseBuilding:
 	Valued:
-		Cost: 2500
+		Cost: 2000
 	Tooltip:
-		Name: AMX ELC bis réservoirs de commande
+		Name: AMX ELC bis 75 réservoirs de commande
 	Mobile:
 		Speed: 100
 		TurnSpeed: 4
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 670
+	HitShape@Front:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 520,0,0, 520,-350,0, 520,350,0
+		Type: Rectangle
+			TopLeft: -350, -620
+			BottomRight: 350, -420
+	HitShape@Side:
+        ArmorTypes: Light
+        TargetableOffsets: 0,-350,0, 0,350,0
+		Type: Rectangle
+			TopLeft: -350, -420
+			BottomRight: 350, 420
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -520,0,0, -520,-350,0, -520,350,0
+		Type: Rectangle
+			TopLeft: -350, 420
+			BottomRight: 350, 620
+	Armor@TypeFront:
+		Type: LightMedium
+	Armor@TypeSide/Rear:
+		Type: Light
+	RevealsShroud:
+		Range: 20c0
+	Turreted:
+		Offset: -128,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: SA32L
+		AmmoPoolName: MainCannon
+		LocalOffset: 700,0,850
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	ActorLostNotification:
+		Notification: CriticalUnitLost
+	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@france:
+		Prerequisite: vehicles.france
+		Factions: france
+	SelfHealing:
+		Step: 1
+		PercentageStep: 0
+		Delay: 3
+		HealIfBelow: 100
+		DamageCooldown: 400
+	ProvidesRadar:
+	CashTrickler:
+		Interval: 250
+		Amount: 100
+		ShowTicks: False
+	Production:
+		Produces: Building
+	ProductionBar@Building:
+		ProductionType: Building
+	ParatroopersPower@F_paradrop1:
+		Prerequisites: france.commander
+		UnitType: paraplane
+		DropItems: f_rifle, f_rifle, f_rifle, f_rifle, f_rifle, f_rifle, f_rifle, f_rifle, f_rifle, f_rifle
+		Icon: paradrop
+		OrderName: FranceInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: French Rifleman Drop
+		LongDesc: Drops 10 Rifleman on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@F_paradrop2:
+		Prerequisites: france.commander
+		UnitType: paraplane
+		DropItems: f_atinf, f_atinf, f_atinf, f_atinf, f_atinf
+		Icon: paradrop
+		OrderName: FranceATInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: French AT-Infantry Drop
+		LongDesc: Drops 5 AT-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@F_paradrop3
+		Prerequisites: france.commander
+		UnitType: paraplane
+		DropItems: f_smg, f_smg, f_smg, f_smg, f_smg, f_smg
+		Icon: paradrop
+		OrderName: FranceInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: French SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+
+F_FCM36:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 201
+		Prerequisites: ~vehicles.france, ~!EarlyPhaseI
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: FCM 36
+	Mobile:
+		Speed: 36
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1220
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 540,0,0, 540,-330,0, 540,330,0
+		Type: Rectangle
+			TopLeft: -330, -640
+			BottomRight: 330, -440
+	HitShape@Side:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-330,0, 0,330,0
+		Type: Rectangle
+			TopLeft: -330, -440
+			BottomRight: 330, 440
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -540,0,0, -540,-330,0, -540,330,0
+		Type: Rectangle
+			TopLeft: -330, 440
+			BottomRight: 330, 640
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 128,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: SA18
+		AmmoPoolName: MainCannon
+		LocalOffset: 450,64,950
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_D1:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 203
+		Prerequisites: ~vehicles.france, ~!EarlyPhaseI
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Renault D1
+	Mobile:
+		Speed: 36
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1400
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 540,0,0, 540,-330,0, 540,330,0
+		Type: Rectangle
+			TopLeft: -330, -640
+			BottomRight: 330, -440
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-330,0, 0,330,0
+		Type: Rectangle
+			TopLeft: -330, -440
+			BottomRight: 330, 440
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -540,0,0, -540,-330,0, -540,330,0
+		Type: Rectangle
+			TopLeft: -330, 440
+			BottomRight: 330, 640
+	Armor@TypeFront/Side:
+		Type: Medium
+	Armor@TypeSide:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: 25mmCRM
+		AmmoPoolName: MainCannon
+		LocalOffset: 550,0,980
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 120
+        ReloadCount: 6
+        PipCount: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_RENAULTR35:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 201
+		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Renault R-35
+	Mobile:
+		Speed: 30
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1060
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 540,0,0, 540,-330,0, 540,330,0
+		Type: Rectangle
+			TopLeft: -330, -640
+			BottomRight: 330, -440
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-330,0, 0,330,0
+		Type: Rectangle
+			TopLeft: -330, -440
+			BottomRight: 330, 440
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -540,0,0, -540,-330,0, -540,330,0
+		Type: Rectangle
+			TopLeft: -330, 440
+			BottomRight: 330, 640
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: SA38
+		AmmoPoolName: MainCannon
+		LocalOffset: 475,64,950
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_D2:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 203
+		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Char D2
+	Mobile:
+		Speed: 35
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1975
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
+		Type: Rectangle
+			TopLeft: -380, -820
+			BottomRight: 380, -620
+	HitShape@Side:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-380,0, 0,380,0
+		Type: Rectangle
+			TopLeft: -380, -620
+			BottomRight: 380, 620
+	HitShape@Rear:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
+		Type: Rectangle
+			TopLeft: -380, 620
+			BottomRight: 380, 820
+	Armor@TypeFront/Side:
+		Type: LightHeavy
+	Armor@TypeRear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 128,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: SA34_HE
+		AmmoPoolName: MainCannon
+		LocalOffset: 725,80,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: 7.5mmMG
+		LocalOffset: 400,0,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_RENAULTFTAC:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 206
+		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Renault FT AC
+	Mobile:
+		Speed: 30
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 700
+	HitShape@Front:
+        ArmorTypes: Light
+        TargetableOffsets: 550,0,0, 550,-320,0, 550,320,0
+		Type: Rectangle
+			TopLeft: -320, -650
+			BottomRight: 320, -450
+	HitShape@Side:
+        ArmorTypes: Light
+        TargetableOffsets: 0,-320,0, 0,320,0
+		Type: Rectangle
+			TopLeft: -320, -450
+			BottomRight: 320, 500
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: -600,0,0, -600,-320,0, -600,320,0
+		Type: Rectangle
+			TopLeft: -320, 500
+			BottomRight: 320, 700
+	Armor@TypeFront/Side:
+		Type: Light
+	Armor@TypeRear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 0,0,0
+		TurnSpeed: 1
+	Armament@cannon:
+		Weapon: SA37_APCR
+		AmmoPoolName: MainCannon
+		LocalOffset: 750,0,1000
+		Recoil: 200
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+
+F_RENAULTFT75BS:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 207
+		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Renault FT 75 BS
+	Mobile:
+		Speed: 30
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 700
+	HitShape@Front:
+        ArmorTypes: Light
+        TargetableOffsets: 550,0,0, 550,-320,0, 550,320,0
+		Type: Rectangle
+			TopLeft: -320, -650
+			BottomRight: 320, -450
+	HitShape@Side:
+        ArmorTypes: Light
+        TargetableOffsets: 0,-320,0, 0,320,0
+		Type: Rectangle
+			TopLeft: -320, -450
+			BottomRight: 320, 500
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -600,0,0, -600,-320,0, -600,320,0
+		Type: Rectangle
+			TopLeft: -320, 500
+			BottomRight: 320, 700
+	Armor@TypeFront/Side:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 128,0,0
+		TurnSpeed: 1
+	Armament@cannon:
+		Weapon: 75mmBS
+		AmmoPoolName: MainCannon
+		LocalOffset: 750,0,1000
+		Recoil: 200
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	AutoTarget:
+		InitialStance: HoldFire
+		EnableStances: False
+		ScanRadius: 30
+
+F_AMX38:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 202
+		Prerequisites: ~vehicles.france, ~EarlyPhaseII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: AMX 38
+	Mobile:
+		Speed: 38
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1800
+	HitShape@Front:
+        ArmorTypes: VeryHeavy
+        TargetableOffsets: 600,0,0, 600,-350,0, 600,350,0
+        Type: Rectangle
+			TopLeft: -350, -700
+			BottomRight: 350, -500
+	HitShape@Sides:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -500
+			BottomRight: 350, 570
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -670,0,0, -670,-350,0, -670,350,0
+        Type: Rectangle
+			TopLeft: -350, 570
+			BottomRight: 350, 770
+	Armor@TypeFront:
+		Type: VeryHeavy
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 64,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: SA35
+		AmmoPoolName: MainCannon
+		LocalOffset: 650,0,950
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@TurretMG:
+		Weapon: 7.5mmMG
+		LocalOffset: 450,64,950
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_S35:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 203
+		Prerequisites: ~vehicles.france, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 2200
+	Tooltip:
+		Name: Somua S35
+	Mobile:
+		Speed: 56
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1950
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
+        Type: Rectangle
+			TopLeft: -380, -820
+			BottomRight: 380, -620
+	HitShape@Sides:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-380,0, 0,380,0
+        Type: Rectangle
+			TopLeft: -380, -620
+			BottomRight: 380, 500
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -600,0,0, -600,-380,0, -600,380,0
+        Type: Rectangle
+			TopLeft: -380, 500
+			BottomRight: 380, 700
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: SA35
+		AmmoPoolName: MainCannon
+		LocalOffset: 625,0,1075
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: 7.5mmMG
+		LocalOffset: 400,-32,1050
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_B1:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 204
+		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase I
+	Valued:
+		Cost: 4000
+	Tooltip:
+		Name: Char B1
+	Mobile:
+		Speed: 40
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 3200
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 850,0,0, 850,-440,0, 850,440,0
+		Type: Rectangle
+			TopLeft: -440, -950
+			BottomRight: 440, -650
+	HitShape@Side:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-440,0, 0,440,0
+		Type: Rectangle
+			TopLeft: -440, -650
+			BottomRight: 440, 640
+	HitShape@Rear:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: -840,0,0, -840,-440,0, -840,440,0
+		Type: Rectangle
+			TopLeft: -440, 640
+			BottomRight: 440, 940
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide/Rear:
+		Type: LightHeavy
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 1
+	Armament@cannon:
+		Weapon: SA34_HE
+		AmmoPoolName: MainCannon
+		LocalOffset: 725,0,1150
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: 7.5mmMG
+		LocalOffset: 400,-32,1100
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_S40:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 203
+		Prerequisites: ~vehicles.france, ~EarlyPhaseII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 2300
+	Tooltip:
+		Name: Somua S40
+	Mobile:
+		Speed: 50
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2030
+	HitShape@Front:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
+        Type: Rectangle
+			TopLeft: -380, -820
+			BottomRight: 380, -620
+	HitShape@Sides:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-380,0, 0,380,0
+        Type: Rectangle
+			TopLeft: -380, -620
+			BottomRight: 380, 500
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -600,0,0, -600,-380,0, -600,380,0
+        Type: Rectangle
+			TopLeft: -380, 500
+			BottomRight: 380, 700
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: SA35
+		AmmoPoolName: MainCannon
+		LocalOffset: 725,0,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: 7.5mmMG
+		LocalOffset: 400,-32,1050
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_RENAULTUE57:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 206
+		Prerequisites: ~vehicles.france, ~EarlyPhaseIII, ~!MidPhaseI
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Renault UE 57
+	Mobile:
+		Speed: 52
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 244
+	HitShape@Front:
+        ArmorTypes: Open
+        TargetableOffsets: 225,0,0, 225,-260,0, 225,260,0
+		Type: Rectangle
+			TopLeft: -260, -325
+			BottomRight: 260, -125
+	HitShape@Side:
+        ArmorTypes: Open
+        TargetableOffsets: 0,-260,0, 0,260,0
+		Type: Rectangle
+			TopLeft: -260, -125
+			BottomRight: 260, 125
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: -225,0,0, -225,-260,0, -225,260,0
+		Type: Rectangle
+			TopLeft: -260, 125
+			BottomRight: 260, 325
+	Armor@TypeFront/Side:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: -256,0,0
+		TurnSpeed: 3
+	Armament@cannon:
+		Weapon: SA37_APCR
+		AmmoPoolName: MainCannon
+		LocalOffset: 600,0,875
+		Recoil: 200
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+
+F_39LAM:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 207
+		Prerequisites: ~vehicles.france, ~EarlyPhaseIII #, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Lorraine 39L AM
+	Mobile:
+		Speed: 56
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 665
+	HitShape@Front:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 500,0,0, 500,-260,0, 500,260,0
+        Type: Rectangle
+			TopLeft: -260, -600
+			BottomRight: 260, -400
+	HitShape@Sides:
+        ArmorTypes: Open
+        TargetableOffsets: 0,-260,0, 0,260,0
+        Type: Rectangle
+			TopLeft: -260, -400
+			BottomRight: 260, 400
+	HitShape@Rear:
+        ArmorTypes: Open
+        TargetableOffsets: -500,0,0, -500,-260,0, -500,260,0
+        Type: Rectangle
+			TopLeft: -260, 400
+			BottomRight: 260, 600
+	Armor@TypeFront:
+		Type: LightMedium
+	Armor@TypeSide/Rear:
+		Type: Open
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: -192,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: 105mmL
+		AmmoPoolName: MainCannon
+		LocalOffset: 550,0,1600
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	Targetable:
+		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
+	AutoTarget:
+		InitialStance: HoldFire
+		EnableStances: False
+		ScanRadius: 30
+
+F_AMXELC90:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 200
+		Prerequisites: ~france.commander, ~MidPhaseI
+		BuildLimit: 1
+		BuildDuration: 1
+		Description: Mid Phase I
+	BaseBuilding:
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: AMX ELC bis 90 réservoirs de commande
+	Mobile:
+		Speed: 100
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 700
 	HitShape@Front:
         ArmorTypes: LightMedium
         TargetableOffsets: 520,0,0, 520,-350,0, 520,350,0
@@ -89,8 +1223,8 @@ F_AMXELC90:
 		DamageCooldown: 400
 	ProvidesRadar:
 	CashTrickler:
-		Interval: 100
-		Amount: 100
+		Interval: 250
+		Amount: 200
 		ShowTicks: False
 	Production:
 		Produces: Building
@@ -138,485 +1272,42 @@ F_AMXELC90:
 		ArrowSequence: arrow
 		CircleSequence: circles
 		ClockSequence: clock
-        
-F_RENAULTFT:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetInfantry
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 201
-		Prerequisites: ~vehicles.france, ~!EarlyPhaseII
-		BuildDuration: 1
-		Description: Start Phase
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Renault FT
-	Mobile:
-		Speed: 30
-		TurnSpeed: 3
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 670
-	HitShape@Front:
-        ArmorTypes: Light
-        TargetableOffsets: 550,0,0, 550,-320,0, 550,320,0
-		Type: Rectangle
-			TopLeft: -320, -650
-			BottomRight: 320, -450
-	HitShape@Side:
-        ArmorTypes: Light
-        TargetableOffsets: 0,-320,0, 0,320,0
-		Type: Rectangle
-			TopLeft: -320, -450
-			BottomRight: 320, 500
-	HitShape@Rear:
-        ArmorTypes: Light
-        TargetableOffsets: -600,0,0, -600,-320,0, -600,320,0
-		Type: Rectangle
-			TopLeft: -320, 500
-			BottomRight: 320, 700
-	Armor@TypeFront/Side:
-		Type: Light
-	RevealsShroud:
-		Range: 15c0
-	Turreted:
-		Offset: 128,0,0
-		TurnSpeed: 2
-	Armament@turretmg:
-		Weapon: 7.5mmMGFT
-		AmmoPoolName: MainCannon
-		LocalOffset: 350,0,1024
-		MuzzleSequence: muzzle
-		MuzzleSplitFacings: 8
-		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 300
-        ReloadCount: 30
-        PipCount: 10
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Green
-	AttackTurreted:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-        
-F_RENAULTR35:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 202
-		Prerequisites: ~vehicles.france, ~!EarlyPhaseI
-		BuildDuration: 1
-		Description: Start Phase
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Renault R-35
-	Mobile:
-		Speed: 30
-		TurnSpeed: 3
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 790
-	HitShape@Front:
-        ArmorTypes: Heavy
-        TargetableOffsets: 540,0,0, 540,-330,0, 540,330,0
-		Type: Rectangle
-			TopLeft: -330, -640
-			BottomRight: 330, -440
-	HitShape@Side:
-        ArmorTypes: Medium
-        TargetableOffsets: 0,-330,0, 0,330,0
-		Type: Rectangle
-			TopLeft: -330, -440
-			BottomRight: 330, 440
-	HitShape@Rear:
-        ArmorTypes: Medium
-        TargetableOffsets: -540,0,0, -540,-330,0, -540,330,0
-		Type: Rectangle
-			TopLeft: -330, 440
-			BottomRight: 330, 640
-	Armor@TypeFront:
-		Type: Heavy
-	Armor@TypeSide/Rear:
-		Type: Medium
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		TurnSpeed: 2
-	Armament@cannon:
-		Weapon: SA18
-		AmmoPoolName: MainCannon
-		LocalOffset: 450,64,950
-		Recoil: 150
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
-	AttackTurreted:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-        
-F_FCM36:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 203
-		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseII
-		BuildDuration: 1
-		Description: Early Phase I
-	Valued:
-		Cost: 1250
-	Tooltip:
-		Name: FCM 36
-	Mobile:
-		Speed: 36
-		TurnSpeed: 4
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 1220
-	HitShape@Front:
-        ArmorTypes: LightHeavy
-        TargetableOffsets: 540,0,0, 540,-330,0, 540,330,0
-		Type: Rectangle
-			TopLeft: -330, -640
-			BottomRight: 330, -440
-	HitShape@Side:
-        ArmorTypes: LightHeavy
-        TargetableOffsets: 0,-330,0, 0,330,0
-		Type: Rectangle
-			TopLeft: -330, -440
-			BottomRight: 330, 440
-	HitShape@Rear:
-        ArmorTypes: LightMedium
-        TargetableOffsets: -540,0,0, -540,-330,0, -540,330,0
-		Type: Rectangle
-			TopLeft: -330, 440
-			BottomRight: 330, 640
-	Armor@TypeFront:
-		Type: Heavy
-	Armor@TypeSide:
-		Type: Medium
-	Armor@TypeRear:
-		Type: LightMedium
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		TurnSpeed: 3
-	Armament@cannon:
-		Weapon: SA18
-		AmmoPoolName: MainCannon
-		LocalOffset: 450,64,950
-		Recoil: 150
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
-	AttackTurreted:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-        
-F_D2:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 204
-		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseII
-		BuildDuration: 1
-		Description: Early Phase I
-	Valued:
-		Cost: 2500
-	Tooltip:
-		Name: Char D2
-	Mobile:
-		Speed: 35
-		TurnSpeed: 3
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 1975
-	HitShape@Front:
-        ArmorTypes: LightHeavy
-        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
-		Type: Rectangle
-			TopLeft: -380, -820
-			BottomRight: 380, -620
-	HitShape@Side:
-        ArmorTypes: LightHeavy
-        TargetableOffsets: 0,-380,0, 0,380,0
-		Type: Rectangle
-			TopLeft: -380, -620
-			BottomRight: 380, 620
-	HitShape@Rear:
-        ArmorTypes: VeryLight
-        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
-		Type: Rectangle
-			TopLeft: -380, 620
-			BottomRight: 380, 820
-	Armor@TypeFront/Side:
-		Type: LightHeavy
-	Armor@TypeRear:
-		Type: VeryLight
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		Offset: 128,0,0
-		TurnSpeed: 2
-	Armament@cannon:
-		Weapon: SA34
-		AmmoPoolName: MainCannon
-		LocalOffset: 725,80,1100
-		Recoil: 150
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	Armament@turretmg:
-		Weapon: 7.5mmMG
-		LocalOffset: 400,0,1024
-		MuzzleSequence: muzzle
-		MuzzleSplitFacings: 8
-		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
-	AttackTurreted:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
+	ParatroopersPower@F_paradrop3
+		Prerequisites: france.commander
+		UnitType: paraplane
+		DropItems: f_smg, f_smg, f_smg, f_smg, f_smg, f_smg
+		Icon: paradrop
+		OrderName: FranceInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: French SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
 
-F_RENAULTFTAC:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 205
-		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseIII
-		BuildDuration: 1
-		Description: Early Phase I
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Renault FT AC
-	Mobile:
-		Speed: 30
-		TurnSpeed: 3
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 700
-	HitShape@Front:
-        ArmorTypes: Light
-        TargetableOffsets: 550,0,0, 550,-320,0, 550,320,0
-		Type: Rectangle
-			TopLeft: -320, -650
-			BottomRight: 320, -450
-	HitShape@Side:
-        ArmorTypes: Light
-        TargetableOffsets: 0,-320,0, 0,320,0
-		Type: Rectangle
-			TopLeft: -320, -450
-			BottomRight: 320, 500
-	HitShape@Rear:
-        ArmorTypes: Open
-        TargetableOffsets: -600,0,0, -600,-320,0, -600,320,0
-		Type: Rectangle
-			TopLeft: -320, 500
-			BottomRight: 320, 700
-	Armor@TypeFront/Side:
-		Type: Light
-	Armor@TypeRear:
-		Type: VeryLight
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		Offset: 0,0,0
-		TurnSpeed: 1
-	Armament@cannon:
-		Weapon: SA37
-		AmmoPoolName: MainCannon
-		LocalOffset: 750,0,1000
-		Recoil: 200
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
-	AttackFrontal:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-	Targetable:
-		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
-
-F_RENAULTFT75BS:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 206
-		Prerequisites: ~vehicles.france, ~EarlyPhaseI, ~!EarlyPhaseIII
-		BuildDuration: 1
-		Description: Early Phase I
-	Valued:
-		Cost: 1500
-	Tooltip:
-		Name: Renault FT 75 BS
-	Mobile:
-		Speed: 30
-		TurnSpeed: 2
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 700
-	HitShape@Front:
-        ArmorTypes: Light
-        TargetableOffsets: 550,0,0, 550,-320,0, 550,320,0
-		Type: Rectangle
-			TopLeft: -320, -650
-			BottomRight: 320, -450
-	HitShape@Side:
-        ArmorTypes: Light
-        TargetableOffsets: 0,-320,0, 0,320,0
-		Type: Rectangle
-			TopLeft: -320, -450
-			BottomRight: 320, 500
-	HitShape@Rear:
-        ArmorTypes: Light
-        TargetableOffsets: -600,0,0, -600,-320,0, -600,320,0
-		Type: Rectangle
-			TopLeft: -320, 500
-			BottomRight: 320, 700
-	Armor@TypeFront/Side:
-		Type: Light
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		Offset: 128,0,0
-		TurnSpeed: 1
-	Armament@cannon:
-		Weapon: 75mmBS
-		AmmoPoolName: MainCannon
-		LocalOffset: 750,0,1000
-		Recoil: 200
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
-	AttackFrontal:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-	AutoTarget:
-		InitialStance: HoldFire
-		EnableStances: False
-		ScanRadius: 30
-        
 F_H35:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 207
-		Prerequisites: ~vehicles.france, ~EarlyPhaseII, ~!EarlyPhaseIII
+		BuildPaletteOrder: 201
+		Prerequisites: ~vehicles.france, ~MidPhaseI #, ~!LatePhaseI
 		BuildDuration: 1
-		Description: Early Phase II
+		Description: Mid Phase I
 	Valued:
-		Cost: 1800
+		Cost: 1200
 	Tooltip:
 		Name: Hotchkiss H-35
 	Mobile:
@@ -687,131 +1378,52 @@ F_H35:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 
-F_B1:
+F_AMX40:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 208
-		Prerequisites: ~vehicles.france, ~EarlyPhaseII
+		BuildPaletteOrder: 202
+		Prerequisites: ~vehicles.france, ~MidPhaseI, ~!MidPhaseII
 		BuildDuration: 1
-		Description: Early Phase II
-	Valued:
-		Cost: 4000
-	Tooltip:
-		Name: Char B1
-	Mobile:
-		Speed: 42
-		TurnSpeed: 2
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 3200   
-	HitShape@Front:
-        ArmorTypes: Heavy
-        TargetableOffsets: 850,0,0, 850,-440,0, 850,440,0
-		Type: Rectangle
-			TopLeft: -440, -950
-			BottomRight: 440, -750
-	HitShape@Side:
-        ArmorTypes: LightHeavy
-        TargetableOffsets: 0,-440,0, 0,440,0
-		Type: Rectangle
-			TopLeft: -440, -750
-			BottomRight: 440, 440
-	HitShape@Rear:
-        ArmorTypes: LightHeavy
-        TargetableOffsets: -840,0,0, -840,-440,0, -840,440,0
-		Type: Rectangle
-			TopLeft: -440, 440
-			BottomRight: 440, 940
-	Armor@TypeFront:
-		Type: Heavy
-	Armor@TypeSide/Rear:
-		Type: LightHeavy
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		Offset: 256,0,0
-		TurnSpeed: 1
-	Armament@cannon:
-		Weapon: SA34
-		AmmoPoolName: MainCannon
-		LocalOffset: 725,0,1150
-		Recoil: 150
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	Armament@turretmg:
-		Weapon: 7.5mmMG
-		LocalOffset: 400,-32,1100
-		MuzzleSequence: muzzle
-		MuzzleSplitFacings: 8
-		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
-	AttackTurreted:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-        
-F_AMX38:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 209
-		Prerequisites: ~vehicles.france, ~EarlyPhaseII, ~!MidPhaseI
-		BuildDuration: 1
-		Description: Early Phase II
+		Description: Mid Phase I
 	Valued:
 		Cost: 2800
 	Tooltip:
-		Name: AMX 38
+		Name: AMX 40
 	Mobile:
-		Speed: 38
+		Speed: 75
 		TurnSpeed: 4
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 1800
+		HP: 2000
 	HitShape@Front:
-        ArmorTypes: VeryHeavy
+        ArmorTypes: Ultra
         TargetableOffsets: 600,0,0, 600,-350,0, 600,350,0
         Type: Rectangle
 			TopLeft: -350, -700
 			BottomRight: 350, -500
 	HitShape@Sides:
-        ArmorTypes: Medium
+        ArmorTypes: VeryHeavy
         TargetableOffsets: 0,-350,0, 0,350,0
         Type: Rectangle
 			TopLeft: -350, -500
 			BottomRight: 350, 570
 	HitShape@Rear:
-        ArmorTypes: Medium
+        ArmorTypes: LightMedium
         TargetableOffsets: -670,0,0, -670,-350,0, -670,350,0
         Type: Rectangle
 			TopLeft: -350, 570
 			BottomRight: 350, 770
 	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide:
 		Type: VeryHeavy
-	Armor@TypeSide/Rear:
-		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
 	RevealsShroud:
 		Range: 10c0
 	Turreted:
@@ -820,17 +1432,11 @@ F_AMX38:
 	Armament@cannon:
 		Weapon: SA35
 		AmmoPoolName: MainCannon
-		LocalOffset: 650,0,950
+		LocalOffset: 625,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	Armament@TurretMG:
-		Weapon: 7.5mmMG
-		LocalOffset: 450,64,950
-		MuzzleSequence: muzzle
-		MuzzleSplitFacings: 8
-		MuzzlePalette: apolra50alpha
 	AmmoPool@MainCannon:
         Name: MainCannon
         Ammo: 20
@@ -850,28 +1456,29 @@ F_AMX38:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
-        
-F_S35:
+
+F_S42:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 210
-		Prerequisites: ~vehicles.france, ~EarlyPhaseIII
+		BuildPaletteOrder: 203
+		Prerequisites: ~vehicles.france, ~MidPhaseI, ~!MidPhaseII
 		BuildDuration: 1
-		Description: Early Phase III
+		Description: Mid Phase I
 	Valued:
-		Cost: 3200
+		Cost: 2400
 	Tooltip:
-		Name: Somua S35
+		Name: Somua S42 FCM
 	Mobile:
-		Speed: 56
+		Speed: 60
 		TurnSpeed: 3
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 1950
+		HP: 2030
 	HitShape@Front:
         ArmorTypes: LightHeavy
         TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
@@ -899,12 +1506,12 @@ F_S35:
 	RevealsShroud:
 		Range: 10c0
 	Turreted:
-		Offset: 275,0,0
+		Offset: 192,0,0
 		TurnSpeed: 2
 	Armament@cannon:
-		Weapon: SA35
+		Weapon: SA37
 		AmmoPoolName: MainCannon
-		LocalOffset: 625,0,1050
+		LocalOffset: 825,24,1075
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
@@ -935,57 +1542,59 @@ F_S35:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 
-F_RENAULTUE57:
+F_SAU40:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 211
-		Prerequisites: ~vehicles.france, ~EarlyPhaseIII
+		BuildPaletteOrder: 206
+		Prerequisites: ~vehicles.france, ~MidPhaseI #, ~!MidPhaseII
 		BuildDuration: 1
-		Description: Early Phase III
+		Description: Mid Phase I
 	Valued:
-		Cost: 750
+		Cost: 3000
 	Tooltip:
-		Name: Renault UE 57
+		Name: Somua SAu 40
 	Mobile:
-		Speed: 52
-		TurnSpeed: 4
+		Speed: 55
+		TurnSpeed: 2
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 244
+		HP: 2450
 	HitShape@Front:
-        ArmorTypes: Open
-        TargetableOffsets: 225,0,0, 225,-260,0, 225,260,0
-		Type: Rectangle
-			TopLeft: -260, -325
-			BottomRight: 260, -125
-	HitShape@Side:
-        ArmorTypes: Open
-        TargetableOffsets: 0,-260,0, 0,260,0
-		Type: Rectangle
-			TopLeft: -260, -125
-			BottomRight: 260, 125
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
+        Type: Rectangle
+			TopLeft: -380, -820
+			BottomRight: 380, -620
+	HitShape@Sides:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-380,0, 0,380,0
+        Type: Rectangle
+			TopLeft: -380, -620
+			BottomRight: 380, 500
 	HitShape@Rear:
-        ArmorTypes: Open
-        TargetableOffsets: -225,0,0, -225,-260,0, -225,260,0
-		Type: Rectangle
-			TopLeft: -260, 125
-			BottomRight: 260, 325
-	Armor@TypeFront/Side:
-		Type: Open
+        ArmorTypes: Medium
+        TargetableOffsets: -600,0,0, -600,-380,0, -600,380,0
+        Type: Rectangle
+			TopLeft: -380, 500
+			BottomRight: 380, 700
+	Armor@TypeFront:
+		Type: LightHeavy
+	Armor@TypeSide/Rear:
+		Type: Medium
 	RevealsShroud:
 		Range: 10c0
 	Turreted:
-		Offset: -256,0,0
-		TurnSpeed: 3
+		TurnSpeed: 2
 	Armament@cannon:
-		Weapon: SA37
+		Weapon: SA44_APCR
 		AmmoPoolName: MainCannon
-		LocalOffset: 600,0,875
-		Recoil: 200
+		LocalOffset: 1400,16,750
+		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
@@ -1008,112 +1617,29 @@ F_RENAULTUE57:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
-	Targetable:
-		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
 
-F_39LAM:
+F_AMX40B:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 212
-		Prerequisites: ~vehicles.france, ~EarlyPhaseIII
+		BuildPaletteOrder: 202
+		Prerequisites: ~vehicles.france, ~MidPhaseII #, ~!LatePhaseII
 		BuildDuration: 1
-		Description: Early Phase III
-	Valued:
-		Cost: 1200
-	Tooltip:
-		Name: Lorraine 39L AM
-	Mobile:
-		Speed: 56
-		TurnSpeed: 3
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 665
-	HitShape@Front:
-        ArmorTypes: LightMedium
-        TargetableOffsets: 500,0,0, 500,-260,0, 500,260,0
-        Type: Rectangle
-			TopLeft: -260, -600
-			BottomRight: 260, -400
-	HitShape@Sides:
-        ArmorTypes: Open
-        TargetableOffsets: 0,-260,0, 0,260,0
-        Type: Rectangle
-			TopLeft: -260, -400
-			BottomRight: 260, 400
-	HitShape@Rear:
-        ArmorTypes: Open
-        TargetableOffsets: -500,0,0, -500,-260,0, -500,260,0
-        Type: Rectangle
-			TopLeft: -260, 400
-			BottomRight: 260, 600
-	Armor@TypeFront:
-		Type: LightMedium
-	Armor@TypeSide/Rear:
-		Type: Open
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		Offset: -192,0,0
-		TurnSpeed: 2
-	Armament@cannon:
-		Weapon: 105mmL
-		AmmoPoolName: MainCannon
-		LocalOffset: 550,0,1600
-		Recoil: 150
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Red
-	AttackFrontal:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-	Targetable:
-		TargetTypes: Ground, Vehicle, OpenVehicle, Repair, DetonateAttack
-	AutoTarget:
-		InitialStance: HoldFire
-		EnableStances: False
-		ScanRadius: 30
-        
-F_AMX40:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceFrance
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 213
-		Prerequisites: ~vehicles.france, ~MidPhaseI
-		BuildDuration: 1
-		Description: Mid Phase I
+		Description: Mid Phase II
 	Valued:
 		Cost: 4000
 	Tooltip:
-		Name: AMX 40
+		Name: AMX 40B
 	Mobile:
 		Speed: 75
 		TurnSpeed: 4
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 2200
+		HP: 2100
 	HitShape@Front:
         ArmorTypes: UltraHeavy
         TargetableOffsets: 600,0,0, 600,-350,0, 600,350,0
@@ -1127,7 +1653,7 @@ F_AMX40:
 			TopLeft: -350, -500
 			BottomRight: 350, 570
 	HitShape@Rear:
-        ArmorTypes: LightHeavy
+        ArmorTypes: LightMedium
         TargetableOffsets: -670,0,0, -670,-350,0, -670,350,0
         Type: Rectangle
 			TopLeft: -350, 570
@@ -1137,7 +1663,7 @@ F_AMX40:
 	Armor@TypeSide:
 		Type: VeryHeavy
 	Armor@TypeRear:
-		Type: LightHeavy
+		Type: LightMedium
 	RevealsShroud:
 		Range: 10c0
 	Turreted:
@@ -1146,7 +1672,7 @@ F_AMX40:
 	Armament@cannon:
 		Weapon: SA32
 		AmmoPoolName: MainCannon
-		LocalOffset: 650,0,950
+		LocalOffset: 650,0,980
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
@@ -1157,6 +1683,241 @@ F_AMX40:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_S42B:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 203
+		Prerequisites: ~vehicles.france, ~MidPhaseII #, ~!MidPhaseIII
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 2600
+	Tooltip:
+		Name: Somua S42 ARL
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2300
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 720,0,0, 720,-380,0, 720,380,0
+        Type: Rectangle
+			TopLeft: -380, -820
+			BottomRight: 380, -620
+	HitShape@Sides:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-380,0, 0,380,0
+        Type: Rectangle
+			TopLeft: -380, -620
+			BottomRight: 380, 500
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -600,0,0, -600,-380,0, -600,380,0
+        Type: Rectangle
+			TopLeft: -380, 500
+			BottomRight: 380, 700
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide:
+		Type: Medium
+	Armor@TypeRear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 192,0,0
+		TurnSpeed: 2
+	Armament@cannon:
+		Weapon: SA44
+		AmmoPoolName: MainCannon
+		LocalOffset: 850,0,1075
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_ACL:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 204
+		Prerequisites: ~vehicles.france, ~MidPhaseI, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Mid Phase II
+	Valued:
+		Cost: 4500
+	Tooltip:
+		Name: ACL 1
+	Mobile:
+		Speed: 40
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 4400
+	HitShape@Front:
+        ArmorTypes: UltraHeavy
+        TargetableOffsets: 850,0,0, 850,-440,0, 850,440,0
+		Type: Rectangle
+			TopLeft: -440, -950
+			BottomRight: 440, -650
+	HitShape@Side:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-440,0, 0,440,0
+		Type: Rectangle
+			TopLeft: -440, -650
+			BottomRight: 440, 640
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -840,0,0, -840,-440,0, -840,440,0
+		Type: Rectangle
+			TopLeft: -440, 640
+			BottomRight: 440, 940
+	Armor@TypeFront:
+		Type: UltraHeavy
+	Armor@TypeSide:
+		Type: LightHeavy
+	Armor@TypeRear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 1
+	Armament@cannon:
+		Weapon: M1A1_76
+		AmmoPoolName: MainCannon
+		LocalOffset: 1250,0,1200
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+F_ARL44:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceFrance
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 204
+		Prerequisites: ~vehicles.france, ~MidPhaseII #, ~!LatePhaseI
+		BuildDuration: 1
+		Description: Mid Phase III
+	Valued:
+		Cost: 4800
+	Tooltip:
+		Name: ARL 44
+	Mobile:
+		Speed: 40
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 4700
+	HitShape@Front:
+        ArmorTypes: UltraHeavy
+        TargetableOffsets: 850,0,0, 850,-440,0, 850,440,0
+		Type: Rectangle
+			TopLeft: -440, -950
+			BottomRight: 440, -650
+	HitShape@Side:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-440,0, 0,440,0
+		Type: Rectangle
+			TopLeft: -440, -650
+			BottomRight: 440, 640
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -840,0,0, -840,-440,0, -840,440,0
+		Type: Rectangle
+			TopLeft: -440, 640
+			BottomRight: 440, 940
+	Armor@TypeFront:
+		Type: UltraHeavy
+	Armor@TypeSide:
+		Type: LightHeavy
+	Armor@TypeRear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 1
+	Armament@cannon:
+		Weapon: F3_90
+		AmmoPoolName: MainCannon
+		LocalOffset: 1550,0,1150
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
 	AmmoPool@MainCannon:
         Name: MainCannon
         Ammo: 20

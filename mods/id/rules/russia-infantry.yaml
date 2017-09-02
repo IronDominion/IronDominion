@@ -38,6 +38,42 @@ r_rifle:
         Voice: Move
         PlayerExperience: 500
 
+r_atinf:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableSoviet
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Russian AT-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Gray
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Panzerschreck
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: PanzerschreckGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: FlakTrooperVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
 r_smg:
 	Inherits@1: ^Infantry
 	Inherits@2: ^ParachutableSoviet

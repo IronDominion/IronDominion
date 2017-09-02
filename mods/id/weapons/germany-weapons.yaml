@@ -55,7 +55,7 @@ KwK37:
 	Range: 26c520
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
-		Speed: 0c675
+		Speed: 0c578
 		Inaccuracy: 1c0
 
 #Panzer IV A MG
@@ -116,12 +116,12 @@ EW141:
 		Speed: 1c755
 		Inaccuracy: 1c256
 	Warhead@2Eff: CreateEffect
-		InValidTargets: Vehicle
+		InValidTargets: Vehicle, OpenVehicle
 	Warhead@3Eff: CreateEffect
 		Explosions: pshotts1, pshotts2, pshotts3
 		ExplosionPalette: pshotts
 		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
-		ValidTargets: Vehicle
+		ValidTargets: Vehicle, OpenVehicle
                 
 #Panzer II B Cannon
 KWK30:
@@ -133,15 +133,15 @@ KWK30:
 	BurstDelay: 7
 	Report: 20mm_KwK30_v1.wav, 20mm_KwK30_v2.wav, 20mm_KwK30_v3.wav
 	Projectile: BulletAS
-		Speed: 1c575
+		Speed: 1c170
 		Inaccuracy: 1c256
 	Warhead@2Eff: CreateEffect
-		InValidTargets: Vehicle
+		InValidTargets: Vehicle, OpenVehicle
 	Warhead@3Eff: CreateEffect
 		Explosions: pshotts1, pshotts2, pshotts3
 		ExplosionPalette: pshotts
 		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
-		ValidTargets: Vehicle
+		ValidTargets: Vehicle, OpenVehicle
         
 #Panzer 35t Cannon
 KwK34t:
@@ -162,7 +162,7 @@ KwK38t:
 	Range: 17c680
 	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
 	Projectile: BulletAS
-		Speed: 1c125
+		Speed: 1c162
 		Inaccuracy: 1c0
                
 #Panzerjäger I Cannon        
@@ -173,7 +173,7 @@ PaK36t:
 	Range: 26c520
 	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
 	Projectile: BulletAS
-		Speed: 1c241
+		Speed: 1c454
 		Inaccuracy: 0c512
 
 #Sturmpanzer I Cannon  
@@ -197,7 +197,7 @@ KwK36:
 	Range: 26c520
 	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
 	Projectile: BulletAS
-		Speed: 0c745
+		Speed: 1c125
 		Inaccuracy: 1c0
 
 #StuG III B Cannon
@@ -208,8 +208,8 @@ StuK40:
 	Range: 26c520
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
-		Speed: 1c185
-		Inaccuracy: 0c512
+		Speed: 1c110
+		Inaccuracy: 1c0
 
 #Marder II B Cannon
 PaK40:
@@ -219,19 +219,19 @@ PaK40:
 	Range: 35c360
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
-		Speed: 1c400
+		Speed: 1c482
 		Inaccuracy: 0c512
 
 #Wespe Cannon
 FhB18:
 	Inherits@calsize: ^105mm
-	Inherits@caltype: ^ARTY_HEAT
+	Inherits@caltype: ^HE
 	ReloadDelay: 200
 	Range: 50c0
 	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
-		Speed: 0c810
+		Speed: 0c615
 		Inaccuracy: 6c0
 		ContrailLength: 20
         
@@ -243,20 +243,20 @@ KwK39:
 	Range: 26c520
 	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
 	Projectile: BulletAS
-		Speed: 1c252
+		Speed: 1c028
 		Inaccuracy: 1c0
 
 
-#StuG III B Cannon
-StuK40L/48:
+#StuG III F Cannon
+StuK40/L48:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 200
-	Range: 35c360
+	Range: 26c520
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
-		Speed: 1c185
-		Inaccuracy: 1c0
+		Speed: 1c388
+		Inaccuracy: 0c512
         
 #Panzer III L Cannon
 KwK39/L60:
@@ -266,7 +266,7 @@ KwK39/L60:
 	Range: 26c520
 	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
 	Projectile: BulletAS
-		Speed: 1c770
+		Speed: 1c566
 		Inaccuracy: 0c768
 
 #Panzer IV F2 Cannon
@@ -277,18 +277,18 @@ KwK40/L43:
 	Range: 35c360
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
-		Speed: 1c185
+		Speed: 1c110
 		Inaccuracy: 0c768
-        
+
 #Panzer VII E Cannon
-KwK36L/56:
+KwK36/L56:
 	Inherits@calsize: ^88mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
 	Range: 35c360
 	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
 	Projectile: BulletAS
-		Speed: 1c117
+		Speed: 1c160
 		Inaccuracy: 0c768
 
 #Panzer IV F2 MG
@@ -315,9 +315,29 @@ SlG33:
 	Report: mortar_shoot_v1.wav, mortar_shoot_v2.wav, mortar_shoot_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
-		Speed: 0c413
+		Speed: 0c533
 		Inaccuracy: 6c0
 		ContrailLength: 20
+
+#Panzer II G Cannon
+KwK38:
+	Inherits@calsize: ^20mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 17c680
+	Burst: 5
+	BurstDelay: 7
+	Report: 20mm_KwK38_v1.wav, 20mm_KwK38_v2.wav, 20mm_KwK38_v3.wav
+	Projectile: BulletAS
+		Speed: 1c463
+		Inaccuracy: 1c0
+	Warhead@2Eff: CreateEffect
+		InValidTargets: Vehicle, OpenVehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pshotts1, pshotts2, pshotts3
+		ExplosionPalette: pshotts
+		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
+		ValidTargets: Vehicle, OpenVehicle
 
 #Panzer IV G Cannon
 KwK40/L48:
@@ -328,4 +348,59 @@ KwK40/L48:
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c185
+		Inaccuracy: 0c768
+
+#Panzer V A Cannon
+KwK42/L70:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 200
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c388
+		Inaccuracy: 0c768
+
+#Jagdtpanzer IV/48 Cannon
+PaK39/L48:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c482
+		Inaccuracy: 0c512
+
+#Jagdtpanzer IV/70 Cannon
+PaK39/L70:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c734
+		Inaccuracy: 0c256
+
+#Tiger II Cannon
+KwK43/L70:
+	Inherits@calsize: ^88mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
+	Projectile: BulletAS
+		Speed: 1c500
+		Inaccuracy: 0c512
+
+#Elefant Cannon
+KwK43/L71:
+	Inherits@calsize: ^88mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 250
+	Range: 35c360
+	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
+	Projectile: BulletAS
+		Speed: 1c875
 		Inaccuracy: 0c512

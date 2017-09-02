@@ -140,8 +140,8 @@ World:
 		Class: none
 		ClassName: Normal
 		Factions: america
-		BaseActor: a_m2m
-		SupportActors: a_rifle,a_rifle,a_rifle,a_rifle,a_rifle,a_rifle,a_atinf,a_atinf,a_atinf,a_atinf
+		BaseActor: a_m2mc
+		SupportActors: a_rifle,a_rifle,a_rifle,a_rifle,a_smg,a_smg,a_atinf,a_atinf,a_atinf,a_atinf
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@germany0:
@@ -149,15 +149,15 @@ World:
 		ClassName: Infantry
 		Factions: germany
 		BaseActor: g_p4a
-		SupportActors: g_rifle,g_rifle,g_rifle,g_rifle,g_rifle,g_rifle,g_atinf,g_atinf,g_atinf,g_atinf,
+		SupportActors: g_rifle,g_rifle,g_rifle,g_rifle,g_smg,g_smg,g_atinf,g_atinf,g_atinf,g_atinf,
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@france0:
 		Class: none
 		ClassName: Infantry
 		Factions: france
-		BaseActor: f_amxelc90
-		SupportActors: f_rifle,f_rifle,f_rifle,f_rifle,f_rifle,f_rifle,f_atinf,f_atinf,f_atinf,f_atinf
+		BaseActor: f_amxelc
+		SupportActors: f_rifle,f_rifle,f_rifle,f_rifle,f_smg,f_smg,f_atinf,f_atinf,f_atinf,f_atinf
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@russia0:
@@ -165,7 +165,7 @@ World:
 		ClassName: Infantry
 		Factions: russia
 		BaseActor: r_t127
-		SupportActors: r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle,r_rifle
+		SupportActors: r_rifle,r_rifle,r_rifle,r_rifle,,r_smg,r_smg,r_atinf,r_atinf,r_atinf,r_atinf
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@britain0:
@@ -173,7 +173,7 @@ World:
 		ClassName: Infantry
 		Factions: britain
 		BaseActor: b_cmk3
-		SupportActors: b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle
+		SupportActors: b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle,b_rifle
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@america1:
@@ -181,7 +181,7 @@ World:
 		ClassName: Base
 		Factions: america
 		BaseActor: node
-		SupportActors: a_m2m
+		SupportActors: a_m2mc
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@germany1:
@@ -197,7 +197,7 @@ World:
 		ClassName: Base
 		Factions: france
 		BaseActor: node
-		SupportActors: f_amxelc90
+		SupportActors: f_amxelc
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@russia1:

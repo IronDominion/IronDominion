@@ -13,7 +13,7 @@ g_p4a:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p1c:
 	Defaults:
 		Length: *
@@ -29,7 +29,7 @@ g_p1c:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_p2b:
 	Defaults:
 		Length: *
@@ -45,7 +45,7 @@ g_p2b:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_p35t:
 	Defaults:
 		Length: *
@@ -61,7 +61,7 @@ g_p35t:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_p38t:
 	Defaults:
 		Length: *
@@ -77,7 +77,7 @@ g_p38t:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_pj1:
 	Defaults:
 		Length: *
@@ -85,7 +85,7 @@ g_pj1:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_bison:
 	Defaults:
 		Length: *
@@ -93,7 +93,7 @@ g_bison:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p2c:
 	Defaults:
 		Length: *
@@ -109,7 +109,7 @@ g_p2c:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_p3e:
 	Defaults:
 		Length: *
@@ -125,7 +125,7 @@ g_p3e:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_p4d:
 	Defaults:
 		Length: *
@@ -149,7 +149,7 @@ g_stug3b:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_marder2:
 	Defaults:
 		Length: *
@@ -165,7 +165,7 @@ g_wespe:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p2d:
 	Defaults:
 		Length: *
@@ -181,7 +181,7 @@ g_p2d:
         Length: 3
         Facings: -32
 	icon: xxicon
-    
+
 g_p3f:
 	Defaults:
 		Length: *
@@ -197,7 +197,7 @@ g_p3f:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p4f1:
 	Defaults:
 		Length: *
@@ -221,7 +221,7 @@ g_stug3f:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_hetzer:
 	Defaults:
 		Length: *
@@ -237,7 +237,7 @@ g_hetzer:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p4f2c:
 	Defaults:
 		Length: *
@@ -253,7 +253,23 @@ g_p4f2c:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
+g_p2f:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
+        Facings: -32
+	icon: xxicon
+
 g_p3j:
 	Defaults:
 		Length: *
@@ -269,7 +285,7 @@ g_p3j:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p4f2:
 	Defaults:
 		Length: *
@@ -285,7 +301,7 @@ g_p4f2:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p7t:
 	Defaults:
 		Length: *
@@ -317,7 +333,23 @@ g_grille:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
+g_p2g:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
+        Facings: -32
+	icon: xxicon
+
 g_p3l:
 	Defaults:
 		Length: *
@@ -333,7 +365,7 @@ g_p3l:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 g_p4g:
 	Defaults:
 		Length: *
@@ -346,6 +378,142 @@ g_p4g:
 	muzzle6: mgun-e
 	muzzle7: mgun-ne
 	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_pj4_48:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p2l:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p4h:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p5a:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_stug4:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_pj4_70:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p4-5:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p5g:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p7t2h:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_elefant:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
 	icon: xxicon

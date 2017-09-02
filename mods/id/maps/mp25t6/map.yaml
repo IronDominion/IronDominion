@@ -1,6 +1,6 @@
 MapFormat: 11
 
-RequiresMod: ra2
+RequiresMod: id
 
 Title: DEFCON 6
 
@@ -1586,66 +1586,45 @@ Actors:
 	Actor563: tree07
 		Owner: Neutral
 		Location: 123,72
+	Actor566: mpspawn
+		Owner: Neutral
+		Location: 40,13
+	Actor567: mpspawn
+		Owner: Neutral
+		Location: 71,-34
+	Actor568: mpspawn
+		Owner: Neutral
+		Location: 119,-61
+	Actor569: mpspawn
+		Owner: Neutral
+		Location: 171,-8
+	Actor570: mpspawn
+		Owner: Neutral
+		Location: 152,45
+	Actor571: mpspawn
+		Owner: Neutral
+		Location: 96,68
 	Actor564: node
 		Owner: Creeps
-		Location: 105,14
+		Location: 133,-19
 	Actor565: node
 		Owner: Creeps
-		Location: 119,-1
-	Actor566: node
-		Owner: Creeps
-		Location: 80,64
-	Actor567: node
-		Owner: Creeps
-		Location: 114,75
-	Actor568: node
-		Owner: Creeps
-		Location: 145,61
-	Actor569: node
-		Owner: Creeps
-		Location: 172,37
-	Actor570: node
-		Owner: Creeps
-		Location: 187,10
-	Actor571: node
-		Owner: Creeps
-		Location: 169,-24
+		Location: 78,-1
 	Actor572: node
 		Owner: Creeps
-		Location: 138,-55
+		Location: 87,30
 	Actor573: node
 		Owner: Creeps
-		Location: 103,-70
+		Location: 119,38
 	Actor574: node
 		Owner: Creeps
-		Location: 79,-54
+		Location: 144,14
 	Actor575: node
 		Owner: Creeps
-		Location: 52,-28
+		Location: 111,7
 	Actor576: node
 		Owner: Creeps
-		Location: 39,-2
-	Actor577: node
-		Owner: Creeps
-		Location: 51,36
-	Actor578: mpspawn
-		Owner: Neutral
-		Location: 167,-4
-	Actor580: mpspawn
-		Owner: Neutral
-		Location: 116,-50
-	Actor581: mpspawn
-		Owner: Neutral
-		Location: 73,-30
-	Actor582: mpspawn
-		Owner: Neutral
-		Location: 55,16
-	Actor583: mpspawn
-		Owner: Neutral
-		Location: 99,62
-	Actor584: mpspawn
-		Owner: Neutral
-		Location: 151,45
+		Location: 103,-28
 
 Rules:
 	World:

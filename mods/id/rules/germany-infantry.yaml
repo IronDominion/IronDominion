@@ -54,8 +54,6 @@ g_atinf:
 		HP: 100
 	Mobile:
 		Speed: 40
-	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 15c0
 	AttackFrontal:

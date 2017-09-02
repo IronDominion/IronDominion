@@ -1,8 +1,9 @@
 R_T127:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 400
@@ -12,7 +13,7 @@ R_T127:
 		Description: Start Phase
 	BaseBuilding:
 	Valued:
-		Cost: 2500
+		Cost: 2000
 	Tooltip:
 		Name: T-127 Commander
 	Mobile:
@@ -58,8 +59,8 @@ R_T127:
 		MuzzlePalette: ssmuzzle
 	Armament@turretmg:
 		Weapon: Degtyaryov
-		LocalOffset: 300,-64,1025
 		MuzzleSequence: muzzle
+		LocalOffset: 300,-64,1025
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
 	AmmoPool@MainCannon:
@@ -95,7 +96,7 @@ R_T127:
 		DamageCooldown: 400
 	ProvidesRadar:
 	CashTrickler:
-		Interval: 100
+		Interval: 250
 		Amount: 100
 		ShowTicks: False
 	Production:
@@ -114,6 +115,27 @@ R_T127:
 		CameraActor: camera
 		Description: Russian Rifleman Drop
 		LongDesc: Drops 10 Rifleman on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@r_paradrop2:
+		Prerequisites: russia.commander
+		UnitType: paraplane
+		DropItems: r_atinf, r_atinf, r_atinf, r_atinf, r_atinf
+		Icon: paradrop
+		OrderName: RussiaATInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: Russian AT-Infantry Drop
+		LongDesc: Drops 5 AT-Infantry on the field.
 		SelectTargetSpeechNotification: SelectTarget
 		LowPowerSpeechNotification: LowPower
 		LaunchSpeechNotification: ReinforcementsReady
@@ -146,10 +168,11 @@ R_T127:
 		ClockSequence: clock
 
 R_T26:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 401
@@ -157,7 +180,7 @@ R_T26:
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 1000
+		Cost: 750
 	Tooltip:
 		Name: T-26
 	Mobile:
@@ -228,18 +251,19 @@ R_T26:
 		VoiceSet: SovietVehicleVoice
 
 R_BT2:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 402
-		Prerequisites: ~vehicles.russia, ~!EarlyPhaseII
+		Prerequisites: ~vehicles.russia, ~!EarlyPhaseI
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 2000
+		Cost: 900
 	Tooltip:
 		Name: BT-2
 	Mobile:
@@ -278,14 +302,14 @@ R_BT2:
 	Armament@MainCannon:
 		Weapon: M1930_37
 		AmmoPoolName: MainCannon
-		LocalOffset: 710,0,1025
+		LocalOffset: 500,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
 	Armament@turretmg:
 		Weapon: Degtyaryov
-		LocalOffset: 300,64,1025
+		LocalOffset: 300,128,1025
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
@@ -310,10 +334,11 @@ R_BT2:
 		VoiceSet: SovietVehicleVoice
 
 R_T28:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 403
@@ -321,7 +346,7 @@ R_T28:
 		BuildDuration: 1
 		Description: Early Phase I
 	Valued:
-		Cost: 2500
+		Cost: 2000
 	Tooltip:
 		Name: T-28
 	Mobile:
@@ -390,10 +415,11 @@ R_T28:
 		VoiceSet: SovietVehicleVoice
 
 R_T60:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 404
@@ -401,7 +427,7 @@ R_T60:
 		BuildDuration: 1
 		Description: Early Phase I
 	Valued:
-		Cost: 600
+		Cost: 500
 	Tooltip:
 		Name: T-60
 	Mobile:
@@ -457,7 +483,90 @@ R_T60:
         Name: MainCannon
         Ammo: 40
         ReloadCount: 4
-        PipCount: 10
+        PipCount: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+
+R_BT5:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 405
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: BT-5
+	Mobile:
+		Speed: 82
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1170
+	HitShape@Front:
+        ArmorTypes: Light
+        TargetableOffsets: 600,0,0, 600,-350,0, 600,350,0
+        Type: Rectangle
+			TopLeft: -350, -650
+			BottomRight: 350, -450
+	HitShape@Sides:
+        ArmorTypes: VeryLight
+        TargetableOffsets: 0,-350,0, 0,350,0
+        Type: Rectangle
+			TopLeft: -350, -450
+			BottomRight: 350, 450
+	HitShape@Rear:
+        ArmorTypes: VeryLight
+        TargetableOffsets: -600,0,0, -600,-350,0, -600,350,0
+        Type: Rectangle
+			TopLeft: -350, 450
+			BottomRight: 350, 700
+	Armor@TypeFront:
+		Type: Light
+	Armor@TypeSide/Rear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 128,0,0
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: M1930_37
+		AmmoPoolName: MainCannon
+		LocalOffset: 710,0,1025
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: Degtyaryov
+		LocalOffset: 300,64,1025
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
         SelfReloads: True
         SelfReloadDelay: 400
         ResetOnFire: True
@@ -476,20 +585,21 @@ R_T60:
 		VoiceSet: SovietVehicleVoice
 
 R_SU76:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 405
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseI
+		BuildPaletteOrder: 406
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseI, ~!EarlyPhaseIII
 		BuildDuration: 1
 		Description: Early Phase I
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: SU-76
+		Name: SU-76M
 	Mobile:
 		Speed: 68
 		TurnSpeed: 3
@@ -524,7 +634,7 @@ R_SU76:
 	Armament@MainCannon:
 		Weapon: M1942_76
 		AmmoPoolName: MainCannon
-		LocalOffset: 1100,0,900
+		LocalOffset: 1100,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
@@ -550,13 +660,14 @@ R_SU76:
 		VoiceSet: SovietVehicleVoice
 
 R_BT7:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 406
+		BuildPaletteOrder: 407
 		Prerequisites: ~vehicles.russia, ~EarlyPhaseII, ~!EarlyPhaseIII
 		BuildDuration: 1
 		Description: Early Phase II
@@ -634,14 +745,15 @@ R_BT7:
 		VoiceSet: SovietVehicleVoice
 
 R_KV1:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 407
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseII
+		BuildPaletteOrder: 408
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseII #, ~!MidPhaseIII
 		BuildDuration: 1
 		Description: Early Phase II
 	Valued:
@@ -649,7 +761,7 @@ R_KV1:
 	Tooltip:
 		Name: KV-1
 	Mobile:
-		Speed: 52
+		Speed: 40
 		TurnSpeed: 2
 		Crushes: fence, crate, infantry
 	Health:
@@ -689,6 +801,12 @@ R_KV1:
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: Degtyaryov
+		LocalOffset: 400,-64,1250
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
 	AmmoPool@MainCannon:
         Name: MainCannon
         Ammo: 20
@@ -710,18 +828,19 @@ R_KV1:
 		VoiceSet: SovietVehicleVoice
 
 R_SU26:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 408
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseII
+		BuildPaletteOrder: 409
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseII #, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 2000
+		Cost: 2500
 	Tooltip:
 		Name: SU-26
 	Mobile:
@@ -798,18 +917,19 @@ R_SU26:
 		ScanRadius: 30
 
 R_T46:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 409
+		BuildPaletteOrder: 410
 		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII, ~!MidPhaseI
 		BuildDuration: 1
 		Description: Early Phase III
 	Valued:
-		Cost: 1200
+		Cost: 600
 	Tooltip:
 		Name: T-46
 	Mobile:
@@ -878,14 +998,15 @@ R_T46:
 		VoiceSet: SovietVehicleVoice
 
 R_T70:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 410
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII
+		BuildPaletteOrder: 411
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Early Phase III
 	Valued:
@@ -917,7 +1038,7 @@ R_T70:
 			TopLeft: -380, 450
 			BottomRight: 380, 580
 	Armor@TypeFront:
-		Type: LightMedium
+		Type: Heavy
 	Armor@TypeSide/Rear:
 		Type: Light
 	RevealsShroud:
@@ -943,7 +1064,7 @@ R_T70:
         Name: MainCannon
         Ammo: 20
         ReloadCount: 1
-        PipCount: 10
+        PipCount: 20
         SelfReloads: True
         SelfReloadDelay: 400
         ResetOnFire: True
@@ -962,18 +1083,19 @@ R_T70:
 		VoiceSet: SovietVehicleVoice
 
 R_T34:
-	Inherits: ^Vehicle
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 411
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII
+		BuildPaletteOrder: 412
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII, ~!MidPhaseI
 		BuildDuration: 1
 		Description: Early Phase III
 	Valued:
-		Cost: 3500
+		Cost: 2500
 	Tooltip:
 		Name: T-34
 	Mobile:
@@ -981,7 +1103,7 @@ R_T34:
 		TurnSpeed: 4
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 3090
+		HP: 2900
 	HitShape@Front:
         ArmorTypes: Heavy
         TargetableOffsets: 800,0,0, 800,-450,0, 800,450,0
@@ -1045,23 +1167,348 @@ R_T34:
 	Voiced:
 		VoiceSet: SovietVehicleVoice 
 
-R_T50:
-	Inherits: ^Vehicle
+R_KV2:
+	Inherits:^RA2Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 412
-		Prerequisites: ~vehicles.russia, ~MidPhaseI
+		BuildPaletteOrder: 413
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Early Phase II
+	Valued:
+		Cost: 6000
+	Tooltip:
+		Name: KV-2
+	Mobile:
+		Speed: 30
+		TurnSpeed: 1
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 5130
+	HitShape@Front:
+        ArmorTypes: VeryHeavy
+        TargetableOffsets: 920,0,0, 920,-550,0, 920,550,0
+        Type: Rectangle
+			TopLeft: -550, -1020
+			BottomRight: 550, -720
+	HitShape@Sides:
+        ArmorTypes: Heavy
+        TargetableOffsets: 0,-550,0, 0,550,0
+        Type: Rectangle
+			TopLeft: -550, -720
+			BottomRight: 550, 750
+	HitShape@Rear:
+        ArmorTypes: Heavy
+        TargetableOffsets: -950,0,0, -950,-550,0, -950,550,0
+        Type: Rectangle
+			TopLeft: -550, 750
+			BottomRight: 550, 1050
+	Armor@TypeFront:
+		Type: VeryHeavy
+	Armor@TypeSide/Rear:
+		Type: Heavy
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 1
+	Armament@MainCannon:
+		Weapon: U11_122
+		AmmoPoolName: MainCannon
+		LocalOffset: 950,0,1400
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+
+R_SU76i:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 414
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseIII #, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: SU-76I
+	Mobile:
+		Speed: 75
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 2280
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 680,0,0, 680,-420,0, 680,420,0
+		Type: Rectangle
+			TopLeft: -420, -780
+			BottomRight: 420, -580
+	HitShape@Side:
+        ArmorTypes: LightMedium
+        TargetableOffsets: 0,-420,0, 0,420,0
+		Type: Rectangle
+			TopLeft: -420, -580
+			BottomRight: 420, 580
+	HitShape@Rear:
+        ArmorTypes: Light
+        TargetableOffsets: -680,0,0, -680,-420,0, -680,420,0
+		Type: Rectangle
+			TopLeft: -420, 580
+			BottomRight: 420, 780
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide:
+		Type: LightMedium
+	Armor@TypeRear:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: M1942_76
+		AmmoPoolName: MainCannon
+		LocalOffset: 1100,0,900
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+
+R_T34_85M:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 415
+		Prerequisites: ~russia.commander, ~MidPhaseI #, ~!LatePhaseI
 		BuildLimit: 1
 		BuildDuration: 1
 		Description: Mid Phase I
 	BaseBuilding:
 	Valued:
-		Cost: 2500
+		Cost: 3000
 	Tooltip:
-		Name: T-50 Commander
+		Name: T-34/85M Commander
+	Mobile:
+		Speed: 80
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 3300
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 800,0,0, 800,-500,0, 800,500,0
+        Type: Rectangle
+			TopLeft: -500, -1000
+			BottomRight: 500, -750
+	HitShape@Sides:
+        ArmorTypes: Heavy
+        TargetableOffsets: 0,-500,0, 0,500,0
+        Type: Rectangle
+			TopLeft: -500, -750
+			BottomRight: 500, 750
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -750,0,0, -750,-500,0, -750,500,0
+        Type: Rectangle
+			TopLeft: -500, 750
+			BottomRight: 500, 950
+	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide:
+		Type: Heavy
+	Armor@TypeRear:
+		Type: Medium
+	RevealsShroud:
+		Range: 20c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: ZIS53
+		AmmoPoolName: MainCannon
+		LocalOffset: 1500,0,1050
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: Degtyaryov
+		LocalOffset: 400,-64,1025
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice 
+	ActorLostNotification:
+		Notification: CriticalUnitLost
+	ProvidesPrerequisite@name:
+	ProvidesPrerequisite@russia:
+		Prerequisite: vehicles.russia
+		Factions: russia
+	SelfHealing:
+		Step: 1
+		PercentageStep: 0
+		Delay: 3
+		HealIfBelow: 100
+		DamageCooldown: 400
+	ProvidesRadar:
+	CashTrickler:
+		Interval: 250
+		Amount: 200
+		ShowTicks: False
+	Production:
+		Produces: Building
+	ProductionBar@Building:
+		ProductionType: Building
+	ParatroopersPower@r_paradrop1:
+		Prerequisites: russia.commander
+		UnitType: paraplane
+		DropItems: r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle
+		Icon: paradrop
+		OrderName: RussiaInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: Russian Rifleman Drop
+		LongDesc: Drops 10 Rifleman on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@r_paradrop2:
+		Prerequisites: russia.commander
+		UnitType: paraplane
+		DropItems: r_atinf, r_atinf, r_atinf, r_atinf, r_atinf
+		Icon: paradrop
+		OrderName: RussiaATInfantryDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: Russian AT-Infantry Drop
+		LongDesc: Drops 5 AT-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+	ParatroopersPower@r_paradrop3:
+		Prerequisites: russia.commander
+		UnitType: paraplane
+		DropItems: r_smg, r_smg, r_smg, r_smg, r_smg, r_smg
+		Icon: paradrop
+		OrderName: RussiaInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: Russian SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
+
+R_T50:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 416
+		Prerequisites: ~vehicles.russia, ~MidPhaseI #, ~!LatePhaseI
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: T-50
 	Mobile:
 		Speed: 90
 		TurnSpeed: 4
@@ -1091,7 +1538,7 @@ R_T50:
 	Armor@TypeSide/Rear:
 		Type: LightMedium
 	RevealsShroud:
-		Range: 20c0
+		Range: 10c0
 	Turreted:
 		Offset: 160,0,0
 		TurnSpeed: 3
@@ -1128,66 +1575,252 @@ R_T50:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: SovietVehicleVoice
-	ActorLostNotification:
-		Notification: CriticalUnitLost
-	ProvidesPrerequisite@name:
-	ProvidesPrerequisite@russia:
-		Prerequisite: vehicles.russia
-		Factions: russia
-	SelfHealing:
-		Step: 1
-		PercentageStep: 0
-		Delay: 3
-		HealIfBelow: 100
-		DamageCooldown: 400
-	ProvidesRadar:
-	CashTrickler:
-		Interval: 100
-		Amount: 100
-		ShowTicks: False
-	Production:
-		Produces: Building
-	ProductionBar@Building:
-		ProductionType: Building
-	ParatroopersPower@r_paradrop1:
-		Prerequisites: russia.commander
-		UnitType: paraplane
-		DropItems: r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle, r_rifle
-		Icon: paradrop
-		OrderName: RussiaInfantryDropOrder
-		SquadSize: 1
-		SquadOffset: -3072,3072,0
-		ChargeTime: 60
-		CameraActor: camera
-		Description: Russian Rifleman Drop
-		LongDesc: Drops 10 Rifleman on the field.
-		SelectTargetSpeechNotification: SelectTarget
-		LowPowerSpeechNotification: LowPower
-		LaunchSpeechNotification: ReinforcementsReady
-		DisplayBeacon: false
-		DisplayRadarPing: True
-		BeaconPoster:
-		ArrowSequence: arrow
-		CircleSequence: circles
-		ClockSequence: clock
-	ParatroopersPower@r_paradrop3:
-		Prerequisites: russia.commander
-		UnitType: paraplane
-		DropItems: r_smg, r_smg, r_smg, r_smg, r_smg, r_smg
-		Icon: paradrop
-		OrderName: RussiaInfantrySMGDropOrder
-		SquadSize: 1
-		SquadOffset: -3072,3072,0
-		ChargeTime: 60
-		CameraActor: camera
-		Description: Russian SMG-Infantry Drop
-		LongDesc: Drops 6 SMG-Infantry on the field.
-		SelectTargetSpeechNotification: SelectTarget
-		LowPowerSpeechNotification: LowPower
-		LaunchSpeechNotification: ReinforcementsReady
-		DisplayBeacon: false
-		DisplayRadarPing: True
-		BeaconPoster:
-		ArrowSequence: arrow
-		CircleSequence: circles
-		ClockSequence: clock
+
+R_T34_76:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 417
+		Prerequisites: ~vehicles.russia, ~MidPhaseI #, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 2600
+	Tooltip:
+		Name: T-34/76
+	Mobile:
+		Speed: 83
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 3200
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 800,0,0, 800,-450,0, 800,450,0
+        Type: Rectangle
+			TopLeft: -450, -900
+			BottomRight: 450, -650
+	HitShape@Sides:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: 0,-450,0, 0,450,0
+        Type: Rectangle
+			TopLeft: -450, -650
+			BottomRight: 450, 650
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -750,0,0, -750,-450,0, -750,450,0
+        Type: Rectangle
+			TopLeft: -450, 650
+			BottomRight: 450, 850
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide:
+		Type: LightHeavy
+	Armor@TypeRear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 3
+	Armament@MainCannon:
+		Weapon: F34/41_APCR
+		AmmoPoolName: MainCannon
+		LocalOffset: 900,0,1025
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: Degtyaryov
+		LocalOffset: 300,-64,1025
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+
+R_T80:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 418
+		Prerequisites: ~vehicles.russia, ~MidPhaseII #, ~!MidPhaseIII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: T-80
+	Mobile:
+		Speed: 68
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1200
+	HitShape@Front:
+        ArmorTypes: Heavy
+        TargetableOffsets: 480,0,0, 480,-380,0, 480,380,0
+        Type: Rectangle
+			TopLeft: -380, -580
+			BottomRight: 380, -380
+	HitShape@Sides:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-380,0, 0,380,0
+        Type: Rectangle
+			TopLeft: -380, -380
+			BottomRight: 380, 380
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -480,0,0, -480,-380,0, -480,380,0
+        Type: Rectangle
+			TopLeft: -380, 450
+			BottomRight: 380, 580
+	Armor@TypeFront:
+		Type: Heavy
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: -32,-92,0
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: M1937_45
+		AmmoPoolName: MainCannon
+		LocalOffset: 700,0,925
+		Recoil: 100
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: Degtyaryov
+		LocalOffset: 300,-64,900
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        ReloadCount: 1
+        PipCount: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+
+R_KV2B:
+	Inherits:^RA2Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceRussia
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 419
+		Prerequisites: ~vehicles.russia, ~MidPhaseII #, ~!LatePhaseI
+		BuildDuration: 1
+		Description: Mid Phase II
+	Valued:
+		Cost: 7000
+	Tooltip:
+		Name: KV-2B
+	Mobile:
+		Speed: 30
+		TurnSpeed: 1
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 5300
+	HitShape@Front:
+        ArmorTypes: VeryHeavy
+        TargetableOffsets: 920,0,0, 920,-550,0, 920,550,0
+        Type: Rectangle
+			TopLeft: -550, -1020
+			BottomRight: 550, -720
+	HitShape@Sides:
+        ArmorTypes: Heavy
+        TargetableOffsets: 0,-550,0, 0,550,0
+        Type: Rectangle
+			TopLeft: -550, -720
+			BottomRight: 550, 750
+	HitShape@Rear:
+        ArmorTypes: LightHeavy
+        TargetableOffsets: -950,0,0, -950,-550,0, -950,550,0
+        Type: Rectangle
+			TopLeft: -550, 750
+			BottomRight: 550, 1050
+	Armor@TypeFront:
+		Type: VeryHeavy
+	Armor@TypeSide:
+		Type: Heavy
+	Armor@TypeRear:
+		Type: LightHeavy
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 256,0,0
+		TurnSpeed: 1
+	Armament@MainCannon:
+		Weapon: M10_152
+		AmmoPoolName: MainCannon
+		LocalOffset: 950,0,1350
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SovietVehicleVoice

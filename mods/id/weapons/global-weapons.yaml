@@ -4,10 +4,20 @@ UnitExplode:
 		Damage: 100
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		Versus:
-			None: 90
-			Wood: 75
-			Light: 60
-			Heavy: 25
+			Infantry: 100
+			Vehicle: 25
+			Open: 200
+			VeryLight: 180
+			Light: 150
+			LightMedium: 100
+			Medium: 75
+			LightHeavy: 50
+			Heavy: 35
+			VeryHeavy: 25
+			Ultra: 10
+			UltraHeavy: 5
+			Buildings: 200
+			Walls: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: airexplo01, airexplo02, airexplo03, airexplo04, airexplo05, airexplo06, airexplo07, airexplo08, airexplo09
@@ -19,10 +29,36 @@ UnitExplodeSmall:
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 	Warhead@2Eff: CreateEffect
-		Explosions: unitexplode01
-		Palette: unitexplode01
-		ImpactSounds: expnew13.wav
+		Explosions: unitexplode_sml, unitexplode_med
+		ImpactSounds: tank_destroyed_small_v1.wav, tank_destroyed_small_v2.wav, tank_destroyed_small_v3.wav
 		ExplosionPalette: unitexplode01
+
+UnitExplodeMedium:
+	Inherits: UnitExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: unitexplode_sml, unitexplode_med, unitexplode_lrg
+		ImpactSounds: tank_destroyed_medium_v1.wav, tank_destroyed_medium_v2.wav, tank_destroyed_medium_v3.wav
+		ExplosionPalette: unitexplode01
+
+UnitExplodeLarge:
+	Inherits: UnitExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 250
+	Warhead@2Eff: CreateEffect
+		Explosions: unitexplode_sml, unitexplode_med, unitexplode_lrg
+		ImpactSounds: tank_destroyed_large_v1.wav, tank_destroyed_large_v2.wav, tank_destroyed_large_v3.wav
+		ExplosionPalette: unitexplode01
+
+EngineBlast:
+	Inherits: UnitExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 250
+	Warhead@2Eff: CreateEffect
+		Explosions: ptankeng
+		ImpactSounds: smoke_v1.wav, smoke_v2.wav
+		ExplosionPalette: smoke
 
 SmallDebris:
 	ReloadDelay: 60

@@ -1,12 +1,18 @@
-eraints = {4500, 7500, 7500, 7500} -- time untill another era in ticks 4500 - 7500
-eraunits = {"early_phase1", "early_phase2", "early_phase3", "mid_phase1"} -- unit to spawn for prereq
+eraints = {3000, 4500, 4500, 4500, 4500, 4500, 4500, 4500, 4500, 4500} -- time untill another era in ticks 1500 = 1min
+eraunits = {"early_phase1", "early_phase2", "early_phase3", "mid_phase1", "mid_phase2", "mid_phase3", "late_phase1", "late_phase2", "late_phase3", "post_phase"} -- unit to spawn for prereq
 eraadvancetext= {
   "You've advanced to Early Phase I.",
   "You've advanced to Early Phase II.",
   "You've advanced to Early Phase III.",
-  "You've advanced to Mid Phase I."} -- text to say when advancing
+  "You've advanced to Mid Phase I.",
+  "You've advanced to Mid Phase II.",
+  "You've advanced to Mid Phase III.",
+  "You've advanced to Late Phase I.",
+  "You've advanced to Late Phase II.",
+  "You've advanced to Late Phase III.",
+  "You've advanced to Post Phase X."} -- text to say when advancing
 
-erabools = {false, false, false, false} -- make one for each era
+erabools = {false, false, false, false, false, false, false, false, false, false} -- make one for each era
 
 era_int_current = 1
 era_int_max = 0

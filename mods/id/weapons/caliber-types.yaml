@@ -1,5 +1,4 @@
 ^Bullet:
-#	ValidTargets: Infantry, OpenVehicle
 	Projectile: BulletAS
 		Image: bullet
 		LaunchAngle: 45
@@ -25,14 +24,12 @@
 			Buildings: 0
 			Walls: 0
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
-#        ValidTargets: Infantry, OpenVehicle
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 		ValidTargets: Ground
 		InValidTargets: Water
         
 ^APBullet:
-#	ValidTargets: Infantry, OpenVehicle
 	Projectile: BulletAS
 		Image: bullet
 		LaunchAngle: 45
@@ -58,7 +55,6 @@
 			Buildings: 0
 			Walls: 0
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
-#        ValidTargets: Infantry, OpenVehicle
 	Warhead@2Eff: CreateEffect
 		Explosions: gatexp1
 		ExplosionPalette: tseffect
@@ -66,11 +62,13 @@
 		InValidTargets: Water
 
 ^HE:
+	Projectile: BulletAS
+		ContrailColor: FFFF0095
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
 		Versus:
 			Infantry: 100
-			Vehicle: 50
+			Vehicle: 25
 			Open: 200
 			VeryLight: 180
 			Light: 150
@@ -87,12 +85,19 @@
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 50, 40, 30, 20
 	Warhead@2Eff: CreateEffect
-		Explosions: heexplosion01
+		Explosions: pboomhay
+		ExplosionPalette: pboomhay
+		ImpactSounds: Tank_hit_HE_v1.wav, Tank_hit_HE_v2.wav, Tank_hit_HE_v3.wav
+		InValidTargets: Water, Vehicle, OpenVehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pvzrvmst1, pvzrvmst2, pvzrvmst3, pvzrvmst4
+		ExplosionPalette: pvzrvmst
 		ImpactSounds: grenexpl1.aud, grenexpl2.aud, grenexpl3.aud, grenexpl4.aud
-		InValidTargets: Water
-		ExplosionPalette: heexplosion01
+		ValidTargets: Vehicle, OpenVehicle
 
 ^AP:
+	Projectile: BulletAS
+		ContrailColor: FFFFFF95
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Versus:
@@ -109,22 +114,32 @@
 			Ultra: 25
 			UltraHeavy: 15
 			Buildings: 50
-			Walls: 75
+			Walls: 50
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 50, 25
 	Warhead@2Eff: CreateEffect
 		Explosions: apexplosion01
 		ImpactSounds: explosion01.aud, explosion02.aud
-		InValidTargets: Water
+		InValidTargets: Water, Vehicle, OpenVehicle
 		ExplosionPalette: apexplosion01
+	Warhead@3Eff: CreateEffect
+		Explosions: pboombox1, pboombox2, pboombox3
+		ExplosionPalette: pboombox
+		ImpactSounds: tank_hit_v1.wav, tank_hit_v2.wav, tank_hit_v3.wav, tank_hit_v4.wav, tank_hit_v5.wav
+		ValidTargets: Vehicle, OpenVehicle
+	Warhead@EngineDamage: GrantExternalCondition
+		Range: 1c0
+		Duration: 375
+		Condition: EngineDamage
+		ValidTargets: Vehicle, OpenVehicle
 
 ^APCR:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Versus:
 			Infantry: 100
-			Vehicle: 125
+			Vehicle: 150
 			Open: 200
 			VeryLight: 200
 			Light: 175
@@ -141,17 +156,29 @@
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 50, 25
 	Warhead@2Eff: CreateEffect
-		Explosions: apexplosion01
+		Explosions: ptdustfly1, ptdustfly2, ptdustfly3
+		ExplosionPalette: ptdustfly
 		ImpactSounds: explosion01.aud, explosion02.aud
-		InValidTargets: Water
-		ExplosionPalette: apexplosion01
+		InValidTargets: Water, Vehicle, OpenVehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pvzrvmst1, pvzrvmst2, pvzrvmst3, pvzrvmst4
+		ExplosionPalette: pvzrvmst
+		ImpactSounds: tank_hit_v1.wav, tank_hit_v2.wav, tank_hit_v3.wav, tank_hit_v4.wav, tank_hit_v5.wav
+		ValidTargets: Vehicle, OpenVehicle
+	Warhead@EngineDamage: GrantExternalCondition
+		Range: 1c0
+		Duration: 375
+		Condition: EngineDamage
+		ValidTargets: Vehicle, OpenVehicle
 
 ^HEAT:
+	Projectile: BulletAS
+		ContrailColor: FF8C0095
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Versus:
 			Infantry: 100
-			Vehicle: 150
+			Vehicle: 200
 			Open: 200
 			VeryLight: 200
 			Light: 175
@@ -168,12 +195,24 @@
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 50, 25
 	Warhead@2Eff: CreateEffect
-		Explosions: heexplosion01
-		ImpactSounds: grenexpl1.aud, grenexpl2.aud, grenexpl3.aud, grenexpl4.aud
-		InValidTargets: Water
-		ExplosionPalette: heexplosion01
+		Explosions: pboomhay
+		ExplosionPalette: pboomhay
+		ImpactSounds: Tank_hit_HE_v1.wav, Tank_hit_HE_v2.wav, Tank_hit_HE_v3.wav
+		InValidTargets: Water, Vehicle, OpenVehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pvzrvmst1, pvzrvmst2, pvzrvmst3, pvzrvmst4
+		ExplosionPalette: pvzrvmst
+		ImpactSounds: tank_hit_v1.wav, tank_hit_v2.wav, tank_hit_v3.wav, tank_hit_v4.wav, tank_hit_v5.wav
+		ValidTargets: Vehicle, OpenVehicle
+	Warhead@EngineDamage: GrantExternalCondition
+		Range: 1c0
+		Duration: 375
+		Condition: EngineDamage
+		ValidTargets: Vehicle, OpenVehicle
 
 ^ARTY_HEAT:
+	Projectile: BulletAS
+		ContrailColor: FF8C0095
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
 			Infantry: 100
@@ -194,7 +233,13 @@
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 50, 40, 30, 20
 	Warhead@2Eff: CreateEffect
-		Explosions: heexplosion02
+	Warhead@2Eff: CreateEffect
+		Explosions: pboomhay
+		ExplosionPalette: pboomhay
 		ImpactSounds: grenexpl1.aud, grenexpl2.aud, grenexpl3.aud, grenexpl4.aud
 		InValidTargets: Water
-		ExplosionPalette: heexplosion02
+	Warhead@EngineDamage: GrantExternalCondition
+		Range: 1c0
+		Duration: 375
+		Condition: EngineDamage
+		ValidTargets: Vehicle, OpenVehicle

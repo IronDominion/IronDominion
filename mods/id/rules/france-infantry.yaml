@@ -43,7 +43,7 @@ f_atinf:
 	Inherits@2: ^ParachutableAllied
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXP: ^GainsExperienceFrance
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -54,8 +54,6 @@ f_atinf:
 		HP: 100
 	Mobile:
 		Speed: 40
-	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 15c0
 	AttackFrontal:
@@ -75,3 +73,39 @@ f_atinf:
 		Sequence: stand
 	Passenger:
 		PipType: Gray
+
+f_smg:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableAllied
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceFrance
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: French SMG-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: FrenchSMG
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: FrenchSMGGarrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: GermanGIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand

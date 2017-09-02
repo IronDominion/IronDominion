@@ -903,43 +903,14 @@ Rules:
 			Red: 0.75
 			Green: 0.6
 			Blue: 0.8
-	caairp:
-		Inherits: ^TechBuilding
-		Valued:
-			Cost: 2500
-		Tooltip:
-			Name: Tech Airport
-		Armor@Type:
-			Type: Medium
-		Health:
-			HP: 5000
-		Building:
-			Dimensions: 3,3
-			Footprint: xxx xxx xxx
-		HitShape:
-			UseOccupiedCellsOffsets: true
-			Type: Rectangle
-				LocalYaw: 128
-				TopLeft: -1536, -1536
-				BottomRight: 1536, 1536
-		WithIdleOverlay@decoration:
-		WithIdleOverlay@flag:
-			Sequence: flag
-			ArrowSequence: arrow
-			ClockSequence: clock
-			CircleSequence: circles
-		ProvidesPrerequisite@Name:
-		ProductionBar@Vehicle:
-			ProductionType: Vehicle
-		PrimaryBuilding:
-		RallyPoint:
-			Offset: 4,2
-			Palette: mouse
-			IsPlayerPalette: false
-		Exit@1:
-			SpawnOffset: -1024,0,0
-			ExitCell: 3,2
-		ProductionAirdrop:
-			ReadyAudio: ReinforcementsArrived
-			ActorType: paraplane
-			Produces: Vehicle
+        WeatherOverlay:
+            WindTick: 150, 550
+            UseSquares: false
+            ScatterDirection: 0, 0
+            Gravity: 8.00, 12.00
+            SwingOffset: 0, 0
+            SwingSpeed: 0, 0
+            SwingAmplitude: 0, 0
+            ParticleColors: 304074, 28386C, 202C60, 182C54
+            LineTailAlphaValue: 150
+            ParticleSize: 1, 1

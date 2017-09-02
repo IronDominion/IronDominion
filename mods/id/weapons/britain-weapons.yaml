@@ -20,7 +20,7 @@ QF2_40:
 	Range: 17c680
 	Report: 4inch_v1.wav, 4inch_v2.wav, 4inch_v3.wav
 	Projectile: BulletAS
-		Speed: 1c188
+		Speed: 1c098
 		Inaccuracy: 1c0
 
 BrenMG:

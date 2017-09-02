@@ -6,7 +6,7 @@
 		Shadow: true
 		LaunchAngle: 45
 		Palette: tseffect
-		ContrailLength: 10
+		ContrailLength: 6
 		ContrailColor: FFFFFF
 		ContrailWidth: 0c15
 		Blockable: true        

@@ -93,6 +93,11 @@ g_p4f2c:
 	turret: g_p4f1tur
 	barrel: g_p4f2barl
 
+g_p2f:
+	idle:
+	turret: g_p2ftur
+	barrel: g_p2fbarl
+
 g_p3j:
 	idle:
 	turret: g_p3jtur
@@ -118,6 +123,11 @@ g_grille:
 	turret: g_grilletur
 	barrel: g_grillebarl
 
+g_p2g:
+	idle:
+	turret: g_p2gtur
+	barrel: g_p2gbarl
+
 g_p3l:
 	idle:
 	turret: g_p3ltur
@@ -127,6 +137,56 @@ g_p4g:
 	idle:
 	turret: g_p4gtur
 	barrel: g_p4gbarl
+
+g_pj4_48:
+	idle:
+	turret: g_pj4_48tur
+	barrel: g_pj4_48barl
+
+g_p2l:
+	idle:
+	turret: g_p2ltur
+	barrel: g_p2lbarl
+
+g_p4h:
+	idle:
+	turret: g_p4htur
+	barrel: g_p4hbarl
+
+g_p5a:
+	idle:
+	turret: g_p5atur
+	barrel: g_p5abarl
+
+g_stug4:
+	idle:
+	turret: g_stug4tur
+	barrel: g_stug4barl
+
+g_pj4_70:
+	idle:
+	turret: g_pj4_70tur
+	barrel: g_pj4_70barl
+
+g_p4-5:
+	idle:
+	turret: g_p4-5tur
+	barrel: g_p4-5barl
+
+g_p5g:
+	idle:
+	turret: g_p5gtur
+	barrel: g_p5gbarl
+
+g_p7t2h:
+	idle:
+	turret: g_p7t2htur
+	barrel: g_p7t2hbarl
+
+g_elefant:
+	idle:
+	turret: g_elefanttur
+	barrel: g_elefantbarl
 
 f_amxelc90:
 	idle: f_amxelc
@@ -138,10 +198,10 @@ f_amxelc:
 	turret: f_amxelctur
 	barrel: f_amxelcbarl
 
-f_renaultft:
+f_d1:
 	idle:
-	turret: f_renaultfttur
-	barrel: f_renaultftbarl
+	turret: f_d1tur
+	barrel: f_d1barl
 
 f_renaultr35:
 	idle:
@@ -190,11 +250,16 @@ f_s35:
 	turret: f_s35tur
 	barrel: f_s35barl
 
+f_s40:
+	idle:
+	turret: f_s40tur
+	barrel: f_s40barl
+
 f_renaultue57:
 	idle:
 	turret: f_renaultue57tur
 	barrel: f_renaultue57barl
-    
+
 f_39lam:
 	idle:
 	turret: f_39lamtur
@@ -204,22 +269,57 @@ f_amx40:
 	idle:
 	turret: f_amx40tur
 	barrel: f_amx40barl
-    
-a_m2m:
+
+f_s42:
 	idle:
-	turret: a_m2mtur
-	barrel: a_m2mbarl
+	turret: f_s42tur
+	barrel: f_s42barl
+
+f_amx40b:
+	idle:
+	turret: f_amx40btur
+	barrel: f_amx40bbarl
+
+f_s42b:
+	idle:
+	turret: f_s42btur
+	barrel: f_s42bbarl
+
+f_sau40:
+	idle:
+	turret: f_sau40tur
+	barrel: f_sau40barl
+
+f_acl:
+	idle:
+	turret: f_acltur
+	barrel: f_aclbarl
+
+f_arl44:
+	idle:
+	turret: f_arl44tur
+	barrel: f_arl44barl
+
+a_m2mc:
+	idle:
+	turret: a_m2mctur
+	barrel: a_m2mcbarl
 
 a_m2l:
 	idle:
 	turret: a_m2ltur
 	barrel: a_m2lbarl
-    
+
 a_m22:
 	idle:
 	turret: a_m22tur
 	barrel: a_m22barl
-    
+
+a_m2m:
+	idle:
+	turret: a_m2mtur
+	barrel: a_m2mbarl
+
 a_m3s:
 	idle:
 	turret: a_m3stur
@@ -234,7 +334,7 @@ a_m9:
 	idle:
 	turret: a_m9tur
 	barrel: a_m9barl
-    
+
 a_m7p:
 	idle:
 	turret: a_m7ptur
@@ -276,6 +376,21 @@ a_m10w:
 	turret: a_m10wtur
 	barrel: a_m10wbarl
 
+a_m4a2e4:
+	idle:
+	turret: a_m4a2e4tur
+	barrel: a_m4a2e4barl
+
+a_t14:
+	idle:
+	turret: a_t14tur
+	barrel: a_t14barl
+
+a_m4a3e8:
+	idle:
+	turret: a_m4a3e8tur
+	barrel: a_m4a3e8barl
+
 r_t127:
 	idle:
 	turret: r_t127tur
@@ -301,6 +416,11 @@ r_t60:
 	turret: r_t60tur
 	barrel: r_t60barl
 
+r_bt5:
+	idle:
+	turret: r_bt5tur
+	barrel: r_bt5barl
+
 r_su76:
 	idle:
 	turret: r_su76tur
@@ -315,6 +435,16 @@ r_kv1:
 	idle:
 	turret: r_kv1tur
 	barrel: r_kv1barl
+
+r_kv2:
+	idle:
+	turret: r_kv2tur
+	barrel: r_kv2barl
+
+r_kv2b:
+	idle:
+	turret: r_kv2btur
+	barrel: r_kv2bbarl
 
 r_su26:
 	idle:
@@ -336,10 +466,30 @@ r_t34:
 	turret: r_t34tur
 	barrel: r_t34barl
 
+r_su76i:
+	idle:
+	turret: r_su76itur
+	barrel: r_su76ibarl
+
+r_t34_85m:
+	idle:
+	turret: r_t34_85mtur
+	barrel: r_t34_85mbarl
+
 r_t50:
 	idle:
 	turret: r_t50tur
 	barrel: r_t50barl
+
+r_t34_76:
+	idle:
+	turret: r_t34_76tur
+	barrel: r_t34_76barl
+
+r_t80:
+	idle:
+	turret: r_t80tur
+	barrel: r_t80barl
 
 b_cmk3:
 	idle:

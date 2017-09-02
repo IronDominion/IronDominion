@@ -4,6 +4,8 @@ g_outpost:
         Image: caairp
 	Tooltip:
 		Name: German Outpost
+	MustBeDestroyed:
+		RequiredForShortGame: true
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
@@ -19,6 +21,8 @@ f_outpost:
         Image: caairp
 	Tooltip:
 		Name: French Outpost
+	MustBeDestroyed:
+		RequiredForShortGame: true
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 200
@@ -34,6 +38,8 @@ a_outpost:
         Image: caairp
 	Tooltip:
 		Name: American Outpost
+	MustBeDestroyed:
+		RequiredForShortGame: true
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 300
@@ -49,6 +55,8 @@ r_outpost:
         Image: caairp
 	Tooltip:
 		Name: Russian Outpost
+	MustBeDestroyed:
+		RequiredForShortGame: true
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 400
@@ -67,6 +75,8 @@ b_outpost:
         Image: caairp
 	Tooltip:
 		Name: British Outpost
+	MustBeDestroyed:
+		RequiredForShortGame: true
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 500
@@ -97,8 +107,8 @@ node:
 	BaseProvider:
 		Range: 15c0
 	CashTrickler:
-		Interval: 1000
-		Amount: 500
+		Interval: 250
+		Amount: 100
 		ShowTicks: True
 	Selectable:
 		Bounds: 64, 64, 0, -6        
@@ -108,12 +118,13 @@ node:
 		OwnerType: Killer
 	ProvidesPrerequisite@name:
 		Prerequisite: node
+	-RepairableBuilding:
 	SelfHealing:
 		Step: 1
 		PercentageStep: 5
 		Delay: 1
 		HealIfBelow: 100
-		DamageCooldown: 1000
+		DamageCooldown: 500
 	Targetable@node:
 		TargetTypes: Node
     WithRangeCircle:

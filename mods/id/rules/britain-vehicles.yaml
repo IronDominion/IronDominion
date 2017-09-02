@@ -3,6 +3,7 @@ B_CMK3:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 500
@@ -95,7 +96,7 @@ B_CMK3:
 		DamageCooldown: 400
 	ProvidesRadar:
 	CashTrickler:
-		Interval: 100
+		Interval: 250
 		Amount: 100
 		ShowTicks: False
 	Production:
@@ -129,6 +130,7 @@ B_M2:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 505
@@ -211,6 +213,7 @@ B_M3S:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 509
@@ -299,6 +302,7 @@ B_M3GRANT:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 513
@@ -404,6 +408,7 @@ B_S3:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 518

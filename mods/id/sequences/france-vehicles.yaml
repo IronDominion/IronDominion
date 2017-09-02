@@ -1,7 +1,7 @@
 f_amxelc90:
 	Defaults:
 		Length: *
-	cannonmuzzle: tankmuzzle_med
+	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
 	icon: xxicon
@@ -14,18 +14,12 @@ f_amxelc:
         Facings: -32
 	icon: xxicon
     
-f_renaultft:
+f_d1:
 	Defaults:
 		Length: *
-	muzzle0: mgun-n
-	muzzle1: mgun-nw
-	muzzle2: mgun-w
-	muzzle3: mgun-sw
-	muzzle4: mgun-s
-	muzzle5: mgun-se
-	muzzle6: mgun-e
-	muzzle7: mgun-ne
-		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
 	icon: xxicon
     
 f_renaultr35:
@@ -123,7 +117,7 @@ f_amx38:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
+
 f_s35:
 	Defaults:
 		Length: *
@@ -139,24 +133,8 @@ f_s35:
         Length: 5
         Facings: -32
 	icon: xxicon
-    
-f_renaultue57:
-	Defaults:
-		Length: *
-	cannonmuzzle: tankmuzzle_med
-        Length: 5
-        Facings: -32
-	icon: xxicon
-    
-f_39lam:
-	Defaults:
-		Length: *
-	cannonmuzzle: tankmuzzle_lrg
-        Length: 5
-        Facings: -32
-	icon: xxicon
 
-f_amx40:
+f_s40:
 	Defaults:
 		Length: *
 	muzzle0: mgun-n
@@ -168,6 +146,95 @@ f_amx40:
 	muzzle6: mgun-e
 	muzzle7: mgun-ne
 	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_renaultue57:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_39lam:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_amx40:
+	Defaults:
+		Length: *
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
+        Facings: -32
+	icon: xxicon
+
+f_s42:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_amx40b:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_s42b:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_sau40:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_acl:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+f_arl44:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
 	icon: xxicon

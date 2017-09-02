@@ -164,6 +164,10 @@
 		Name: unitexplode01
 		Filename: unitexplode01.pal
 		AllowModifiers: false
+	PaletteFromJasc32File@unitexplode02:
+		Name: unitexplode02
+		Filename: unitexplode02.pal
+		AllowModifiers: false
 	PaletteFromJasc32File@apexplosion01:
 		Name: apexplosion01
 		Filename: apexplosion01.pal
@@ -191,4 +195,24 @@
 	PaletteFromJasc32File@ssmuzzle:
 		Name: ssmuzzle
 		Filename: ssmuzzle.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@pboomhay:
+		Name: pboomhay
+		Filename: pboomhay.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@pboombox:
+		Name: pboombox
+		Filename: pboombox.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@smoke:
+		Name: smoke
+		Filename: smallsmk.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@ptdustfly:
+		Name: ptdustfly
+		Filename: ptdustfly.pal
+		AllowModifiers: false
+	PaletteFromJasc32File@pvzrvmst:
+		Name: pvzrvmst
+		Filename: pvzrvmst.pal
 		AllowModifiers: false

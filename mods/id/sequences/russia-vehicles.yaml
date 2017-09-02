@@ -78,6 +78,22 @@ r_t60:
         Facings: -32
 	icon: xxicon
 
+r_bt5:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
+        Facings: -32
+	icon: xxicon
+
 r_su76:
 	Defaults:
 		Length: *
@@ -105,7 +121,31 @@ r_bt7:
 r_kv1:
 	Defaults:
 		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
 	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+r_kv2:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+r_kv2b:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
 	icon: xxicon
@@ -174,6 +214,14 @@ r_t34:
         Facings: -32
 	icon: xxicon
 
+r_su76i:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
 r_t127:
 	Defaults:
 		Length: *
@@ -186,6 +234,54 @@ r_t127:
 	muzzle6: mgun-e
 	muzzle7: mgun-ne
 	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+r_t34_76:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+r_t80:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
+        Facings: -32
+	icon: xxicon
+
+r_t34_85m:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
 	icon: xxicon

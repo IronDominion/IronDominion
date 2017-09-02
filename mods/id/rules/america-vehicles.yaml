@@ -1,8 +1,9 @@
-A_M2M:
+A_M2MC:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 300
@@ -12,7 +13,7 @@ A_M2M:
 		Description: Start Phase
 	BaseBuilding:
 	Valued:
-		Cost: 2500
+		Cost: 2000
 	Tooltip:
 		Name: M2 Medium Tank Commander
 	Mobile:
@@ -20,25 +21,25 @@ A_M2M:
 		TurnSpeed: 4
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 1870
+		HP: 1900
 	HitShape@Front:
         ArmorTypes: Medium
-        TargetableOffsets: 770,0,0, 770,-440,0, 770,440,0
+        TargetableOffsets: 720,0,0, 720,-420,0, 720,420,0
         Type: Rectangle
-			TopLeft: -440, -870
-			BottomRight: 440, -670
+			TopLeft: -420, -820
+			BottomRight: 420, -620
 	HitShape@Sides:
         ArmorTypes: Light
-        TargetableOffsets: 0,-440,0, 0,440,0
+        TargetableOffsets: 0,-420,0, 0,420,0
         Type: Rectangle
-			TopLeft: -440, -670
-			BottomRight: 440, 640
+			TopLeft: -420, -620
+			BottomRight: 420, 620
 	HitShape@Rear:
         ArmorTypes: VeryLight
-        TargetableOffsets: -740,0,0, -740,-440,0, -740,440,0
+        TargetableOffsets: -740,0,0, -740,-420,0, -740,420,0
         Type: Rectangle
-			TopLeft: -440, 640
-			BottomRight: 440, 840
+			TopLeft: -420, 620
+			BottomRight: 420, 820
 	Armor@TypeFront:
 		Type: Medium
 	Armor@TypeSide:
@@ -51,16 +52,16 @@ A_M2M:
 		Offset: 32,0,0
 		TurnSpeed: 3
 	Armament@MainCannon:
-		Weapon: M3_37
+		Weapon: M5_37
 		AmmoPoolName: MainCannon
-		LocalOffset: 750,0,1350
+		LocalOffset: 700,0,1300
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
 	Armament@turretmg:
 		Weapon: M1919
-		LocalOffset: 160,160,1600
+		LocalOffset: 160,160,1550
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
@@ -97,7 +98,7 @@ A_M2M:
 		DamageCooldown: 400
 	ProvidesRadar:
 	CashTrickler:
-		Interval: 100
+		Interval: 250
 		Amount: 100
 		ShowTicks: False
 	Production:
@@ -146,20 +147,42 @@ A_M2M:
 		ArrowSequence: arrow
 		CircleSequence: circles
 		ClockSequence: clock
+	ParatroopersPower@A_paradrop3
+		Prerequisites: america.commander
+		UnitType: paraplane
+		DropItems: a_smg, a_smg, a_smg, a_smg, a_smg, a_smg
+		Icon: paradrop
+		OrderName: AmericaInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: American SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
 
 A_M22:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 301
-		Prerequisites: ~vehicles.america, ~!EarlyPhaseII
+		Prerequisites: ~vehicles.america, ~!EarlyPhaseI
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 1000
+		Cost: 750
     Tooltip:
 		Name: M22 Locust
 	Mobile:
@@ -234,6 +257,7 @@ A_M2L:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 302
@@ -241,7 +265,7 @@ A_M2L:
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 2000
+		Cost: 1300
     Tooltip:
 		Name: M2 Light Tank
 	Mobile:
@@ -311,19 +335,99 @@ A_M2L:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 
+A_M2M:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 303
+		Prerequisites: ~vehicle.america, ~EarlyPhaseI, ~!EarlyPhaseII
+		BuildDuration: 1
+		Description: Start Phase
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: M2 Medium Tank
+	Mobile:
+		Speed: 63
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1870
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 720,0,0, 720,-420,0, 720,420,0
+        Type: Rectangle
+			TopLeft: -420, -820
+			BottomRight: 420, -620
+	HitShape@Sides:
+        ArmorTypes: Light
+        TargetableOffsets: 0,-420,0, 0,420,0
+        Type: Rectangle
+			TopLeft: -420, -620
+			BottomRight: 420, 620
+	HitShape@Rear:
+        ArmorTypes: VeryLight
+        TargetableOffsets: -740,0,0, -740,-420,0, -740,420,0
+        Type: Rectangle
+			TopLeft: -420, 620
+			BottomRight: 420, 820
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide:
+		Type: Light
+	Armor@TypeRear:
+		Type: VeryLight
+	RevealsShroud:
+		Range: 20c0
+	Turreted:
+		Offset: 32,0,0
+		TurnSpeed: 3
+	Armament@MainCannon:
+		Weapon: M5_37
+		AmmoPoolName: MainCannon
+		LocalOffset: 750,0,1350
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
 A_M3S:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 303
+		BuildPaletteOrder: 304
 		Prerequisites: ~vehicles.america, ~EarlyPhaseII, ~!MidPhaseI
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 2200
+		Cost: 1400
     Tooltip:
 		Name: M3 Stuart
 	Mobile:
@@ -362,7 +466,7 @@ A_M3S:
 	Armament@MainCannon:
 		Weapon: M5_37
 		AmmoPoolName: MainCannon
-		LocalOffset: 750,0,1000
+		LocalOffset: 750,0,975
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
@@ -404,14 +508,15 @@ A_M3LEE:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 304
+		BuildPaletteOrder: 305
 		Prerequisites: ~vehicles.america, ~EarlyPhaseII, ~!MidPhaseI
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
-		Cost: 3000
+		Cost: 2400
     Tooltip:
 		Name: M3 Lee
 	Mobile:
@@ -419,7 +524,7 @@ A_M3LEE:
 		TurnSpeed: 4
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 2800
+		HP: 2200
 	HitShape@Front:
         ArmorTypes: LightHeavy
         TargetableOffsets: 770,0,0, 770,-440,0, 770,440,0
@@ -509,9 +614,10 @@ A_M9:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 305
+		BuildPaletteOrder: 306
 		Prerequisites: ~vehicles.america, ~EarlyPhaseI, ~!EarlyPhaseIII
 		BuildDuration: 1
 		Description: Early Phase I
@@ -589,10 +695,11 @@ A_M7P:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 306
-		Prerequisites: ~vehicles.america, ~EarlyPhaseI, ~!MidPhaseI
+		BuildPaletteOrder: 307
+		Prerequisites: ~vehicles.america, ~EarlyPhaseI #, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Early Phase I
 	Valued:
@@ -679,14 +786,15 @@ A_M7M:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 307
+		BuildPaletteOrder: 308
 		Prerequisites: ~vehicles.america, ~EarlyPhaseIII, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Early Phase III
 	Valued:
-		Cost: 2500
+		Cost: 2200
 	Tooltip:
 		Name: M7 Medium Tank
 	Mobile:
@@ -722,7 +830,7 @@ A_M7M:
 	Turreted:
 		TurnSpeed: 2
 	Armament@MainCannon:
-		Weapon: M3_75
+		Weapon: M3_75_HE
 		AmmoPoolName: MainCannon
 		LocalOffset: 800,0,1100
 		Recoil: 150
@@ -735,82 +843,7 @@ A_M7M:
         SelfReloads: True
         SelfReloadDelay: 400
         ResetOnFire: True
-        PipType: Gray
-	AttackTurreted:
-		Voice: Attack
-	RenderSprites:
-	Selectable:
-		Bounds: 64, 52, 0, -6
-	WithVoxelBody:
-	WithVoxelTurret:
-		Recoils: False
-	WithVoxelBarrel:
-	WithMuzzleOverlay:
-	Voiced:
-		VoiceSet: AlliedVehicleVoice
-
-A_M8A1:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@PRIORITY: ^AutoTargetVehicle
-	Inherits@EXP: ^GainsExperienceAmerica
-	Buildable:
-		Queue: Vehicle
-		BuildPaletteOrder: 308
-		Prerequisites: ~vehicles.america, ~EarlyPhaseIII
-		BuildDuration: 1
-		Description: Early Phase III
-	Valued:
-		Cost: 2000
-    Tooltip:
-		Name: M8A1 Scott
-	Mobile:
-		Speed: 87
-		TurnSpeed: 4
-		Crushes: fence, crate, infantry
-	Health:
-		HP: 1633
-	HitShape@Front:
-        ArmorTypes: Medium
-        TargetableOffsets: 500,0,0, 500,-380,0, 500,380,0
-        Type: Rectangle
-			TopLeft: -380, -600
-			BottomRight: 380, -400
-	HitShape@Side:
-        ArmorTypes: Medium
-        TargetableOffsets: 0,-380,0, 0,380,0
-        Type: Rectangle
-			TopLeft: -380, -400
-			BottomRight: 380, 520
-	HitShape@Rear:
-        ArmorTypes: LightMedium
-        TargetableOffsets: -620,0,0, -620,-380,0, -620,380,0
-        Type: Rectangle
-			TopLeft: -380, 520
-			BottomRight: 380, 720
-	Armor@TypeFront:
-		Type: Medium
-	Armor@TypeSide/Rear:
-		Type: LightMedium
-	RevealsShroud:
-		Range: 10c0
-	Turreted:
-		TurnSpeed: 3
-	Armament@MainCannon:
-		Weapon: M1_57
-		AmmoPoolName: MainCannon
-		LocalOffset: 900,0,1200
-		Recoil: 150
-		RecoilRecovery: 10
-		MuzzleSequence: cannonmuzzle
-		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+        PipType: Yellow
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -829,6 +862,7 @@ A_M4I:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 309
@@ -836,8 +870,9 @@ A_M4I:
 		BuildLimit: 1
 		BuildDuration: 1
 		Description: Mid Phase I
+	BaseBuilding:
 	Valued:
-		Cost: 2500
+		Cost: 3000
 	Tooltip:
 		Name: M4 Improved Commander
 	Mobile:
@@ -922,8 +957,8 @@ A_M4I:
 		DamageCooldown: 400
 	ProvidesRadar:
 	CashTrickler:
-		Interval: 100
-		Amount: 100
+		Interval: 250
+		Amount: 200
 		ShowTicks: False
 	Production:
 		Produces: Building
@@ -971,20 +1006,42 @@ A_M4I:
 		ArrowSequence: arrow
 		CircleSequence: circles
 		ClockSequence: clock
+	ParatroopersPower@A_paradrop3
+		Prerequisites: america.commander
+		UnitType: paraplane
+		DropItems: a_smg, a_smg, a_smg, a_smg, a_smg, a_smg
+		Icon: paradrop
+		OrderName: AmericaInfantrySMGDropOrder
+		SquadSize: 1
+		SquadOffset: -3072,3072,0
+		ChargeTime: 60
+		CameraActor: camera
+		Description: American SMG-Infantry Drop
+		LongDesc: Drops 6 SMG-Infantry on the field.
+		SelectTargetSpeechNotification: SelectTarget
+		LowPowerSpeechNotification: LowPower
+		LaunchSpeechNotification: ReinforcementsReady
+		DisplayBeacon: false
+		DisplayRadarPing: True
+		BeaconPoster:
+		ArrowSequence: arrow
+		CircleSequence: circles
+		ClockSequence: clock
 
 A_M5S:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 310
-		Prerequisites: ~vehicles.america, ~MidPhaseI, ~!MidPhaseIII
+		Prerequisites: ~vehicles.america, ~MidPhaseI #, ~!MidPhaseIII
 		BuildDuration: 1
 		Description: Mid Phase I
 	Valued:
-		Cost: 2400
+		Cost: 1500
     Tooltip:
 		Name: M5 Stuart
 	Mobile:
@@ -1065,14 +1122,15 @@ A_M4S:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 311
-		Prerequisites: ~vehicles.america, ~MidPhaseI
+		Prerequisites: ~vehicles.america, ~MidPhaseI, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Mid Phase I
 	Valued:
-		Cost: 4000
+		Cost: 3000
 	Tooltip:
 		Name: M4 Sherman
 	Mobile:
@@ -1150,15 +1208,99 @@ A_M4S:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 
+A_M4A2E4:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 312
+		Prerequisites: ~vehicles.america, ~MidPhaseI, ~!MidPhaseII
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 3200
+	Tooltip:
+		Name: M4A2E4 Sherman
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 3180
+	HitShape@Front:
+        ArmorTypes: Ultra
+        TargetableOffsets: 820,0,0, 820,-500,0, 820,500,0
+        Type: Rectangle
+			TopLeft: -500, -920
+			BottomRight: 500, -620
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-440,0, 0,440,0
+        Type: Rectangle
+			TopLeft: -500, -620
+			BottomRight: 500, 910
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -810,0,0, -810,-500,0, -810,500,0
+        Type: Rectangle
+			TopLeft: -500, 640
+			BottomRight: 500, 910
+	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 32,0,0
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: M3_75_HE
+		AmmoPoolName: MainCannon
+		LocalOffset: 950,0,1200
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: M1919
+		LocalOffset: 400,-64,1100
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
 A_M6H:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeLarge
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 312
-		Prerequisites: ~america.commander, ~MidPhaseI
+		BuildPaletteOrder: 313
+		Prerequisites: ~america.commander, ~MidPhaseI #, ~MidPhaseIII
 		BuildLimit: 1
 		BuildDuration: 1
 		Description: Mid Phase I
@@ -1167,7 +1309,7 @@ A_M6H:
 	Tooltip:
 		Name: M6 Heavy Tank
 	Mobile:
-		Speed: 52
+		Speed: 45
 		TurnSpeed: 2
 		Crushes: fence, crate, infantry
 	Health:
@@ -1203,7 +1345,7 @@ A_M6H:
 		TurnSpeed: 1
 	Armament@MainCannon:
 		Name: MainCannon
-		Weapon: M3_76
+		Weapon: M1A1_76
 		AmmoPoolName: MainCannon
 		LocalOffset: 1300,64,1350
 		Recoil: 200
@@ -1257,16 +1399,93 @@ A_M6H:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
+
+A_M8A1:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 314
+		Prerequisites: ~vehicles.america, ~MidPhaseI #, ~!MidPhaseIII
+		BuildDuration: 1
+		Description: Early Phase III
+	Valued:
+		Cost: 2000
+    Tooltip:
+		Name: M8A1 Scott
+	Mobile:
+		Speed: 87
+		TurnSpeed: 4
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 1633
+	HitShape@Front:
+        ArmorTypes: Medium
+        TargetableOffsets: 500,0,0, 500,-380,0, 500,380,0
+        Type: Rectangle
+			TopLeft: -380, -600
+			BottomRight: 380, -400
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-380,0, 0,380,0
+        Type: Rectangle
+			TopLeft: -380, -400
+			BottomRight: 380, 520
+	HitShape@Rear:
+        ArmorTypes: LightMedium
+        TargetableOffsets: -620,0,0, -620,-380,0, -620,380,0
+        Type: Rectangle
+			TopLeft: -380, 520
+			BottomRight: 380, 720
+	Armor@TypeFront:
+		Type: Medium
+	Armor@TypeSide/Rear:
+		Type: LightMedium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@MainCannon:
+		Weapon: M1_57
+		AmmoPoolName: MainCannon
+		LocalOffset: 900,0,1200
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Blue
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
         
 A_M10W:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 312
-		Prerequisites: ~vehicles.america, ~MidPhaseI
+		BuildPaletteOrder: 315
+		Prerequisites: ~vehicles.america, ~MidPhaseI #, ~!MidPhaseIII
 		BuildDuration: 1
 		Description: Mid Phase I
 	Valued:
@@ -1323,6 +1542,179 @@ A_M10W:
         SelfReloadDelay: 400
         ResetOnFire: True
         PipType: Blue
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+A_T14:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 316
+		Prerequisites: ~vehicles.america, ~MidPhaseII #, ~!MidPhaseIII
+		BuildDuration: 1
+		Description: Mid Phase II
+	Valued:
+		Cost: 4000
+	Tooltip:
+		Name: T14 Assault Tank
+	Mobile:
+		Speed: 40
+		TurnSpeed: 2
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 4700
+	HitShape@Front:
+        ArmorTypes: Ultra
+        TargetableOffsets: 820,0,0, 820,-500,0, 820,500,0
+        Type: Rectangle
+			TopLeft: -500, -920
+			BottomRight: 500, -620
+	HitShape@Side:
+        ArmorTypes: VeryHeavy
+        TargetableOffsets: 0,-440,0, 0,440,0
+        Type: Rectangle
+			TopLeft: -500, -620
+			BottomRight: 500, 910
+	HitShape@Rear:
+        ArmorTypes: Heavy
+        TargetableOffsets: -810,0,0, -810,-500,0, -810,500,0
+        Type: Rectangle
+			TopLeft: -500, 640
+			BottomRight: 500, 910
+	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide:
+		Type: VeryHeavy
+	Armor@TypeRear:
+		Type: Heavy
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		TurnSpeed: 1
+	Armament@MainCannon:
+		Weapon: M3_75_HE
+		AmmoPoolName: MainCannon
+		LocalOffset: 950,0,1100
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: M2MG
+		LocalOffset: 400,-64,1100
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Yellow
+	AttackTurreted:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	WithVoxelTurret:
+		Recoils: False
+	WithVoxelBarrel:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+
+A_M4A3E8:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetVehicle
+	Inherits@EXP: ^GainsExperienceAmerica
+	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 317
+		Prerequisites: ~vehicles.america, ~MidPhaseII #, ~!LatePhaseI
+		BuildDuration: 1
+		Description: Mid Phase I
+	Valued:
+		Cost: 3200
+	Tooltip:
+		Name: M4A3E8 Sherman
+	Mobile:
+		Speed: 60
+		TurnSpeed: 3
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 3400
+	HitShape@Front:
+        ArmorTypes: Ultra
+        TargetableOffsets: 820,0,0, 820,-500,0, 820,500,0
+        Type: Rectangle
+			TopLeft: -500, -920
+			BottomRight: 500, -620
+	HitShape@Side:
+        ArmorTypes: Medium
+        TargetableOffsets: 0,-440,0, 0,440,0
+        Type: Rectangle
+			TopLeft: -500, -620
+			BottomRight: 500, 910
+	HitShape@Rear:
+        ArmorTypes: Medium
+        TargetableOffsets: -810,0,0, -810,-500,0, -810,500,0
+        Type: Rectangle
+			TopLeft: -500, 640
+			BottomRight: 500, 910
+	Armor@TypeFront:
+		Type: Ultra
+	Armor@TypeSide/Rear:
+		Type: Medium
+	RevealsShroud:
+		Range: 10c0
+	Turreted:
+		Offset: 32,0,0
+		TurnSpeed: 2
+	Armament@MainCannon:
+		Weapon: M1A2_76
+		AmmoPoolName: MainCannon
+		LocalOffset: 1400,0,1200
+		Recoil: 150
+		RecoilRecovery: 10
+		MuzzleSequence: cannonmuzzle
+		MuzzlePalette: ssmuzzle
+	Armament@turretmg:
+		Weapon: M2MG
+		LocalOffset: 32,32,1680
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	Armament@turretmg2:
+		Weapon: M1919
+		LocalOffset: 300,32,1580
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+		MuzzlePalette: apolra50alpha
+	AmmoPool@MainCannon:
+        Name: MainCannon
+        Ammo: 20
+        SelfReloads: True
+        SelfReloadDelay: 400
+        ResetOnFire: True
+        PipType: Gray
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:

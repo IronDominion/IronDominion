@@ -1,6 +1,6 @@
 MapFormat: 11
 
-RequiresMod: ra2
+RequiresMod: id
 
 Title: Dustbowl
 
@@ -96,16 +96,6 @@ Actors:
 		Facing: 96
 	Actor11: cats01
 		Location: 72,18
-		Owner: Neutral
-		Health: 100
-		Facing: 96
-	Actor12: cawt01
-		Location: 87,23
-		Owner: Neutral
-		Health: 100
-		Facing: 96
-	Actor13: cawt01
-		Location: 85,23
 		Owner: Neutral
 		Health: 100
 		Facing: 96
@@ -830,9 +820,6 @@ Actors:
 	Actor176: tree28
 		Location: 55,-5
 		Owner: Neutral
-	Actor177: tree28
-		Location: 66,-8
-		Owner: Neutral
 	Actor178: tree28
 		Location: 60,-8
 		Owner: Neutral
@@ -895,9 +882,6 @@ Actors:
 		Owner: Neutral
 	Actor201: tree20
 		Location: 91,24
-		Owner: Neutral
-	Actor202: tibtre02
-		Location: 125,9
 		Owner: Neutral
 	Actor203: tree28
 		Location: 129,5
@@ -1532,12 +1516,6 @@ Actors:
 	Actor418: tree19
 		Location: 88,-43
 		Owner: Neutral
-	Actor419: mpspawn
-		Location: 69,46
-		Owner: Neutral
-	Actor420: mpspawn
-		Location: 78,-36
-		Owner: Neutral
 	Actor428: waypoint
 		Location: 93,-26
 		Owner: Neutral
@@ -1865,12 +1843,6 @@ Actors:
 	Actor555: srock05
 		Location: 126,22
 		Owner: Neutral
-	Actor556: node
-		Owner: Neutral
-		Location: 113,13
-	Actor557: node
-		Owner: Neutral
-		Location: 31,2
 	Actor558: tree22
 		Owner: Neutral
 		Location: 112,-5
@@ -1919,6 +1891,24 @@ Actors:
 	Actor573: tree20
 		Owner: Neutral
 		Location: 63,-27
+	Actor556: mpspawn
+		Owner: Neutral
+		Location: 75,-37
+	Actor557: mpspawn
+		Owner: Neutral
+		Location: 71,46
+	Actor574: node
+		Owner: Creeps
+		Location: 41,21
+	Actor575: node
+		Owner: Creeps
+		Location: 109,-6
+	Actor576: node
+		Owner: Creeps
+		Location: 62,-23
+	Actor577: node
+		Owner: Creeps
+		Location: 92,28
 
 Rules:
 	World:

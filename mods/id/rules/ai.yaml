@@ -34,84 +34,114 @@ Player:
 			b_outpost: 100%
 		UnitsToBuild:
 			g_p4a: 1%
-			g_p1c: 5%
-			g_p2b: 30%
+			g_p1c: 20%
+			g_p2b: 50%
 			g_p35t: 25%
 			g_p38t: 25%
 			g_pj1: 15%
 			g_bison: 5%
-			g_p2c: 30%
-			g_p3e: 40%
-			g_p4d: 20%
-			g_stug3b: 15%
-			g_marder2: 15%
+			g_p2c: 40%
+			g_p3e: 50%
+			g_p4d: 30%
+			g_stug3b: 20%
+			g_marder2: 20%
 			g_wespe: 5%
-			g_p2d: 20%
-			g_p3f: 40%
-			g_p4f1: 25%
-			g_stug3f: 10%
+			g_p2d: 30%
+			g_p3f: 50%
+			g_p4f1: 30%
+			g_stug3f: 20%
 			g_hetzer: 20%
 			g_p4f2c: 1%
 			g_p3j: 30%
-			g_p4f2: 25%
+			g_p4f2: 30%
 			g_p7t: 10%
-			g_stug3g: 15%
+			g_stug3g: 20%
 			g_grille: 5%
-			g_p3l: 30%
+			g_p2f: 30%
+			g_p3l: 40%
 			g_p4g: 40%
-            
-			f_amxelc90: 1%
-			f_renaultft: 5%
-			f_renaultr35: 40%
+			g_pj4_48: 15%
+			g_p2l: 40%
+			g_p4h: 50%
+			g_p5a: 30%
+			g_stug4: 20%
+			g_pj4_70: 15%
+			g_p4-5: 1%
+			g_p5g: 50%
+			g_p7t2h: 20%
+			g_elefant: 5%
+
+			f_amxelc: 1%
 			f_fcm36: 40%
-			f_d2: 20%
+			f_d1: 40%
+			f_renaultr35: 50%
+			f_d2: 30%
 			f_renaultftac: 15%
 			f_renaultft75bs: 5%
-			f_h35: 40%
-			f_b1: 10%
-			f_amx38: 20%
-			f_s35: 20%
+			f_h35: 50%
+			f_b1: 15%
+			f_amx38: 40%
+			f_s35: 40%
+			f_s40: 40%
 			f_renaultue57: 15%
 			f_39lam: 5%
-			f_amx40: 15%
-            
-			a_m2m: 1%
-			a_m22: 40%
-			a_m2l: 25%
-			a_m3s: 25%
-			a_m3lee: 20%
+			f_amxelc90: 1%
+			f_amx40: 40%
+			f_s42: 40%
+			f_sau40: 15%
+			f_amx40b: 40%
+			f_s42b: 30%
+			f_acl: 15%
+			f_arl44: 15%
+
+			a_m2mc: 1%
+			a_m22: 25%
+			a_m2l: 50%
+			a_m2m: 30%
+			a_m3s: 50%
+			a_m3lee: 30%
 			a_m9: 15%
 			a_m7p: 5%
-			a_m7m: 30%
-			a_m8a1: 15%
+			a_m7m: 25%
 			a_m4i: 1%
-			a_m5s: 40%
-			a_m4s: 30%
-			a_m6h: 10%
+			a_m5s: 50%
+			a_m4s: 40%
+			a_m6h: 15%
+			a_m8a1: 20%
 			a_m10w: 15%
-            
+			a_m4a2e4: 25%
+			a_t14: 10%
+			a_m4a3e8: 50%
+
 			r_t127: 1%
-			r_t26: 30%
-			r_bt2: 30%
-			r_t28: 20%
+			r_t26: 40%
+			r_bt2: 40%
+			r_t28: 25%
 			r_t60: 40%
+			r_bt5: 40%
 			r_su76: 15%
-			r_bt7: 30%
+			r_bt7: 40%
 			r_kv1: 15%
 			r_su26: 5%
 			r_t46: 30%
 			r_t70: 40%
-			r_t34: 30%
-			r_t50: 1%
-            
+			r_t34: 40%
+			r_kv2: 2%
+			r_su76i: 15%
+			r_t34_85m: 1%
+			r_t50: 30%
+			r_t34_76: 50%
+			r_t80: 40%
+			r_kv2b: 2%
+
 			b_cmk3: 1%
-			b_m2: 20%
-			b_m3s: 20%
+			b_m2: 25%
+			b_m3s: 25%
 			b_m3grant: 20%
 			b_s3: 20%
-        
-		SquadSize: 5
-		SquadSizeRandomBonus: 5
+
+		SquadSize: 3
+		SquadSizeRandomBonus: 7
 
 		SupportPowerDecision@germany1:
 			OrderName: GermanyInfantryDropOrder
@@ -142,7 +172,7 @@ Player:
 				Types: Node
 				Attractiveness: 20
 				TargetMetric: None
-                
+
 		SupportPowerDecision@germany2:
 			OrderName: GermanyATInfantryDropOrder
 			MinimumAttractiveness: 1
@@ -171,7 +201,7 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None 
+				TargetMetric: None
 
 		SupportPowerDecision@germany3:
 			OrderName: GermanyInfantrySMGDropOrder
@@ -201,8 +231,8 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None         
-                
+				TargetMetric: None
+
 		SupportPowerDecision@france1:
 			OrderName: FranceInfantryDropOrder
 			MinimumAttractiveness: 1
@@ -231,7 +261,8 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None         
+				TargetMetric: None
+
 		SupportPowerDecision@france2:
 			OrderName: FranceATInfantryDropOrder
 			MinimumAttractiveness: 1
@@ -260,8 +291,38 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None          
-                
+				TargetMetric: None
+
+		SupportPowerDecision@france3:
+			OrderName: FranceInfantrySMGDropOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure, Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+			Consideration@3:
+				Against: Ally
+				Types: Structure
+				Attractiveness: 20
+				TargetMetric: None
+			Consideration@4:
+				Against: Ally
+				Types: Vehicle, OpenVehicle
+				Attractiveness: 5
+				TargetMetric: None
+			Consideration@5:
+				Against: Enemy
+				Types: Node
+				Attractiveness: 20
+				TargetMetric: None
+
 		SupportPowerDecision@america1:
 			OrderName: AmericaInfantryDropOrder
 			MinimumAttractiveness: 1
@@ -290,7 +351,7 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None         
+				TargetMetric: None
 		SupportPowerDecision@america2:
 			OrderName: AmericaATInfantryDropOrder
 			MinimumAttractiveness: 1
@@ -319,8 +380,37 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None         
-                
+				TargetMetric: None
+		SupportPowerDecision@america3:
+			OrderName: AmericaInfantrySMGDropOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure, Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+			Consideration@3:
+				Against: Ally
+				Types: Structure
+				Attractiveness: 20
+				TargetMetric: None
+			Consideration@4:
+				Against: Ally
+				Types: Vehicle, OpenVehicle
+				Attractiveness: 5
+				TargetMetric: None
+			Consideration@5:
+				Against: Enemy
+				Types: Node
+				Attractiveness: 20
+				TargetMetric: None
+
 		SupportPowerDecision@russia1:
 			OrderName: RussiaInfantryDropOrder
 			MinimumAttractiveness: 1
@@ -349,8 +439,38 @@ Player:
 				Against: Enemy
 				Types: Node
 				Attractiveness: 20
-				TargetMetric: None      
-                
+				TargetMetric: None
+
+		SupportPowerDecision@russia2:
+			OrderName: RussiaATInfantryDropOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure, Vehicle, OpenVehicle
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+			Consideration@3:
+				Against: Ally
+				Types: Structure
+				Attractiveness: 20
+				TargetMetric: None
+			Consideration@4:
+				Against: Ally
+				Types: Vehicle, OpenVehicle
+				Attractiveness: 5
+				TargetMetric: None
+			Consideration@5:
+				Against: Enemy
+				Types: Node
+				Attractiveness: 20
+				TargetMetric: None
+
 		SupportPowerDecision@russia3:
 			OrderName: RussiaInfantrySMGDropOrder
 			MinimumAttractiveness: 1

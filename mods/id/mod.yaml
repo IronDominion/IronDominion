@@ -1,6 +1,6 @@
 Metadata:
 	Title: Iron Dominion
-	Version: test
+	Version: {DEV_VERSION}
 
 PackageFormats: Mix, AudioBag
 
@@ -59,7 +59,7 @@ Packages:
 
 MapFolders:
 	id|maps: System
-	~^maps/id/test: User
+	~^maps/id/{DEV_VERSION}: User
 
 Rules:
 	id|rules/proxy-actors.yaml

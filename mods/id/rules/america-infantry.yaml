@@ -54,8 +54,6 @@ a_atinf:
 		HP: 100
 	Mobile:
 		Speed: 40
-	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 15c0
 	AttackFrontal:
@@ -75,3 +73,39 @@ a_atinf:
 		Sequence: stand
 	Passenger:
 		PipType: Gray
+
+a_smg:
+	Inherits@1: ^Infantry
+	Inherits@2: ^ParachutableAllied
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PRIORITY: ^AutoTargetInfantry
+	Inherits@EXP: ^GainsExperienceAmerica
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: American SMG-Infantry
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 15c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Thomson
+		LocalOffset: 128,0,512
+	Armament@garrison:
+		Weapon: MP40Garrison
+		Name: garrisoned
+	WithInfantryBody:
+		DefaultAttackSequence:
+	-TakeCover:
+	Voiced:
+		VoiceSet: GIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
