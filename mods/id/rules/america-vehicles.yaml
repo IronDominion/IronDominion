@@ -334,7 +334,7 @@ A_M2L:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
-
+        
 A_M2M:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGround
@@ -1301,7 +1301,6 @@ A_M6H:
 		Queue: Vehicle
 		BuildPaletteOrder: 313
 		Prerequisites: ~america.commander, ~MidPhaseI #, ~MidPhaseIII
-		BuildLimit: 1
 		BuildDuration: 1
 		Description: Mid Phase I
 	Valued:

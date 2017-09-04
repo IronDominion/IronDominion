@@ -107,8 +107,8 @@ node:
 	BaseProvider:
 		Range: 15c0
 	CashTrickler:
-		Interval: 250
-		Amount: 100
+		Interval: 100
+		Amount: 375
 		ShowTicks: True
 	Selectable:
 		Bounds: 64, 64, 0, -6        
