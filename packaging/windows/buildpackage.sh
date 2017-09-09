@@ -85,5 +85,12 @@ if [ $? -eq 0 ]; then
 fi
 popd > /dev/null
 
+echo "Packaging zip archive"
+pushd "${BUILTDIR}" > /dev/null
+cp $(find "${SRC_DIR}/thirdparty/download/windows/" -name '*.dll') .
+zip "${PACKAGING_INSTALLER_NAME}-${TAG}-win" -r -9 * --quiet --symlinks
+mv "${PACKAGING_INSTALLER_NAME}-${TAG}-win.zip" "${OUTPUTDIR}"
+popd > /dev/null
+
 # Cleanup
 rm -rf "${BUILTDIR}"
