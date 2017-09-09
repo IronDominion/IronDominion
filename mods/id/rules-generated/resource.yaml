@@ -28,6 +28,8 @@
 		PipCount: 0
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoAPWarehouse:
 		ValidTargets: ResourceAmmoAPWarehouse
 		Priority: 1
@@ -44,6 +46,8 @@
 		TargetTypes: ResourceAmmoAPWarehouse
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoAPConsumer:
 		ValidTargets: ResourceAmmoAPConsumer
 		Priority: 1
@@ -63,6 +67,8 @@
 		TargetTypes: ResourceAmmoAPTransport
 	AutoTarget:
 		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoAPConsumer:
 		ValidTargets: ResourceAmmoAPConsumer
 		Priority: 1
@@ -94,6 +100,8 @@
 		PipCount: 0
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoAPCRWarehouse:
 		ValidTargets: ResourceAmmoAPCRWarehouse
 		Priority: 1
@@ -110,6 +118,8 @@
 		TargetTypes: ResourceAmmoAPCRWarehouse
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoAPCRConsumer:
 		ValidTargets: ResourceAmmoAPCRConsumer
 		Priority: 1
@@ -129,6 +139,8 @@
 		TargetTypes: ResourceAmmoAPCRTransport
 	AutoTarget:
 		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoAPCRConsumer:
 		ValidTargets: ResourceAmmoAPCRConsumer
 		Priority: 1
@@ -160,6 +172,8 @@
 		PipCount: 0
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoHEWarehouse:
 		ValidTargets: ResourceAmmoHEWarehouse
 		Priority: 1
@@ -176,6 +190,8 @@
 		TargetTypes: ResourceAmmoHEWarehouse
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoHEConsumer:
 		ValidTargets: ResourceAmmoHEConsumer
 		Priority: 1
@@ -195,6 +211,8 @@
 		TargetTypes: ResourceAmmoHETransport
 	AutoTarget:
 		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoHEConsumer:
 		ValidTargets: ResourceAmmoHEConsumer
 		Priority: 1
@@ -226,6 +244,8 @@
 		PipCount: 0
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoHEATWarehouse:
 		ValidTargets: ResourceAmmoHEATWarehouse
 		Priority: 1
@@ -242,6 +262,8 @@
 		TargetTypes: ResourceAmmoHEATWarehouse
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoHEATConsumer:
 		ValidTargets: ResourceAmmoHEATConsumer
 		Priority: 1
@@ -261,6 +283,8 @@
 		TargetTypes: ResourceAmmoHEATTransport
 	AutoTarget:
 		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoHEATConsumer:
 		ValidTargets: ResourceAmmoHEATConsumer
 		Priority: 1
@@ -292,6 +316,8 @@
 		PipCount: 0
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceFuelWarehouse:
 		ValidTargets: ResourceFuelWarehouse
 		Priority: 1
@@ -308,6 +334,8 @@
 		TargetTypes: ResourceFuelWarehouse
 	AutoTarget:
 		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceFuelConsumer:
 		ValidTargets: ResourceFuelConsumer
 		Priority: 1
@@ -327,6 +355,8 @@
 		TargetTypes: ResourceFuelTransport
 	AutoTarget:
 		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
 	AutoTargetPriority@ResourceFuelConsumer:
 		ValidTargets: ResourceFuelConsumer
 		Priority: 1
