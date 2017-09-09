@@ -13,6 +13,8 @@
 		Class: ResourceBuilding
 	SelectionDecorations:
 		Palette: pips
+	EditorTilesetFilter:
+		Categories: ResourceBuilding
 
 ^ResourceVehicle:
 	Inherits@Vehicle: ^Vehicle
