@@ -166,7 +166,7 @@ ResourceFuelProduction:
 	ValidTargets: ResourceFuelWarehouse
 	Warhead@ResourceFuel:
 		ValidTargets: ResourceFuelWarehouse
-		Amount: 20
+		Amount: 10
 
 ResourceFuelWarehouse:
 	Inherits@ResourceFuel: ^ResourceFuel

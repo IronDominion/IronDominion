@@ -22,6 +22,7 @@
 	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
 	AmmoPool@ResourceAmmoAP:
 		Ammo: 1
+		InitialAmmo: 0
 		ReloadCount: 1
 		SelfReloads: True
 		SelfReloadDelay: 2
@@ -41,6 +42,7 @@
 	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
 	AmmoPool@ResourceAmmoAP:
 		Ammo: 1000
+		InitialAmmo: 0
 		PipCount: 100
 	Targetable@ResourceAmmoAPWarehouse:
 		TargetTypes: ResourceAmmoAPWarehouse
@@ -50,10 +52,10 @@
 		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoAPConsumer:
 		ValidTargets: ResourceAmmoAPConsumer
-		Priority: 1
+		Priority: 2
 	AutoTargetPriority@ResourceAmmoAPTransport:
 		ValidTargets: ResourceAmmoAPTransport
-		Priority: 2
+		Priority: 1
 	Armament@ResourceAmmoAPWarehouse:
 		Weapon: ResourceAmmoAPWarehouse
 		TargetStances: Ally, Neutral
@@ -61,8 +63,9 @@
 ^ResourceAmmoAPTransport:
 	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
 	AmmoPool@ResourceAmmoAP:
-		Ammo: 100
-		PipCount: 10
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
 	Targetable@ResourceAmmoAPTransport:
 		TargetTypes: ResourceAmmoAPTransport
 	AutoTarget:
@@ -71,7 +74,7 @@
 		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoAPConsumer:
 		ValidTargets: ResourceAmmoAPConsumer
-		Priority: 1
+		Priority: 2
 	Armament@ResourceAmmoAPTransport:
 		Weapon: ResourceAmmoAPTransport
 		TargetStances: Ally
@@ -94,6 +97,7 @@
 	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
 	AmmoPool@ResourceAmmoAPCR:
 		Ammo: 1
+		InitialAmmo: 0
 		ReloadCount: 1
 		SelfReloads: True
 		SelfReloadDelay: 2
@@ -113,6 +117,7 @@
 	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
 	AmmoPool@ResourceAmmoAPCR:
 		Ammo: 1000
+		InitialAmmo: 0
 		PipCount: 100
 	Targetable@ResourceAmmoAPCRWarehouse:
 		TargetTypes: ResourceAmmoAPCRWarehouse
@@ -122,10 +127,10 @@
 		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoAPCRConsumer:
 		ValidTargets: ResourceAmmoAPCRConsumer
-		Priority: 1
+		Priority: 2
 	AutoTargetPriority@ResourceAmmoAPCRTransport:
 		ValidTargets: ResourceAmmoAPCRTransport
-		Priority: 2
+		Priority: 1
 	Armament@ResourceAmmoAPCRWarehouse:
 		Weapon: ResourceAmmoAPCRWarehouse
 		TargetStances: Ally, Neutral
@@ -133,8 +138,9 @@
 ^ResourceAmmoAPCRTransport:
 	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
 	AmmoPool@ResourceAmmoAPCR:
-		Ammo: 100
-		PipCount: 10
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
 	Targetable@ResourceAmmoAPCRTransport:
 		TargetTypes: ResourceAmmoAPCRTransport
 	AutoTarget:
@@ -143,7 +149,7 @@
 		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoAPCRConsumer:
 		ValidTargets: ResourceAmmoAPCRConsumer
-		Priority: 1
+		Priority: 2
 	Armament@ResourceAmmoAPCRTransport:
 		Weapon: ResourceAmmoAPCRTransport
 		TargetStances: Ally
@@ -166,6 +172,7 @@
 	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
 	AmmoPool@ResourceAmmoHE:
 		Ammo: 1
+		InitialAmmo: 0
 		ReloadCount: 1
 		SelfReloads: True
 		SelfReloadDelay: 2
@@ -185,6 +192,7 @@
 	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
 	AmmoPool@ResourceAmmoHE:
 		Ammo: 1000
+		InitialAmmo: 0
 		PipCount: 100
 	Targetable@ResourceAmmoHEWarehouse:
 		TargetTypes: ResourceAmmoHEWarehouse
@@ -194,10 +202,10 @@
 		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoHEConsumer:
 		ValidTargets: ResourceAmmoHEConsumer
-		Priority: 1
+		Priority: 2
 	AutoTargetPriority@ResourceAmmoHETransport:
 		ValidTargets: ResourceAmmoHETransport
-		Priority: 2
+		Priority: 1
 	Armament@ResourceAmmoHEWarehouse:
 		Weapon: ResourceAmmoHEWarehouse
 		TargetStances: Ally, Neutral
@@ -205,8 +213,9 @@
 ^ResourceAmmoHETransport:
 	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
 	AmmoPool@ResourceAmmoHE:
-		Ammo: 100
-		PipCount: 10
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
 	Targetable@ResourceAmmoHETransport:
 		TargetTypes: ResourceAmmoHETransport
 	AutoTarget:
@@ -215,7 +224,7 @@
 		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoHEConsumer:
 		ValidTargets: ResourceAmmoHEConsumer
-		Priority: 1
+		Priority: 2
 	Armament@ResourceAmmoHETransport:
 		Weapon: ResourceAmmoHETransport
 		TargetStances: Ally
@@ -238,6 +247,7 @@
 	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
 	AmmoPool@ResourceAmmoHEAT:
 		Ammo: 1
+		InitialAmmo: 0
 		ReloadCount: 1
 		SelfReloads: True
 		SelfReloadDelay: 2
@@ -257,6 +267,7 @@
 	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
 	AmmoPool@ResourceAmmoHEAT:
 		Ammo: 1000
+		InitialAmmo: 0
 		PipCount: 100
 	Targetable@ResourceAmmoHEATWarehouse:
 		TargetTypes: ResourceAmmoHEATWarehouse
@@ -266,10 +277,10 @@
 		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceAmmoHEATConsumer:
 		ValidTargets: ResourceAmmoHEATConsumer
-		Priority: 1
+		Priority: 2
 	AutoTargetPriority@ResourceAmmoHEATTransport:
 		ValidTargets: ResourceAmmoHEATTransport
-		Priority: 2
+		Priority: 1
 	Armament@ResourceAmmoHEATWarehouse:
 		Weapon: ResourceAmmoHEATWarehouse
 		TargetStances: Ally, Neutral
@@ -277,8 +288,9 @@
 ^ResourceAmmoHEATTransport:
 	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
 	AmmoPool@ResourceAmmoHEAT:
-		Ammo: 100
-		PipCount: 10
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
 	Targetable@ResourceAmmoHEATTransport:
 		TargetTypes: ResourceAmmoHEATTransport
 	AutoTarget:
@@ -287,7 +299,7 @@
 		ScanRadius: 20
 	AutoTargetPriority@ResourceAmmoHEATConsumer:
 		ValidTargets: ResourceAmmoHEATConsumer
-		Priority: 1
+		Priority: 2
 	Armament@ResourceAmmoHEATTransport:
 		Weapon: ResourceAmmoHEATTransport
 		TargetStances: Ally
@@ -309,8 +321,9 @@
 ^ResourceFuelProduction:
 	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
 	AmmoPool@ResourceFuel:
-		Ammo: 20
-		ReloadCount: 20
+		Ammo: 10
+		InitialAmmo: 0
+		ReloadCount: 10
 		SelfReloads: True
 		SelfReloadDelay: 1
 		PipCount: 0
@@ -328,8 +341,9 @@
 ^ResourceFuelWarehouse:
 	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
 	AmmoPool@ResourceFuel:
-		Ammo: 100000
-		PipCount: 1000
+		Ammo: 10000
+		InitialAmmo: 0
+		PipCount: 100
 	Targetable@ResourceFuelWarehouse:
 		TargetTypes: ResourceFuelWarehouse
 	AutoTarget:
@@ -338,10 +352,10 @@
 		InitialStance: AttackAnything
 	AutoTargetPriority@ResourceFuelConsumer:
 		ValidTargets: ResourceFuelConsumer
-		Priority: 1
+		Priority: 2
 	AutoTargetPriority@ResourceFuelTransport:
 		ValidTargets: ResourceFuelTransport
-		Priority: 2
+		Priority: 1
 	Armament@ResourceFuelWarehouse:
 		Weapon: ResourceFuelWarehouse
 		TargetStances: Ally, Neutral
@@ -349,8 +363,9 @@
 ^ResourceFuelTransport:
 	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
 	AmmoPool@ResourceFuel:
-		Ammo: 20000
-		PipCount: 200
+		Ammo: 5000
+		InitialAmmo: 5000
+		PipCount: 50
 	Targetable@ResourceFuelTransport:
 		TargetTypes: ResourceFuelTransport
 	AutoTarget:
@@ -359,7 +374,7 @@
 		ScanRadius: 20
 	AutoTargetPriority@ResourceFuelConsumer:
 		ValidTargets: ResourceFuelConsumer
-		Priority: 1
+		Priority: 2
 	Armament@ResourceFuelTransport:
 		Weapon: ResourceFuelTransport
 		TargetStances: Ally

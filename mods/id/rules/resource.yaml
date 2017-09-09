@@ -179,6 +179,7 @@ ResourceTransportFuel:
 		Image: propa
 	BodyOrientation:
 		QuantizedFacings: 128
+	-Targetable@ResourceFuelConsumer:
 
 ResourceTransportAmmo:
 	Inherits@ResourceBuilding: ^ResourceVehicle
