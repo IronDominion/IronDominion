@@ -4,7 +4,7 @@ F_AMXELC:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
-	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
 	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
@@ -53,13 +53,13 @@ F_AMXELC:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA32L
-		AmmoPoolName: ResourceAmmoHE
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 700,0,850
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@ResourceAmmoHE:
+	AmmoPool@ResourceAmmoAP:
 		Ammo: 20
 	AmmoPool@ResourceFuel:
 		Ammo: 1000
@@ -168,6 +168,8 @@ F_FCM36:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 201
@@ -215,19 +217,16 @@ F_FCM36:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA18
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 450,64,950
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -247,6 +246,8 @@ F_D1:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
@@ -291,21 +292,16 @@ F_D1:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: 25mmCRM
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 550,0,980
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 120
-        ReloadCount: 6
-        PipCount: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 120
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -325,6 +321,8 @@ F_RENAULTR35:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 201
@@ -369,19 +367,16 @@ F_RENAULTR35:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA38
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 475,64,950
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -401,6 +396,8 @@ F_D2:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
@@ -446,7 +443,7 @@ F_D2:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA34_HE
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 725,80,1100
 		Recoil: 150
 		RecoilRecovery: 10
@@ -458,13 +455,10 @@ F_D2:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -484,6 +478,8 @@ F_RENAULTFTAC:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPCRConsumer: ^ResourceAmmoAPCRConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 206
@@ -529,19 +525,16 @@ F_RENAULTFTAC:
 		TurnSpeed: 1
 	Armament@cannon:
 		Weapon: SA37_APCR
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAPCR
 		LocalOffset: 750,0,1000
 		Recoil: 200
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -563,6 +556,8 @@ F_RENAULTFT75BS:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 207
@@ -606,19 +601,16 @@ F_RENAULTFT75BS:
 		TurnSpeed: 1
 	Armament@cannon:
 		Weapon: 75mmBS
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 750,0,1000
 		Recoil: 200
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -642,6 +634,8 @@ F_AMX38:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 202
@@ -687,7 +681,7 @@ F_AMX38:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA35
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 650,0,950
 		Recoil: 150
 		RecoilRecovery: 10
@@ -699,13 +693,10 @@ F_AMX38:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -725,6 +716,8 @@ F_S35:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
@@ -772,7 +765,7 @@ F_S35:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA35
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 625,0,1075
 		Recoil: 150
 		RecoilRecovery: 10
@@ -784,13 +777,10 @@ F_S35:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -810,6 +800,8 @@ F_B1:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 204
@@ -855,7 +847,7 @@ F_B1:
 		TurnSpeed: 1
 	Armament@cannon:
 		Weapon: SA34_HE
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 725,0,1150
 		Recoil: 150
 		RecoilRecovery: 10
@@ -867,13 +859,10 @@ F_B1:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -893,6 +882,8 @@ F_S40:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
@@ -940,7 +931,7 @@ F_S40:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA35
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 725,0,1100
 		Recoil: 150
 		RecoilRecovery: 10
@@ -952,13 +943,10 @@ F_S40:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -978,6 +966,8 @@ F_RENAULTUE57:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPCRConsumer: ^ResourceAmmoAPCRConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 206
@@ -1021,19 +1011,16 @@ F_RENAULTUE57:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA37_APCR
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAPCR
 		LocalOffset: 600,0,875
 		Recoil: 200
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -1055,6 +1042,8 @@ F_39LAM:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 207
@@ -1100,19 +1089,16 @@ F_39LAM:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: 105mmL
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 550,0,1600
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -1138,6 +1124,8 @@ F_AMXELC90:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
@@ -1185,19 +1173,16 @@ F_AMXELC90:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: D915
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 1200,0,900
 		Recoil: 200
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1301,6 +1286,8 @@ F_H35:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 201
@@ -1347,7 +1334,7 @@ F_H35:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA18
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 450,64,950
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1359,13 +1346,10 @@ F_H35:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1385,6 +1369,8 @@ F_AMX40:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 202
@@ -1432,19 +1418,16 @@ F_AMX40:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA35
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 625,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1464,6 +1447,8 @@ F_S42:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
@@ -1511,7 +1496,7 @@ F_S42:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 825,24,1075
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1523,13 +1508,10 @@ F_S42:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1549,6 +1531,8 @@ F_SAU40:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPCRConsumer: ^ResourceAmmoAPCRConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 206
@@ -1593,19 +1577,16 @@ F_SAU40:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA44_APCR
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAPCR
 		LocalOffset: 1400,16,750
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -1625,6 +1606,8 @@ F_AMX40B:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 202
@@ -1672,7 +1655,7 @@ F_AMX40B:
 		TurnSpeed: 3
 	Armament@cannon:
 		Weapon: SA32
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 650,0,980
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1684,13 +1667,10 @@ F_AMX40B:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1710,6 +1690,8 @@ F_S42B:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
@@ -1757,19 +1739,16 @@ F_S42B:
 		TurnSpeed: 2
 	Armament@cannon:
 		Weapon: SA44
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 850,0,1075
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1789,6 +1768,8 @@ F_ACL:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 204
@@ -1835,19 +1816,16 @@ F_ACL:
 		TurnSpeed: 1
 	Armament@cannon:
 		Weapon: M1A1_76
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 1250,0,1200
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1867,6 +1845,8 @@ F_ARL44:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceFrance
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 204
@@ -1913,19 +1893,16 @@ F_ARL44:
 		TurnSpeed: 1
 	Armament@cannon:
 		Weapon: F3_90
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 1550,0,1150
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
