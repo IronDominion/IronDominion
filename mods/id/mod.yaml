@@ -1,6 +1,6 @@
 Metadata:
 	Title: Iron Dominion
-	Version: 0.362
+	Version: 0.363
 
 PackageFormats: Mix, AudioBag
 
@@ -49,6 +49,8 @@ Packages:
 	id|bits/britain/infantry
 	id|bits/britain/vehicles
 	id|bits/cameos
+	id|bits/cameos/germany
+	id|bits/cameos/russia
 	id|bits/structures
 	id|bits/animations
 	id|bits/animations/debris
@@ -92,6 +94,9 @@ Rules:
 	id|rules/russia-vehicles.yaml
 	id|rules/britain-infantry.yaml
 	id|rules/britain-vehicles.yaml
+	id|rules/resource.yaml
+	id|rules-generated/resource.yaml
+	id|rules/movement.yaml
 
 Sequences:
 	id|sequences/misc.yaml
@@ -182,6 +187,8 @@ Weapons:
 	id|weapons/america-weapons.yaml
 	id|weapons/russia-weapons.yaml
 	id|weapons/britain-weapons.yaml
+	id|weapons/resource.yaml
+	id|weapons-generated/resource.yaml
 
 Voices:
 	id|audio/voices.yaml

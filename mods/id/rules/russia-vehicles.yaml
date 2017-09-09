@@ -4,6 +4,8 @@ R_T127:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 400
@@ -51,7 +53,7 @@ R_T127:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M1937/L46_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 800,0,980
 		Recoil: 150
 		RecoilRecovery: 10
@@ -63,13 +65,10 @@ R_T127:
 		LocalOffset: 300,-64,1025
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -88,6 +87,8 @@ R_T127:
 	ProvidesPrerequisite@russia:
 		Prerequisite: vehicles.russia
 		Factions: russia
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0
@@ -173,6 +174,8 @@ R_T26:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 401
@@ -218,7 +221,7 @@ R_T26:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1937_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 700,0,1050
 		Recoil: 150
 		RecoilRecovery: 10
@@ -230,13 +233,10 @@ R_T26:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -256,6 +256,8 @@ R_BT2:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 402
@@ -301,7 +303,7 @@ R_BT2:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1930_37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 500,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
@@ -313,13 +315,10 @@ R_BT2:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -339,6 +338,8 @@ R_T28:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 403
@@ -382,7 +383,7 @@ R_T28:
 		TurnSpeed: 1
 	Armament@MainCannon:
 		Weapon: M27/32
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 750,0,1300
 		Recoil: 150
 		RecoilRecovery: 10
@@ -394,13 +395,10 @@ R_T28:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -420,6 +418,8 @@ R_T60:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 404
@@ -467,7 +467,7 @@ R_T60:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: ShVAK20mm
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 600,64,900
 		Recoil: 100
 		RecoilRecovery: 10
@@ -479,15 +479,10 @@ R_T60:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 40
-        ReloadCount: 4
-        PipCount: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -507,6 +502,8 @@ R_BT5:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 405
@@ -552,7 +549,7 @@ R_BT5:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1930_37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 710,0,1025
 		Recoil: 150
 		RecoilRecovery: 10
@@ -564,13 +561,10 @@ R_BT5:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -590,6 +584,8 @@ R_SU76:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPCRConsumer: ^ResourceAmmoAPCRConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 406
@@ -633,19 +629,16 @@ R_SU76:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1942_76
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAPCR
 		LocalOffset: 1100,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -665,6 +658,8 @@ R_BT7:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 407
@@ -712,7 +707,7 @@ R_BT7:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1930_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 710,0,1025
 		Recoil: 150
 		RecoilRecovery: 10
@@ -724,13 +719,10 @@ R_BT7:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -750,6 +742,8 @@ R_KV1:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 408
@@ -795,7 +789,7 @@ R_KV1:
 		TurnSpeed: 1
 	Armament@MainCannon:
 		Weapon: L11_76
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 900,0,1250
 		Recoil: 150
 		RecoilRecovery: 10
@@ -807,13 +801,10 @@ R_KV1:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -833,10 +824,12 @@ R_SU26:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 409
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseII #, ~!MidPhaseII
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseI #, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:
@@ -880,7 +873,7 @@ R_SU26:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1902/30
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 600,0,1450
 		Recoil: 150
 		RecoilRecovery: 10
@@ -892,13 +885,10 @@ R_SU26:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -922,6 +912,8 @@ R_T46:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 410
@@ -965,7 +957,7 @@ R_T46:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1937/L46_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 800,0,1080
 		Recoil: 150
 		RecoilRecovery: 10
@@ -977,13 +969,10 @@ R_T46:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1003,6 +992,8 @@ R_T70:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 411
@@ -1048,7 +1039,7 @@ R_T70:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1937_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 700,64,925
 		Recoil: 100
 		RecoilRecovery: 10
@@ -1060,15 +1051,10 @@ R_T70:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        ReloadCount: 1
-        PipCount: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1088,6 +1074,8 @@ R_T34:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 412
@@ -1135,7 +1123,7 @@ R_T34:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: F34/41
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 800,0,980
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1147,13 +1135,10 @@ R_T34:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1173,6 +1158,8 @@ R_KV2:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 413
@@ -1218,19 +1205,16 @@ R_KV2:
 		TurnSpeed: 1
 	Armament@MainCannon:
 		Weapon: U11_122
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 950,0,1400
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1250,6 +1234,8 @@ R_SU76i:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPCRConsumer: ^ResourceAmmoAPCRConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 414
@@ -1296,19 +1282,16 @@ R_SU76i:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1942_76
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAPCR
 		LocalOffset: 1100,0,900
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -1328,6 +1311,8 @@ R_T34_85M:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 415
@@ -1377,7 +1362,7 @@ R_T34_85M:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: ZIS53
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 1500,0,1050
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1389,13 +1374,10 @@ R_T34_85M:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1499,6 +1481,8 @@ R_T50:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 416
@@ -1544,7 +1528,7 @@ R_T50:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M1938_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 700,0,950
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1556,13 +1540,10 @@ R_T50:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1582,6 +1563,8 @@ R_T34_76:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPCRConsumer: ^ResourceAmmoAPCRConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 417
@@ -1629,7 +1612,7 @@ R_T34_76:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: F34/41_APCR
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAPCR
 		LocalOffset: 900,0,1025
 		Recoil: 150
 		RecoilRecovery: 10
@@ -1641,13 +1624,10 @@ R_T34_76:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Blue
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1667,6 +1647,8 @@ R_T80:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 418
@@ -1712,7 +1694,7 @@ R_T80:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M1937_45
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 700,0,925
 		Recoil: 100
 		RecoilRecovery: 10
@@ -1724,15 +1706,10 @@ R_T80:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        ReloadCount: 1
-        PipCount: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -1752,6 +1729,8 @@ R_KV2B:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceRussia
 	Inherits@EXPLOSION: ^VehicleExplodeLarge
+	Inherits@ResourceAmmoHEConsumer: ^ResourceAmmoHEConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 419
@@ -1799,19 +1778,16 @@ R_KV2B:
 		TurnSpeed: 1
 	Armament@MainCannon:
 		Weapon: M10_152
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoHE
 		LocalOffset: 950,0,1350
 		Recoil: 150
 		RecoilRecovery: 10
 		MuzzleSequence: cannonmuzzle
 		MuzzlePalette: ssmuzzle
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Yellow
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:

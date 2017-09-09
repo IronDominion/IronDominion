@@ -101,14 +101,14 @@ node:
 	Health:
 		HP: 5000
 	RevealsShroud:
-		Range: 20c0
+		Range: 5c0
 	WithIdleOverlay@flag:
 		Sequence: flag
 	BaseProvider:
 		Range: 15c0
 	CashTrickler:
 		Interval: 100
-		Amount: 375
+		Amount: 300
 		ShowTicks: True
 	Selectable:
 		Bounds: 64, 64, 0, -6        

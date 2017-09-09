@@ -1,0 +1,19 @@
+ResourceConsumesFuel1Tick:
+	Projectile: InstantHit
+	ReloadDelay: 1
+
+ResourceConsumesFuel2Tick:
+	Projectile: InstantHit
+	ReloadDelay: 2
+
+ResourceConsumesFuel3Tick:
+	Projectile: InstantHit
+	ReloadDelay: 3
+
+ResourceConsumesFuel4Tick:
+	Projectile: InstantHit
+	ReloadDelay: 4
+
+ResourceConsumesFuel5Tick:
+	Projectile: InstantHit
+	ReloadDelay: 5

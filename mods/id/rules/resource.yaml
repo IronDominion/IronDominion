@@ -1,0 +1,202 @@
+^ResourceBuilding:
+	Inherits@ExistsInWorld: ^ExistsInWorld
+	Building:
+		TerrainTypes: Clear, Road, DirtRoad, Rough
+	HitShape:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+	AttackOmni:
+		Voice: Attack
+	AlwaysVisible:
+	Selectable:
+		Priority: 1
+		Class: ResourceBuilding
+	SelectionDecorations:
+		Palette: pips
+	EditorTilesetFilter:
+		Categories: ResourceBuilding
+	RevealsShroud:
+		Range: 5c0
+
+^ResourceVehicle:
+	Inherits@Vehicle: ^Vehicle
+	Mobile:
+		Speed: 150
+		TurnSpeed: 3
+	Health:
+		HP: 500
+	Buildable:
+		Queue: Vehicle
+		Prerequisites: vehicles
+		BuildDuration: 1
+		Description: Start Phase
+	AttackFollow:
+		Voice: Attack
+		RescanWhileNotMoving: True
+
+^ResourceConsumesFuel:
+	Inherits@ResourceFuelConsumer: ^ResourceFuelConsumer
+	GrantConditionOnMovement@ResourceConsumesFuel:
+		Condition: ResourceConsumesFuelMoving
+		ConsiderVerticalMovement: True
+	GrantConditionOnAmmo@ResourceConsumesFuel:
+		Condition: MovementDisabled
+		Expression: amount <= 0
+		AmmoPoolName: ResourceFuel
+
+^ResourceConsumesFuel1:
+	Inherits@ResourceConsumesFuel: ^ResourceConsumesFuel
+	ExplodeWeapon@ResourceConsumesFuel1:
+		AmmoPoolName: ResourceFuel
+		RequiresCondition: ResourceConsumesFuelMoving
+
+^ResourceConsumesFuel1Per1:
+	Inherits@ResourceConsumesFuel1: ^ResourceConsumesFuel1
+	ExplodeWeapon@ResourceConsumesFuel1:
+		Weapon: ResourceConsumesFuel1Tick
+
+^ResourceConsumesFuel1Per2:
+	Inherits@ResourceConsumesFuel1: ^ResourceConsumesFuel1
+	ExplodeWeapon@ResourceConsumesFuel1:
+		Weapon: ResourceConsumesFuel2Tick
+
+^ResourceConsumesFuel1Per3:
+	Inherits@ResourceConsumesFuel1: ^ResourceConsumesFuel1
+	ExplodeWeapon@ResourceConsumesFuel1:
+		Weapon: ResourceConsumesFuel3Tick
+
+^ResourceConsumesFuel1Per4:
+	Inherits@ResourceConsumesFuel1: ^ResourceConsumesFuel1
+	ExplodeWeapon@ResourceConsumesFuel1:
+		Weapon: ResourceConsumesFuel4Tick
+
+^ResourceConsumesFuel1Per5:
+	Inherits@ResourceConsumesFuel1: ^ResourceConsumesFuel1
+	ExplodeWeapon@ResourceConsumesFuel1:
+		Weapon: ResourceConsumesFuel5Tick
+
+ResourceAmmoAPProduction:
+	Inherits@ResourceBuilding: ^ResourceBuilding
+	Inherits@ResourceAmmoAPProduction: ^ResourceAmmoAPProduction
+	Tooltip:
+		Name: Ammunition Factory (AP)
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+		Image: caind01
+
+ResourceAmmoAPCRProduction:
+	Inherits@ResourceBuilding: ^ResourceBuilding
+	Inherits@ResourceAmmoAPCRProduction: ^ResourceAmmoAPCRProduction
+	Tooltip:
+		Name: Ammunition Factory (APCR)
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+		Image: caind01
+
+ResourceAmmoHEProduction:
+	Inherits@ResourceBuilding: ^ResourceBuilding
+	Inherits@ResourceAmmoHEProduction: ^ResourceAmmoHEProduction
+	Tooltip:
+		Name: Ammunition Factory (HE)
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+		Image: caind01
+
+ResourceAmmoHEATProduction:
+	Inherits@ResourceBuilding: ^ResourceBuilding
+	Inherits@ResourceAmmoAPCRProduction: ^ResourceAmmoHEATProduction
+	Tooltip:
+		Name: Ammunition Factory (HEAT)
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4, 4
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+		Image: caind01
+
+ResourceFuelProduction:
+	Inherits@ResourceBuilding: ^ResourceBuilding
+	Inherits@ResourceFuelProduction: ^ResourceFuelProduction
+	Tooltip:
+		Name: Oil Derrick
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+		Image: caoild
+	WithIdleOverlay@pump:
+		Sequence: idle-pump
+
+ResourceWarehouseGeneric:
+	Inherits@ResourceBuilding: ^ResourceBuilding
+	Inherits@ResourceWarehouseGeneric: ^ResourceWarehouseGeneric
+	Tooltip:
+		Name: Warehouse
+	Building:
+		Footprint: xxx === x=x
+		Dimensions: 3, 3
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+		Image: cagas01
+	RenderRangeCircle:
+
+ResourceTransportFuel:
+	Inherits@ResourceBuilding: ^ResourceVehicle
+	Inherits@ResourceTransportFuel: ^ResourceTransportFuel
+	Inherits@ResourceConsumesFuel1Per5: ^ResourceConsumesFuel1Per5
+	Tooltip:
+		Name: Fuel Truck
+	Buildable:
+		BuildPaletteOrder: 1
+	Valued:
+		Cost: 1000
+	WithVoxelBody:
+	RenderVoxels:
+		Image: propa
+	RenderSprites:
+		Image: propa
+	BodyOrientation:
+		QuantizedFacings: 128
+	-Targetable@ResourceFuelConsumer:
+
+ResourceTransportAmmo:
+	Inherits@ResourceBuilding: ^ResourceVehicle
+	Inherits@ResourceTransportAmmo: ^ResourceTransportAmmo
+	Inherits@ResourceConsumesFuel1Per5: ^ResourceConsumesFuel1Per5
+	Tooltip:
+		Name: Ammo Truck
+	Buildable:
+		BuildPaletteOrder: 2
+	Valued:
+		Cost: 1000
+	WithVoxelBody:
+	RenderVoxels:
+		Image: truckb
+	RenderSprites:
+		Image: truckb
+	BodyOrientation:
+		QuantizedFacings: 128
+	AmmoPool@ResourceFuel:
+		Ammo: 500

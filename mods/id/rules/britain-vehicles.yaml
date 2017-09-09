@@ -4,6 +4,8 @@ B_CMK3:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 500
@@ -51,7 +53,7 @@ B_CMK3:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: QF2_40
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 700,0,1100
 		Recoil: 150
 		RecoilRecovery: 10
@@ -63,13 +65,10 @@ B_CMK3:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -88,6 +87,8 @@ B_CMK3:
 	ProvidesPrerequisite@britain:
 		Prerequisite: vehicles.britain
 		Factions: britain
+	ProvidesPrerequisite@vehicles:
+		Prerequisite: vehicles
 	SelfHealing:
 		Step: 1
 		PercentageStep: 0
@@ -131,6 +132,8 @@ B_M2:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 505
@@ -176,7 +179,7 @@ B_M2:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M5_37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 600,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
@@ -188,13 +191,10 @@ B_M2:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -214,6 +214,8 @@ B_M3S:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
 	Inherits@EXPLOSION: ^VehicleExplodeSmall
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 509
@@ -259,7 +261,7 @@ B_M3S:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M5_37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 750,0,1000
 		Recoil: 150
 		RecoilRecovery: 10
@@ -277,13 +279,10 @@ B_M3S:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:
@@ -303,6 +302,8 @@ B_M3GRANT:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 513
@@ -350,7 +351,7 @@ B_M3GRANT:
 		TurnSpeed: 3
 	Armament@MainCannon:
 		Weapon: M5_37
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 650,0,1300
 		Recoil: 150
 		RecoilRecovery: 10
@@ -358,7 +359,7 @@ B_M3GRANT:
 		MuzzlePalette: ssmuzzle
 	Armament@ChassisCannon:
 		Weapon: M3_75
-		AmmoPoolName: ChassisCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 1150,225,750
 		Recoil: 0
 		RecoilRecovery: 0
@@ -376,20 +377,10 @@ B_M3GRANT:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
-	AmmoPool@ChassisCannon:
-        Name: ChassisCannon
-        Ammo: 10
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 30
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -409,6 +400,8 @@ B_S3:
 	Inherits@PRIORITY: ^AutoTargetVehicle
 	Inherits@EXP: ^GainsExperienceBritain
 	Inherits@EXPLOSION: ^VehicleExplodeMedium
+	Inherits@ResourceAmmoAPConsumer: ^ResourceAmmoAPConsumer
+	Inherits@ResourceConsumesFuel1Per1: ^ResourceConsumesFuel1Per1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 518
@@ -456,7 +449,7 @@ B_S3:
 		TurnSpeed: 2
 	Armament@MainCannon:
 		Weapon: M3_75
-		AmmoPoolName: MainCannon
+		AmmoPoolName: ResourceAmmoAP
 		LocalOffset: 1000,0,1100
 		Recoil: 150
 		RecoilRecovery: 10
@@ -474,13 +467,10 @@ B_S3:
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 		MuzzlePalette: apolra50alpha
-	AmmoPool@MainCannon:
-        Name: MainCannon
-        Ammo: 20
-        SelfReloads: True
-        SelfReloadDelay: 400
-        ResetOnFire: True
-        PipType: Gray
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 20
+	AmmoPool@ResourceFuel:
+		Ammo: 1000
 	AttackTurreted:
 		Voice: Attack
 	RenderSprites:

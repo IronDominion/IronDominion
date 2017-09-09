@@ -60,7 +60,7 @@ r_bt2:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: bt2icon
 
 r_t60:
 	Defaults:
@@ -92,7 +92,7 @@ r_bt5:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: bt5icon
 
 r_su76:
 	Defaults:
@@ -100,7 +100,7 @@ r_su76:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: su76icon
 
 r_bt7:
 	Defaults:
@@ -116,7 +116,7 @@ r_bt7:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: bt7icon
 
 r_kv1:
 	Defaults:
@@ -132,7 +132,7 @@ r_kv1:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: kv1icon
 
 r_kv2:
 	Defaults:
@@ -140,7 +140,7 @@ r_kv2:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: kv2icon
 
 r_kv2b:
 	Defaults:
@@ -148,7 +148,7 @@ r_kv2b:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: kv2bicon
 
 r_su26:
 	Defaults:
@@ -284,4 +284,4 @@ r_t34_85m:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: t34_85micon

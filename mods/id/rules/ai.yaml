@@ -54,7 +54,7 @@ Player:
 			g_p4f2c: 1%
 			g_p3j: 30%
 			g_p4f2: 30%
-			g_p7t: 10%
+			g_p6t: 10%
 			g_stug3g: 20%
 			g_grille: 5%
 			g_p2f: 30%
@@ -67,9 +67,16 @@ Player:
 			g_stug4: 20%
 			g_pj4_70: 15%
 			g_p4-5: 1%
+			g_p2leo: 30%
 			g_p5g: 50%
-			g_p7t2h: 20%
+			g_p6t2p: 20%
 			g_elefant: 5%
+			g_hummel: 5%
+			g_p6t2h: 20%
+			g_pj5: 30%
+			g_p5-2: 50%
+			g_p7: 2%
+			g_p8: 1%
 
 			f_amxelc: 1%
 			f_fcm36: 40%

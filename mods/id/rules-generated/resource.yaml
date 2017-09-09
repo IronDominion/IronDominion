@@ -1,0 +1,405 @@
+########################################################################
+########################################################################
+########################################################################
+#####                                                              #####
+#####                        GENERATED FILE                        #####
+#####                         DO NOT EDIT                          #####
+#####                                                              #####
+########################################################################
+########################################################################
+########################################################################
+
+
+^ResourceAmmoAPCarrier:
+	AmmoPool@ResourceAmmoAP:
+		Name: ResourceAmmoAP
+		PipType: Gray
+		PipTypeEmpty: AmmoEmpty
+		ShowAsTextPip: True
+		InitialAmmo: 1000000000
+
+^ResourceAmmoAPProduction:
+	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 1
+		InitialAmmo: 0
+		ReloadCount: 1
+		SelfReloads: True
+		SelfReloadDelay: 2
+		PipCount: 0
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoAPWarehouse:
+		ValidTargets: ResourceAmmoAPWarehouse
+		Priority: 1
+	Armament@ResourceAmmoAPProduction:
+		Weapon: ResourceAmmoAPProduction
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoAPWarehouse:
+	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 1000
+		InitialAmmo: 0
+		PipCount: 100
+	Targetable@ResourceAmmoAPWarehouse:
+		TargetTypes: ResourceAmmoAPWarehouse
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoAPConsumer:
+		ValidTargets: ResourceAmmoAPConsumer
+		Priority: 2
+	AutoTargetPriority@ResourceAmmoAPTransport:
+		ValidTargets: ResourceAmmoAPTransport
+		Priority: 1
+	Armament@ResourceAmmoAPWarehouse:
+		Weapon: ResourceAmmoAPWarehouse
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoAPTransport:
+	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
+	AmmoPool@ResourceAmmoAP:
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
+	Targetable@ResourceAmmoAPTransport:
+		TargetTypes: ResourceAmmoAPTransport
+	AutoTarget:
+		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
+	AutoTargetPriority@ResourceAmmoAPConsumer:
+		ValidTargets: ResourceAmmoAPConsumer
+		Priority: 2
+	Armament@ResourceAmmoAPTransport:
+		Weapon: ResourceAmmoAPTransport
+		TargetStances: Ally
+
+^ResourceAmmoAPConsumer:
+	Inherits@ResourceAmmoAPCarrier: ^ResourceAmmoAPCarrier
+	Targetable@ResourceAmmoAPConsumer:
+		TargetTypes: ResourceAmmoAPConsumer
+
+
+^ResourceAmmoAPCRCarrier:
+	AmmoPool@ResourceAmmoAPCR:
+		Name: ResourceAmmoAPCR
+		PipType: Blue
+		PipTypeEmpty: AmmoEmpty
+		ShowAsTextPip: True
+		InitialAmmo: 1000000000
+
+^ResourceAmmoAPCRProduction:
+	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 1
+		InitialAmmo: 0
+		ReloadCount: 1
+		SelfReloads: True
+		SelfReloadDelay: 2
+		PipCount: 0
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoAPCRWarehouse:
+		ValidTargets: ResourceAmmoAPCRWarehouse
+		Priority: 1
+	Armament@ResourceAmmoAPCRProduction:
+		Weapon: ResourceAmmoAPCRProduction
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoAPCRWarehouse:
+	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 1000
+		InitialAmmo: 0
+		PipCount: 100
+	Targetable@ResourceAmmoAPCRWarehouse:
+		TargetTypes: ResourceAmmoAPCRWarehouse
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoAPCRConsumer:
+		ValidTargets: ResourceAmmoAPCRConsumer
+		Priority: 2
+	AutoTargetPriority@ResourceAmmoAPCRTransport:
+		ValidTargets: ResourceAmmoAPCRTransport
+		Priority: 1
+	Armament@ResourceAmmoAPCRWarehouse:
+		Weapon: ResourceAmmoAPCRWarehouse
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoAPCRTransport:
+	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
+	AmmoPool@ResourceAmmoAPCR:
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
+	Targetable@ResourceAmmoAPCRTransport:
+		TargetTypes: ResourceAmmoAPCRTransport
+	AutoTarget:
+		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
+	AutoTargetPriority@ResourceAmmoAPCRConsumer:
+		ValidTargets: ResourceAmmoAPCRConsumer
+		Priority: 2
+	Armament@ResourceAmmoAPCRTransport:
+		Weapon: ResourceAmmoAPCRTransport
+		TargetStances: Ally
+
+^ResourceAmmoAPCRConsumer:
+	Inherits@ResourceAmmoAPCRCarrier: ^ResourceAmmoAPCRCarrier
+	Targetable@ResourceAmmoAPCRConsumer:
+		TargetTypes: ResourceAmmoAPCRConsumer
+
+
+^ResourceAmmoHECarrier:
+	AmmoPool@ResourceAmmoHE:
+		Name: ResourceAmmoHE
+		PipType: Yellow
+		PipTypeEmpty: AmmoEmpty
+		ShowAsTextPip: True
+		InitialAmmo: 1000000000
+
+^ResourceAmmoHEProduction:
+	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 1
+		InitialAmmo: 0
+		ReloadCount: 1
+		SelfReloads: True
+		SelfReloadDelay: 2
+		PipCount: 0
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoHEWarehouse:
+		ValidTargets: ResourceAmmoHEWarehouse
+		Priority: 1
+	Armament@ResourceAmmoHEProduction:
+		Weapon: ResourceAmmoHEProduction
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoHEWarehouse:
+	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 1000
+		InitialAmmo: 0
+		PipCount: 100
+	Targetable@ResourceAmmoHEWarehouse:
+		TargetTypes: ResourceAmmoHEWarehouse
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoHEConsumer:
+		ValidTargets: ResourceAmmoHEConsumer
+		Priority: 2
+	AutoTargetPriority@ResourceAmmoHETransport:
+		ValidTargets: ResourceAmmoHETransport
+		Priority: 1
+	Armament@ResourceAmmoHEWarehouse:
+		Weapon: ResourceAmmoHEWarehouse
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoHETransport:
+	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
+	AmmoPool@ResourceAmmoHE:
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
+	Targetable@ResourceAmmoHETransport:
+		TargetTypes: ResourceAmmoHETransport
+	AutoTarget:
+		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
+	AutoTargetPriority@ResourceAmmoHEConsumer:
+		ValidTargets: ResourceAmmoHEConsumer
+		Priority: 2
+	Armament@ResourceAmmoHETransport:
+		Weapon: ResourceAmmoHETransport
+		TargetStances: Ally
+
+^ResourceAmmoHEConsumer:
+	Inherits@ResourceAmmoHECarrier: ^ResourceAmmoHECarrier
+	Targetable@ResourceAmmoHEConsumer:
+		TargetTypes: ResourceAmmoHEConsumer
+
+
+^ResourceAmmoHEATCarrier:
+	AmmoPool@ResourceAmmoHEAT:
+		Name: ResourceAmmoHEAT
+		PipType: Red
+		PipTypeEmpty: AmmoEmpty
+		ShowAsTextPip: True
+		InitialAmmo: 1000000000
+
+^ResourceAmmoHEATProduction:
+	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
+	AmmoPool@ResourceAmmoHEAT:
+		Ammo: 1
+		InitialAmmo: 0
+		ReloadCount: 1
+		SelfReloads: True
+		SelfReloadDelay: 2
+		PipCount: 0
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoHEATWarehouse:
+		ValidTargets: ResourceAmmoHEATWarehouse
+		Priority: 1
+	Armament@ResourceAmmoHEATProduction:
+		Weapon: ResourceAmmoHEATProduction
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoHEATWarehouse:
+	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
+	AmmoPool@ResourceAmmoHEAT:
+		Ammo: 1000
+		InitialAmmo: 0
+		PipCount: 100
+	Targetable@ResourceAmmoHEATWarehouse:
+		TargetTypes: ResourceAmmoHEATWarehouse
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceAmmoHEATConsumer:
+		ValidTargets: ResourceAmmoHEATConsumer
+		Priority: 2
+	AutoTargetPriority@ResourceAmmoHEATTransport:
+		ValidTargets: ResourceAmmoHEATTransport
+		Priority: 1
+	Armament@ResourceAmmoHEATWarehouse:
+		Weapon: ResourceAmmoHEATWarehouse
+		TargetStances: Ally, Neutral
+
+^ResourceAmmoHEATTransport:
+	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
+	AmmoPool@ResourceAmmoHEAT:
+		Ammo: 50
+		InitialAmmo: 50
+		PipCount: 5
+	Targetable@ResourceAmmoHEATTransport:
+		TargetTypes: ResourceAmmoHEATTransport
+	AutoTarget:
+		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
+	AutoTargetPriority@ResourceAmmoHEATConsumer:
+		ValidTargets: ResourceAmmoHEATConsumer
+		Priority: 2
+	Armament@ResourceAmmoHEATTransport:
+		Weapon: ResourceAmmoHEATTransport
+		TargetStances: Ally
+
+^ResourceAmmoHEATConsumer:
+	Inherits@ResourceAmmoHEATCarrier: ^ResourceAmmoHEATCarrier
+	Targetable@ResourceAmmoHEATConsumer:
+		TargetTypes: ResourceAmmoHEATConsumer
+
+
+^ResourceFuelCarrier:
+	AmmoPool@ResourceFuel:
+		Name: ResourceFuel
+		PipType: Green
+		PipTypeEmpty: AmmoEmpty
+		ShowAsTextPip: True
+		InitialAmmo: 1000000000
+
+^ResourceFuelProduction:
+	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
+	AmmoPool@ResourceFuel:
+		Ammo: 10
+		InitialAmmo: 0
+		ReloadCount: 10
+		SelfReloads: True
+		SelfReloadDelay: 1
+		PipCount: 0
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceFuelWarehouse:
+		ValidTargets: ResourceFuelWarehouse
+		Priority: 1
+	Armament@ResourceFuelProduction:
+		Weapon: ResourceFuelProduction
+		TargetStances: Ally, Neutral
+
+^ResourceFuelWarehouse:
+	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
+	AmmoPool@ResourceFuel:
+		Ammo: 10000
+		InitialAmmo: 0
+		PipCount: 100
+	Targetable@ResourceFuelWarehouse:
+		TargetTypes: ResourceFuelWarehouse
+	AutoTarget:
+		AllowMovement: False
+		EnableStances: False
+		InitialStance: AttackAnything
+	AutoTargetPriority@ResourceFuelConsumer:
+		ValidTargets: ResourceFuelConsumer
+		Priority: 2
+	AutoTargetPriority@ResourceFuelTransport:
+		ValidTargets: ResourceFuelTransport
+		Priority: 1
+	Armament@ResourceFuelWarehouse:
+		Weapon: ResourceFuelWarehouse
+		TargetStances: Ally, Neutral
+
+^ResourceFuelTransport:
+	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
+	AmmoPool@ResourceFuel:
+		Ammo: 5000
+		InitialAmmo: 5000
+		PipCount: 50
+	Targetable@ResourceFuelTransport:
+		TargetTypes: ResourceFuelTransport
+	AutoTarget:
+		AllowMovement: True
+		InitialStance: AttackAnything
+		ScanRadius: 20
+	AutoTargetPriority@ResourceFuelConsumer:
+		ValidTargets: ResourceFuelConsumer
+		Priority: 2
+	Armament@ResourceFuelTransport:
+		Weapon: ResourceFuelTransport
+		TargetStances: Ally
+
+^ResourceFuelConsumer:
+	Inherits@ResourceFuelCarrier: ^ResourceFuelCarrier
+	Targetable@ResourceFuelConsumer:
+		TargetTypes: ResourceFuelConsumer
+
+
+^ResourceWarehouseGeneric:
+	Inherits@ResourceAmmoAPWarehouse: ^ResourceAmmoAPWarehouse
+	Inherits@ResourceAmmoAPCRWarehouse: ^ResourceAmmoAPCRWarehouse
+	Inherits@ResourceAmmoHEWarehouse: ^ResourceAmmoHEWarehouse
+	Inherits@ResourceAmmoHEATWarehouse: ^ResourceAmmoHEATWarehouse
+	Inherits@ResourceFuelWarehouse: ^ResourceFuelWarehouse
+
+
+^ResourceTransportFuel:
+	Inherits@ResourceFuelTransport: ^ResourceFuelTransport
+
+^ResourceTransportAmmo:
+	Inherits@ResourceAmmoAPTransport: ^ResourceAmmoAPTransport
+	Inherits@ResourceAmmoAPCRTransport: ^ResourceAmmoAPCRTransport
+	Inherits@ResourceAmmoHETransport: ^ResourceAmmoHETransport
+	Inherits@ResourceAmmoHEATTransport: ^ResourceAmmoHEATTransport
+
+

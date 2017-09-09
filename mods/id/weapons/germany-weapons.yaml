@@ -2,7 +2,7 @@
 Kar98:
 	Inherits@caltype: ^Bullet
 	ReloadDelay: 50
-	Range: 10c0
+	Range: 8c0
 	Report: kar_98_1.wav, kar_98_2.wav, kar_98_3.wav, kar_98_4.wav
 	Projectile: BulletAS
 		Speed: 1c350
@@ -19,7 +19,7 @@ Panzerschreck:
 	Inherits@calsize: ^88mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 100
-	Range: 6c512
+	Range: 6c0
 	Report: panzerschreck_v1.wav, panzerschreck_v2.wav
 	Projectile: BulletAS
 		Speed: 0c195
@@ -33,7 +33,7 @@ PanzerschreckGarrison:
 MP40:
 	Inherits@caltype: ^Bullet
 	ReloadDelay: 80
-	Range: 8c0
+	Range: 6c0
 	Burst: 5
 	BurstDelay: 3
 	Report: mp40_v1.wav, mp40_v2.wav, mp40_v3.wav, mp40_v4.wav
@@ -45,14 +45,14 @@ MP40:
 
 MP40Garrison:
 	Inherits@caltype: MP40
-	Range: 13c0
+	Range: 15c0
 
 #Panzer IV A Cannon
 KwK37:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 26c520
+	Range: 24c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 0c578
@@ -62,7 +62,7 @@ KwK37:
 MG34_p4:
 	Inherits@caltype: ^Bullet
 	ReloadDelay: 150
-	Range: 10c0
+	Range: 12c0
 	Burst: 75
 	BurstDelay: 3
 	Report: mg_34_v1.wav, mg_34_v2.wav, mg_34_v3.wav
@@ -77,7 +77,7 @@ MG34_p4:
 MG34_p1:
 	Inherits@caltype: ^Bullet
 	ReloadDelay: 100
-	Range: 17c68
+	Range: 12c0
 	Burst: 40
 	BurstDelay: 2
 	Report: mg_34_v1.wav, mg_34_v2.wav, mg_34_v3.wav
@@ -92,7 +92,7 @@ MG34_p1:
 MG34_p2:
 	Inherits@caltype: ^Bullet
 	ReloadDelay: 100
-	Range: 17c68
+	Range: 12c0
 	Burst: 20
 	BurstDelay: 3
 	Report: mg_34_v1.wav, mg_34_v2.wav, mg_34_v3.wav
@@ -148,7 +148,7 @@ KwK34t:
 	Inherits@calsize: ^37mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 200
-	Range: 17c680
+	Range: 16c0
 	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
 	Projectile: BulletAS
 		Speed: 1c013
@@ -159,7 +159,7 @@ KwK38t:
 	Inherits@calsize: ^50mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 17c680
+	Range: 16c0
 	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
 	Projectile: BulletAS
 		Speed: 1c162
@@ -170,7 +170,7 @@ PaK36t:
 	Inherits@calsize: ^47mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 140
-	Range: 26c520
+	Range: 24c0
 	Report: 47mm_v1.wav, 47mm_v2.wav, 47mm_v3.wav
 	Projectile: BulletAS
 		Speed: 1c454
@@ -181,7 +181,7 @@ InfG33:
 	Inherits@calsize: ^150mm
 	Inherits@caltype: ^HE
 	ReloadDelay: 300
-	Range: 50c0
+	Range: 40c0
 	Report: mortar_shoot_v1.wav, mortar_shoot_v2.wav, mortar_shoot_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
@@ -194,7 +194,7 @@ KwK36:
 	Inherits@calsize: ^37mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 220
-	Range: 26c520
+	Range: 16c0
 	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
 	Projectile: BulletAS
 		Speed: 1c125
@@ -205,7 +205,7 @@ StuK40:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 200
-	Range: 26c520
+	Range: 24c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c110
@@ -216,7 +216,7 @@ PaK40:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 200
-	Range: 35c360
+	Range: 30c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c482
@@ -227,7 +227,7 @@ FhB18:
 	Inherits@calsize: ^105mm
 	Inherits@caltype: ^HE
 	ReloadDelay: 200
-	Range: 50c0
+	Range: 40c0
 	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
@@ -240,7 +240,7 @@ KwK39:
 	Inherits@calsize: ^50mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 220
-	Range: 26c520
+	Range: 24c0
 	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
 	Projectile: BulletAS
 		Speed: 1c028
@@ -252,7 +252,7 @@ StuK40/L48:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 200
-	Range: 26c520
+	Range: 30c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c388
@@ -263,7 +263,7 @@ KwK39/L60:
 	Inherits@calsize: ^50mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 220
-	Range: 26c520
+	Range: 24c0
 	Report: 50mm_Kwk39_L60_v1.wav, 50mm_Kwk39_L60_v2.wav, 50mm_Kwk39_L60_v3.wav
 	Projectile: BulletAS
 		Speed: 1c566
@@ -274,7 +274,7 @@ KwK40/L43:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 30c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c110
@@ -285,7 +285,7 @@ KwK36/L56:
 	Inherits@calsize: ^88mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 30c0
 	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
 	Projectile: BulletAS
 		Speed: 1c160
@@ -295,7 +295,7 @@ KwK36/L56:
 MG42_p4:
 	Inherits@caltype: ^Bullet
 	ReloadDelay: 150
-	Range: 10c0
+	Range: 12c0
 	Burst: 75
 	BurstDelay: 3
 	Report: mg_42_v1.wav, mg_42_v2.wav, mg_42_v3.wav, mg_42_v4.wav, mg_42_v5.wav, mg_42_v6.wav
@@ -311,7 +311,7 @@ SlG33:
 	Inherits@calsize: ^150mm
 	Inherits@caltype: ^ARTY_HEAT
 	ReloadDelay: 300
-	Range: 50c0
+	Range: 40c0
 	Report: mortar_shoot_v1.wav, mortar_shoot_v2.wav, mortar_shoot_v3.wav
 	Projectile: BulletAS
 		LaunchAngle: 90
@@ -324,7 +324,7 @@ KwK38:
 	Inherits@calsize: ^20mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 200
-	Range: 17c680
+	Range: 16c0
 	Burst: 5
 	BurstDelay: 7
 	Report: 20mm_KwK38_v1.wav, 20mm_KwK38_v2.wav, 20mm_KwK38_v3.wav
@@ -344,7 +344,7 @@ KwK40/L48:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 30c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c185
@@ -355,7 +355,7 @@ KwK42/L70:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 200
-	Range: 35c360
+	Range: 30c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c388
@@ -366,7 +366,7 @@ PaK39/L48:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 30c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c482
@@ -377,7 +377,7 @@ PaK39/L70:
 	Inherits@calsize: ^75mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 36c0
 	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
 	Projectile: BulletAS
 		Speed: 1c734
@@ -388,7 +388,7 @@ KwK43/L70:
 	Inherits@calsize: ^88mm
 	Inherits@caltype: ^AP
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 30c0
 	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
 	Projectile: BulletAS
 		Speed: 1c500
@@ -399,8 +399,72 @@ KwK43/L71:
 	Inherits@calsize: ^88mm
 	Inherits@caltype: ^APCR
 	ReloadDelay: 250
-	Range: 35c360
+	Range: 36c0
 	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
 	Projectile: BulletAS
 		Speed: 1c875
+		Inaccuracy: 0c512
+
+#Panzer II Leopard Cannon
+MK103A:
+	Inherits@calsize: ^30mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 200
+	Range: 20c0
+	Burst: 5
+	BurstDelay: 8
+	Report: 37mm_01.wav, 37mm_02.wav, 37mm_03.wav
+	Projectile: BulletAS
+		Speed: 1c440
+		Inaccuracy: 1c0
+	Warhead@2Eff: CreateEffect
+		InValidTargets: Vehicle, OpenVehicle
+	Warhead@3Eff: CreateEffect
+		Explosions: pshotts1, pshotts2, pshotts3
+		ExplosionPalette: pshotts
+		ImpactSounds: tank_hit_bounce_1.wav, tank_hit_bounce_2.wav, tank_hit_bounce_3.wav, tank_hit_bounce_4.wav, tank_hit_bounce_5.wav
+		ValidTargets: Vehicle, OpenVehicle
+
+#Jagdtpanther Cannon
+Pak43/L71:
+	Inherits@calsize: ^88mm
+	Inherits@caltype: ^APCR
+	ReloadDelay: 250
+	Range: 36c0
+	Report: 88mm_KwK36_v1.wav, 88mm_KwK36_v2.wav, 88mm_KwK36_v3.wav
+	Projectile: BulletAS
+		Speed: 1c875
+		Inaccuracy: 0c512
+
+#Löwe Cannon
+KwK105/L70:
+	Inherits@calsize: ^105mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 280
+	Range: 30c0
+	Report: 105mm_M2_v1.wav, 105mm_M2_v2.wav, 105mm_M2_v3.wav
+	Projectile: BulletAS
+		Speed: 1c725
+		Inaccuracy: 0c512
+
+#Maus Cannon
+KwK44/L55:
+	Inherits@calsize: ^128mm
+	Inherits@caltype: ^AP
+	ReloadDelay: 300
+	Range: 30c0
+	Report: 122mm_v1.wav, 122mm_v2.wav, 122mm_v3.wav
+	Projectile: BulletAS
+		Speed: 1c380
+		Inaccuracy: 0c512
+
+#Maus Cannon 2
+KwK44/L36:
+	Inherits@calsize: ^75mm
+	Inherits@caltype: ^HE
+	ReloadDelay: 250
+	Range: 20c0
+	Report: 75mm_Kwk40_v1.wav, 75mm_Kwk40_v2.wav, 75mm_Kwk40_v3.wav
+	Projectile: BulletAS
+		Speed: 1c380
 		Inaccuracy: 0c512
