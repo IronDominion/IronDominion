@@ -12,7 +12,7 @@ g_p4a:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4aicon
 
 g_p1c:
 	Defaults:
@@ -28,7 +28,7 @@ g_p1c:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p1cicon
 
 g_p2b:
 	Defaults:
@@ -44,7 +44,7 @@ g_p2b:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p2bicon
 
 g_p35t:
 	Defaults:
@@ -60,7 +60,7 @@ g_p35t:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p35ticon
 
 g_p38t:
 	Defaults:
@@ -76,7 +76,7 @@ g_p38t:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p38ticon
 
 g_pj1:
 	Defaults:
@@ -84,7 +84,7 @@ g_pj1:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: pj1icon
 
 g_bison:
 	Defaults:
@@ -92,7 +92,7 @@ g_bison:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: bisonicon
 
 g_p2c:
 	Defaults:
@@ -108,7 +108,7 @@ g_p2c:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p2cicon
 
 g_p3e:
 	Defaults:
@@ -124,7 +124,7 @@ g_p3e:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p3eicon
 
 g_p4d:
 	Defaults:
@@ -140,7 +140,7 @@ g_p4d:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4dicon
 
 g_stug3b:
 	Defaults:
@@ -148,7 +148,7 @@ g_stug3b:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: stug3bicon
 
 g_marder2:
 	Defaults:
@@ -156,7 +156,7 @@ g_marder2:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: marder2icon
 
 g_wespe:
 	Defaults:
@@ -164,7 +164,7 @@ g_wespe:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: wespeicon
 
 g_p2d:
 	Defaults:
@@ -180,7 +180,7 @@ g_p2d:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p2dicon
 
 g_p3f:
 	Defaults:
@@ -196,7 +196,7 @@ g_p3f:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p3ficon
 
 g_p4f1:
 	Defaults:
@@ -212,7 +212,7 @@ g_p4f1:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4f1icon
 
 g_stug3f:
 	Defaults:
@@ -220,7 +220,7 @@ g_stug3f:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: stug3ficon
 
 g_hetzer:
 	Defaults:
@@ -236,7 +236,7 @@ g_hetzer:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: hetzericon
 
 g_p4f2c:
 	Defaults:
@@ -252,7 +252,7 @@ g_p4f2c:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4f2cicon
 
 g_p2f:
 	Defaults:
@@ -268,7 +268,7 @@ g_p2f:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p2ficon
 
 g_p3j:
 	Defaults:
@@ -284,7 +284,7 @@ g_p3j:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p3jicon
 
 g_p4f2:
 	Defaults:
@@ -300,9 +300,9 @@ g_p4f2:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4f2icon
 
-g_p7t:
+g_p6t:
 	Defaults:
 		Length: *
 	muzzle0: mgun-n
@@ -316,7 +316,7 @@ g_p7t:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p6ticon
 
 g_stug3g:
 	Defaults:
@@ -324,7 +324,7 @@ g_stug3g:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: stug3gicon
 
 g_grille:
 	Defaults:
@@ -332,7 +332,7 @@ g_grille:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: grilleicon
 
 g_p2g:
 	Defaults:
@@ -348,7 +348,7 @@ g_p2g:
 	cannonmuzzle: tankmuzzle_sml
         Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p2gicon
 
 g_p3l:
 	Defaults:
@@ -364,7 +364,7 @@ g_p3l:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p3licon
 
 g_p4g:
 	Defaults:
@@ -380,7 +380,7 @@ g_p4g:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4gicon
 
 g_pj4_48:
 	Defaults:
@@ -388,7 +388,7 @@ g_pj4_48:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: pj4_48icon
 
 g_p2l:
 	Defaults:
@@ -401,10 +401,10 @@ g_p2l:
 	muzzle5: mgun-se
 	muzzle6: mgun-e
 	muzzle7: mgun-ne
-	cannonmuzzle: tankmuzzle_med
-        Length: 5
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
         Facings: -32
-	icon: xxicon
+	icon: p2licon
 
 g_p4h:
 	Defaults:
@@ -420,7 +420,7 @@ g_p4h:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4hicon
 
 g_p5a:
 	Defaults:
@@ -436,7 +436,7 @@ g_p5a:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p5aicon
 
 g_stug4:
 	Defaults:
@@ -452,7 +452,7 @@ g_stug4:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: stug4icon
 
 g_pj4_70:
 	Defaults:
@@ -460,7 +460,7 @@ g_pj4_70:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: pj4_70icon
 
 g_p4-5:
 	Defaults:
@@ -476,7 +476,7 @@ g_p4-5:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p4-5icon
 
 g_p5g:
 	Defaults:
@@ -492,9 +492,9 @@ g_p5g:
 	cannonmuzzle: tankmuzzle_med
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p5gicon
 
-g_p7t2h:
+g_p6t2p:
 	Defaults:
 		Length: *
 	muzzle0: mgun-n
@@ -508,7 +508,7 @@ g_p7t2h:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
-	icon: xxicon
+	icon: p6t2picon
 
 g_elefant:
 	Defaults:
@@ -516,4 +516,87 @@ g_elefant:
 	cannonmuzzle: tankmuzzle_lrg
         Length: 5
         Facings: -32
+	icon: elefanticon
+
+g_hummel:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
 	icon: xxicon
+
+g_p6t2h:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	icon: p6t2hicon
+
+g_p5-2:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: p5-2icon
+
+g_p2leo:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_sml
+        Length: 3
+        Facings: -32
+	icon: xxicon
+
+g_p7:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	icon: p7icon
+
+g_pj5:
+	Defaults:
+		Length: *
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	icon: xxicon
+
+g_p8:
+	Defaults:
+		Length: *
+	muzzle0: mgun-n
+	muzzle1: mgun-nw
+	muzzle2: mgun-w
+	muzzle3: mgun-sw
+	muzzle4: mgun-s
+	muzzle5: mgun-se
+	muzzle6: mgun-e
+	muzzle7: mgun-ne
+	cannonmuzzle: tankmuzzle_lrg
+        Length: 5
+        Facings: -32
+	cannonmuzzle2: tankmuzzle_med
+        Length: 5
+        Facings: -32
+	icon: p8icon

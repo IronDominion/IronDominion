@@ -618,8 +618,8 @@
 		Scale: 11.7
 		LightYaw: 800
 		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.25,1.25,1.25
+		LightAmbientColor: -1.4,-1.4,-1.4
+		LightDiffuseColor: 1.8,1.8,1.8
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	Voiced:
@@ -663,6 +663,9 @@
     SpeedMultiplier@EngineDamage:
         Modifier: 50
         RequiresCondition: EngineDamage && HighDamage
+    DamageMultiplier@Vulnerability:
+        Modifier: 125
+        RequiresCondition: EngineDamage && HighDamage
 	SmokeParticleEmitter@1:
 		RequiresCondition: EngineDamage && HighDamage
 		Sequence: unitsmoke
@@ -677,8 +680,8 @@
 		Scale: 11.7
 		LightYaw: 800
 		LightPitch: 150
-		LightAmbientColor: -0.5,-0.5,-0.5
-		LightDiffuseColor: 1.4,1.4,1.4
+		LightAmbientColor: -1.4,-1.4,-1.4
+		LightDiffuseColor: 1.8,1.8,1.8
         
 ^VehicleExplodeSmall:
 	Explodes:

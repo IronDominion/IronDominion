@@ -48,6 +48,23 @@
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater, SmallScorch
         
+^30mm:
+	Inherits@BasicProjectile: ^BasicShell
+	Projectile: BulletAS
+		ContrailWidth: 0c17
+	Warhead@1Dam: SpreadDamage
+		Damage: 204
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_clsn
+		ImpactSounds: explosion01.aud, explosion02.aud
+		InValidTargets: Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater, SmallScorch
+        
 ^37mm:
 	Inherits@BasicProjectile: ^BasicShell
 	Projectile: BulletAS
@@ -308,7 +325,7 @@
 	Projectile: BulletAS
 		ContrailWidth: 0c40
 	Warhead@1Dam: SpreadDamage
-		Damage: 4000
+		Damage: 4057
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: explosion01.aud, explosion02.aud

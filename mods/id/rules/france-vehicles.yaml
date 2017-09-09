@@ -895,7 +895,7 @@ F_S40:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 203
-		Prerequisites: ~vehicles.france, ~EarlyPhaseII, ~!MidPhaseI
+		Prerequisites: ~vehicles.france, ~EarlyPhaseIII, ~!MidPhaseI
 		BuildDuration: 1
 		Description: Early Phase II
 	Valued:
@@ -1797,7 +1797,7 @@ F_ACL:
 	Valued:
 		Cost: 4500
 	Tooltip:
-		Name: ACL 1
+		Name: ARL 44
 	Mobile:
 		Speed: 40
 		TurnSpeed: 2
@@ -1875,7 +1875,7 @@ F_ARL44:
 	Valued:
 		Cost: 4800
 	Tooltip:
-		Name: ARL 44
+		Name: ARL 44B
 	Mobile:
 		Speed: 40
 		TurnSpeed: 2

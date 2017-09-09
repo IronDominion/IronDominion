@@ -836,7 +836,7 @@ R_SU26:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 409
-		Prerequisites: ~vehicles.russia, ~EarlyPhaseII #, ~!MidPhaseII
+		Prerequisites: ~vehicles.russia, ~EarlyPhaseI #, ~!MidPhaseII
 		BuildDuration: 1
 		Description: Start Phase
 	Valued:

@@ -88,16 +88,6 @@ Actors:
 		Location: 73,26
 		Facing: 92
 		TurretFacing: 92
-	Actor170: g_marder2
-		Owner: Neutral
-		Location: 75,26
-		Facing: 92
-		TurretFacing: 92
-	Actor171: g_wespe
-		Owner: Neutral
-		Location: 77,26
-		Facing: 92
-		TurretFacing: 92
 	Actor172: g_p3e
 		Owner: Neutral
 		Location: 63,23
@@ -168,7 +158,7 @@ Actors:
 		Location: 73,20
 		Facing: 92
 		TurretFacing: 92
-	Actor189: g_p7t
+	Actor189: g_p6t
 		Owner: Neutral
 		Location: 63,14
 		Facing: 92
@@ -213,7 +203,7 @@ Actors:
 		Location: 65,14
 		Facing: 92
 		TurretFacing: 92
-	Actor215: g_p7t2h
+	Actor215: g_p6t2p
 		Owner: Neutral
 		Location: 63,11
 		Facing: 92
@@ -682,11 +672,6 @@ Actors:
 		Location: 102,-42
 		Facing: 92
 		TurretFacing: 92
-	Actor133: r_su26
-		Owner: Neutral
-		Location: 104,-42
-		Facing: 92
-		TurretFacing: 92
 	Actor134: r_t50
 		Owner: Neutral
 		Location: 98,-51
@@ -812,3 +797,58 @@ Actors:
 		Location: 102,-36
 		SubCell: 5
 		Facing: 92
+	Actor192: g_p6t2h
+		Owner: Neutral
+		Location: 65,11
+		Facing: 92
+		TurretFacing: 92
+	Actor193: f_acl
+		Owner: Neutral
+		Location: 65,-29
+		Facing: 92
+		TurretFacing: 92
+	Actor195: f_arl44
+		Owner: Neutral
+		Location: 67,-29
+		Facing: 92
+		TurretFacing: 92
+	Actor196: g_p7
+		Owner: Neutral
+		Location: 67,11
+		Facing: 92
+		TurretFacing: 92
+	Actor198: g_p5-2
+		Owner: Neutral
+		Location: 69,17
+		Facing: 92
+		TurretFacing: 92
+	Actor199: g_p8
+		Owner: Neutral
+		Location: 69,11
+		Facing: 92
+		TurretFacing: 92
+	Actor202: g_pj5
+		Owner: Neutral
+		Location: 71,17
+		Facing: 92
+		TurretFacing: 92
+	Actor170: g_p2leo
+		Owner: Neutral
+		Location: 75,26
+		Facing: 92
+		TurretFacing: 92
+	Actor171: g_marder2
+		Owner: Neutral
+		Facing: 92
+		TurretFacing: 92
+		Location: 77,26
+	Actor203: g_wespe
+		Owner: Neutral
+		Facing: 92
+		TurretFacing: 92
+		Location: 79,26
+	Actor204: r_su26
+		Owner: Neutral
+		Location: 104,-45
+		Facing: 92
+		TurretFacing: 92
